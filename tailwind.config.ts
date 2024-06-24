@@ -9,11 +9,20 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+      colors: {
+        header_background: {
+          dark: "#1b1b36",
+          DEFAULT: "#e5e5eb",
+        },
+        footer_background: {
+          dark: "#06060c",
+          DEFAULT: "#f8f8ff",
+        },
+        background: {
+          dark: "#06060c",
+          DEFAULT: "#f8f8ff",
+        },
+      }
     },
   },
   plugins: [

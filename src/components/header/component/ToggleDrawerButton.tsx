@@ -11,7 +11,7 @@ export default function ToggleDrawerButton(props: Props) {
         props.onClick();
     }
     return (
-        <button aria-label="サイドドロワーを表示" className="lg:invisible lg:hidden p-2 text-gray-800 bg-gray-200 rounded-lg dark:text-gray-200 dark:bg-gray-800 mr-4 " onClick={onClick}>
+        <button aria-label="サイドドロワーを表示" className="lg:invisible lg:hidden p-2 rounded-lg text-gray-800   dark:text-gray-200 outline outline-1 outline-gray-300 dark:outline-gray-700  mr-4 " onClick={onClick}>
             <List size={ICONSIZE} />
         </button>
     );
