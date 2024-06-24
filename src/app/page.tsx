@@ -1,4 +1,5 @@
-import CatWalkSection from "@/components/cat-walk/CatWalkSection";
+import LinkButton from "@/components/LinkButton";
+import { Info } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   const dummyTexts = [
@@ -22,6 +23,9 @@ export default function Home() {
             </div>
           ))
         }
+        <div className="flex justify-center">
+          <LinkButton href="/about" label="about me" icon={<Info />} iconPosition="left" />
+        </div>
 
       </div>
 
