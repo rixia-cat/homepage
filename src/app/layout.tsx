@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning className={font.className}>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen bg-background dark:bg-background-dark ">
         <ThemeProvider attribute="class">
           <Header />
           {children}

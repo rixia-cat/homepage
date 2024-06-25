@@ -1,3 +1,3 @@
 export default function ArticlePage({ params }: { params: { slug: string } }) {
-    return <div>My Article: {params.slug}</div>
+    return <div className="flex-grow w-full">My Article: {params.slug}</div>
 }

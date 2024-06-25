@@ -27,6 +27,7 @@ const config: Config = {
   },
   plugins: [
     require("tailwindcss-radix")(),
+    require('@tailwindcss/line-clamp'),
   ],
 };
 export default config;

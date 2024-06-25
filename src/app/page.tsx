@@ -1,5 +1,5 @@
 import LinkButton from "@/components/LinkButton";
-import { Info } from "@phosphor-icons/react/dist/ssr";
+import { Book, Info } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   const dummyTexts = [
@@ -12,7 +12,7 @@ export default function Home() {
     "人類社会のすべての構成員の固有の尊厳と平等で譲ることのできない権利とを承認することは"
   ];
   return (
-    <main className="w-full flex-grow  bg-background dark:bg-background-dark ">
+    <main className="w-full flex-grow  ">
 
       <div className="flex flex-col w-full ">
 
@@ -23,7 +23,8 @@ export default function Home() {
             </div>
           ))
         }
-        <div className="flex justify-center">
+        <div className="flex justify-center space-x-4">
+          <LinkButton href="/articles" label="article" icon={<Book />} />
           <LinkButton href="/about" label="about me" icon={<Info />} iconPosition="left" />
         </div>
 
