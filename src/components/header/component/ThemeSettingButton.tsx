@@ -68,7 +68,7 @@ export const ThemeSettingButton = () => {
                     label: 'Unknown',
                 }
         }
-    }, [theme, mounted]);
+    }, [theme, mounted, systemTheme]);
 
 
     /* ドロップダウンメニュー */
