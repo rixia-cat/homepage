@@ -11,33 +11,33 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
             </h1>
         },
         "h2": ({ children }) => {
-            return <h2 className="pb-2 mt-6 mb-4 text-2xl font-bold  border-b-2 border-dashed border-gray-300 dark:border-gray-700 first:mt-0">
+            return <h2 className="pb-2 mt-8 mb-6 text-2xl font-bold  border-b-2 border-dashed border-gray-300 dark:border-gray-700 first:mt-0">
                 {children}
             </h2>
         },
         "h3": ({ children }) => {
-            return <h3 className="text-xl font-bold mt-6 mb-3">
+            return <h3 className="text-xl font-bold mt-8 mb-3">
                 {children}
             </h3>
         },
         "h4": ({ children }) => {
-            return <h4 className="text-lg font-bold mt-6 mb-3">
+            return <h4 className="text-lg font-bold mt-8 mb-3">
                 {children}
             </h4>
         },
         "h5": ({ children }) => {
-            return <h5 className="text-base font-bold mt-6 mb-3">
+            return <h5 className="text-base font-bold mt-8 mb-3">
                 {children}
             </h5>
         },
         "h6": ({ children }) => {
-            return <h6 className="text-sm font-bold mt-6 mb-3">
+            return <h6 className="text-sm font-bold mt-8 mb-3">
                 {children}
             </h6>
         },
 
         "hr": () => {
-            return <hr className="my-6 border-t-2 border-gray-300 dark:border-gray-700 border-dashed" />
+            return <hr className="my-9 border-t-2 border-gray-300 dark:border-gray-700 border-dashed" />
         },
 
         /* Table */

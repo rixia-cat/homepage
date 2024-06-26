@@ -57,7 +57,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         `;
 
 
-    return <div className="flex-grow w-full p-4">
+    return <div className="flex-grow max-w-screen-md mx-auto p-4">
         <div className=" mb-8 border-2 rounded-xl border-gray-300 dark:border-gray-700" >
             <div className="flex justify-center mt-4 mb-8">
                 <span className="text-4xl text-gray-500 dark:text-gray-400">

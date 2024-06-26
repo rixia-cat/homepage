@@ -12,7 +12,7 @@ export default function Home() {
     "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
   ];
   return (
-    <main className="w-full flex-grow  ">
+    <main className="flex-grow max-w-screen-lg mx-auto">
 
       <div className="flex flex-col w-full p-4">
 
