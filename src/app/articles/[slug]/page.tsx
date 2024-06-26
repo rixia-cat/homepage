@@ -1,8 +1,8 @@
-import { useArticleMDXComponents } from "@/app/mdx-components";
+import { articleMDXComponents } from "@/app/mdx-components";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 
-const components = useArticleMDXComponents({});
+const components = articleMDXComponents({});
 const options: MDXRemoteProps["options"] = {
     mdxOptions: {
         remarkPlugins: [remarkGfm],
