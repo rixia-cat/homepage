@@ -1,4 +1,4 @@
-import LinkButton from "@/features/common/button/LinkButton";
+import LinkButton from "@/components/button/LinkButton";
 import { Book, Info } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {

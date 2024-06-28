@@ -10,6 +10,7 @@ const options: MDXRemoteProps["options"] = {
 };
 
 export default async function ArticlePage({ params }: { params: { slug: string } }) {
+    const leadingEmoji = "📖";
     const dummyMarkdownText = `
     ## 見出し2
     ` +
@@ -59,12 +60,12 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 
     return <div className="mx-auto max-w-screen-md grow p-4">
         <div className=" mb-8 rounded-xl border-2 border-gray-300 dark:border-gray-700" >
-            <div className="mb-8 mt-4 flex justify-center">
-                <span className="text-4xl text-gray-500 dark:text-gray-400">
-                    📖
+            <div className="mb-6 mt-2 flex justify-center">
+                <span className="text-5xl text-gray-500 dark:text-gray-400">
+                    {leadingEmoji}
                 </span>
             </div>
-            <h1 className="mb-6 text-center text-3xl font-bold ">
+            <h1 className="mb-6 text-center text-3xl font-bold text-grayishblack dark:text-grayishblack-dark ">
                 記事タイトル
             </h1>
         </div>

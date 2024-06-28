@@ -1,3 +1,5 @@
+import ProfiileCard from "@/components/profile/ProfileCard";
+import AllTagsCard from "@/features/article/components/AllTagsCard";
 import ArticleListView from "@/features/article/components/ArticleListView";
 import { Article } from "@/features/article/type/Article";
 
@@ -71,17 +73,18 @@ export default function ArticlePage() {
         }
     ];
     return (
-        <div className="mx-auto flex max-w-4xl grow">
+        <div className="mx-auto flex max-w-5xl grow">
             {/* <aside className="w-64 min-w-64 max-w-64 p-4  border-x-2 hidden lg:block">
                 <h1 className="text-2xl font-bold mb-4">Side</h1>
             </aside> */}
-            <div className="max-w-screen-lg grow px-6 py-4">
-                <h1 className="mb-4 text-2xl font-bold">Articles</h1>
+            <div className="max-w-screen-lg grow p-6">
+                <h1 className="h-16 text-2xl font-bold">Articles</h1>
                 <ArticleListView articles={dummyArticles} />
             </div>
-            {/* <aside className="hidden  w-64 min-w-64 max-w-64 border-x-2 p-4 lg:block">
-                <h1 className="mb-4 text-2xl font-bold">Side</h1>
-            </aside> */}
+            <aside className="mt-16   hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
+                <AllTagsCard />
+                <ProfiileCard />
+            </aside>
         </div>
     )
 }

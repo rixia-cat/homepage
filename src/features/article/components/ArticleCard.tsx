@@ -7,8 +7,8 @@ type Props = {
 
 export default function ArticleCard(props: Props) {
     return (
-        <div className="rounded-lg border border-gray-300 bg-white dark:border-gray-400 dark:bg-gray-800">
-            <a href={`${props.article.url}`} className="rounded-t-lg hover:bg-gray-100 focus:outline-2 focus:outline-gray-500 dark:hover:bg-gray-900 dark:focus:outline-gray-300">
+        <div className="flex flex-col  rounded-lg border border-gray-300 bg-white dark:border-gray-400 dark:bg-gray-800">
+            <a href={`${props.article.url}`} className="flex grow flex-col rounded-t-lg hover:bg-gray-100 focus:outline-2 focus:outline-gray-500 dark:hover:bg-gray-900 dark:focus:outline-gray-300">
                 <div className="flex w-full">
                     {/* 見出し用絵文字 */}
                     <div className="flex size-20 min-h-20 min-w-20 items-center justify-center rounded-tl-lg bg-gray-200 dark:bg-gray-700 ">
@@ -22,7 +22,7 @@ export default function ArticleCard(props: Props) {
                     </div>
                 </div>
                 {/* 説明文 */}
-                <div className="border-b  border-gray-200  p-2 dark:border-gray-700">
+                <div className="grow border-b  border-gray-200  p-2 dark:border-gray-700 ">
                     <p className="line-clamp-2 text-sm text-gray-600   dark:text-gray-300 ">{props.article.shortDescription}</p>
                 </div>
             </a>
@@ -36,7 +36,7 @@ export default function ArticleCard(props: Props) {
 
             </div>
             {/* タグ */}
-            <div className="flex flex-wrap px-2 pb-2 pt-1 ">
+            <div className="flex flex-nowrap overflow-scroll px-2 pb-2 pt-1">
                 {props.article.tags.map((tag) => (
                     <a key={tag.url} href={tag.url} className="rounded-full border-2  border-gray-300 bg-gray-200 px-2 py-1 text-xs dark:border-gray-700 dark:bg-gray-800">{tag.label}</a>
                 ))}

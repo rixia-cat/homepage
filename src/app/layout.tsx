@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from 'next-themes'
 import { M_PLUS_2, M_PLUS_Rounded_1c } from "next/font/google";
-import Footer from "@/features/common/footer/Footer";
-import { Header } from "@/features/common/header/Header";
+import Footer from "@/components/footer/Footer";
+import { Header } from "@/components/header/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",

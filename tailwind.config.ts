@@ -13,7 +13,7 @@ const config: Config = {
       colors: {
         header_background: {
           dark: "#1b1b36",
-          DEFAULT: "#e5e5eb",
+          DEFAULT: "#dedeed",
         },
         footer_background: {
           dark: "#06060c",
@@ -23,6 +23,16 @@ const config: Config = {
           dark: "#06060c",
           DEFAULT: "#f8f8ff",
         },
+
+        grayishblack: {
+          dark: "#e5e7eb",
+          DEFAULT: "#333d4d",
+        },
+
+        outline: {
+          dark: "#1b1b36",
+          DEFAULT: "#dedeed",
+        }
       }
     },
   },
