@@ -1,4 +1,4 @@
-import LinkButton from "@/components/LinkButton";
+import LinkButton from "@/features/common/button/LinkButton";
 import { Book, Info } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
@@ -12,9 +12,9 @@ export default function Home() {
     "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
   ];
   return (
-    <main className="flex-grow max-w-screen-lg mx-auto">
+    <main className="mx-auto max-w-screen-lg grow">
 
-      <div className="flex flex-col w-full p-4">
+      <div className="flex w-full flex-col p-4">
 
         <div className="flex justify-center space-x-4">
           <LinkButton href="/articles" label="articles" icon={<Book />} />

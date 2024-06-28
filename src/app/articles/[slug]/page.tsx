@@ -57,14 +57,14 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         `;
 
 
-    return <div className="flex-grow max-w-screen-md mx-auto p-4">
-        <div className=" mb-8 border-2 rounded-xl border-gray-300 dark:border-gray-700" >
-            <div className="flex justify-center mt-4 mb-8">
+    return <div className="mx-auto max-w-screen-md grow p-4">
+        <div className=" mb-8 rounded-xl border-2 border-gray-300 dark:border-gray-700" >
+            <div className="mb-8 mt-4 flex justify-center">
                 <span className="text-4xl text-gray-500 dark:text-gray-400">
                     📖
                 </span>
             </div>
-            <h1 className="text-3xl font-bold text-center mb-6 ">
+            <h1 className="mb-6 text-center text-3xl font-bold ">
                 記事タイトル
             </h1>
         </div>

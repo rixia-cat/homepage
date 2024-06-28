@@ -6,38 +6,38 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
 
 
         "h1": ({ children }) => {
-            return <h1 className="pb-2 mt-6 mb-4 text-3xl font-bold  border-b-2 border-dashed border-gray-300 dark:border-gray-700 first:mt-0">
+            return <h1 className="mb-4 mt-6 border-b-2 border-dashed border-gray-300  pb-2 text-3xl font-bold first:mt-0 dark:border-gray-700">
                 {children}
             </h1>
         },
         "h2": ({ children }) => {
-            return <h2 className="pb-2 mt-8 mb-6 text-2xl font-bold  border-b-2 border-dashed border-gray-300 dark:border-gray-700 first:mt-0">
+            return <h2 className="mb-6 mt-8 border-b-2 border-dashed border-gray-300  pb-2 text-2xl font-bold first:mt-0 dark:border-gray-700">
                 {children}
             </h2>
         },
         "h3": ({ children }) => {
-            return <h3 className="text-xl font-bold mt-8 mb-3">
+            return <h3 className="mb-3 mt-8 text-xl font-bold">
                 {children}
             </h3>
         },
         "h4": ({ children }) => {
-            return <h4 className="text-lg font-bold mt-8 mb-3">
+            return <h4 className="mb-3 mt-8 text-lg font-bold">
                 {children}
             </h4>
         },
         "h5": ({ children }) => {
-            return <h5 className="text-base font-bold mt-8 mb-3">
+            return <h5 className="mb-3 mt-8 text-base font-bold">
                 {children}
             </h5>
         },
         "h6": ({ children }) => {
-            return <h6 className="text-sm font-bold mt-8 mb-3">
+            return <h6 className="mb-3 mt-8 text-sm font-bold">
                 {children}
             </h6>
         },
 
         "hr": () => {
-            return <hr className="my-9 border-t-2 border-gray-300 dark:border-gray-700 border-dashed" />
+            return <hr className="my-9 border-t-2 border-dashed border-gray-300 dark:border-gray-700" />
         },
 
         /* Table */
@@ -49,12 +49,12 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
             </div>
         },
         "th": ({ children }) => {
-            return <th className="px-2 py-1 font-bold border border-gray-300 dark:border-gray-700 align-middle bg-gray-200 dark:bg-gray-800">
+            return <th className="border border-gray-300 bg-gray-200 px-2 py-1 align-middle font-bold dark:border-gray-700 dark:bg-gray-800">
                 {children}
             </th>
         },
         "td": ({ children }) => {
-            return <td className="p-2 border border-gray-300 dark:border-gray-700 ">
+            return <td className="border border-gray-300 p-2 dark:border-gray-700 ">
                 {children}
             </td>
         },
@@ -66,16 +66,16 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
 
         /* List */
         "ul": ({ children }) => {
-            return <ul className="list-disc list-inside">{children}</ul>
+            return <ul className="list-inside list-disc">{children}</ul>
         },
         "ol": ({ children }) => {
-            return <ol className="list-decimal list-inside">{children}</ol>
+            return <ol className="list-inside list-decimal">{children}</ol>
         },
         "li": ({ children }) => {
             return <li className="">{children}</li>
         },
         "blockquote": ({ children }) => {
-            return <blockquote className="border-l-4 px-2 my-3 border-gray-300 dark:border-gray-700 align-middle">
+            return <blockquote className="my-3 border-l-4 border-gray-300 px-2 align-middle dark:border-gray-700">
                 <div className='p-2' >{children}</div>
             </blockquote>
         }

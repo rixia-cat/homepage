@@ -104,17 +104,17 @@ export const ThemeSettingButton = () => {
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
-                <button className="p-2 text-gray-800  rounded-lg dark:text-gray-200 900 outline outline-1 outline-gray-300 dark:outline-gray-700 focus:outline-2 focus:outline-gray-500 dark:focus:outline-gray-300"
+                <button className="rounded-lg  p-2 text-gray-800 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-gray-500 dark:text-gray-200 dark:outline-gray-700 dark:focus:outline-gray-300"
                     aria-label="画面テーマを変更">
                     {buttonData.iconElm}
                 </button>
             </DropdownMenu.Trigger>
 
             <DropdownMenu.Portal>
-                <DropdownMenu.Content className="w-40  bg-white rounded-lg shadow-lg dark:bg-gray-800 backdrop-blur-sm">
+                <DropdownMenu.Content className="w-40  rounded-lg bg-white shadow-lg backdrop-blur-sm dark:bg-gray-800">
                     <DropdownMenu.RadioGroup value={theme} onValueChange={setTheme}>
                         {dropdownData.map((data, index) => (
-                            <DropdownMenu.RadioItem value={data.mode} key={index} className="flex items-center justify-start w-full px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 radix-state-checked:bg-gray-200 dark:radix-state-checked:bg-gray-700">
+                            <DropdownMenu.RadioItem value={data.mode} key={index} className="flex w-full items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 radix-state-checked:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 dark:radix-state-checked:bg-gray-700">
                                 {data.iconElm} {data.label}
 
                                 <DropdownMenu.ItemIndicator className="ml-auto">

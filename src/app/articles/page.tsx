@@ -1,5 +1,5 @@
-import ArticleListView from "@/components/article/ArticleListView";
-import { Article } from "@/components/article/type/Article";
+import ArticleListView from "@/features/article/components/ArticleListView";
+import { Article } from "@/features/article/type/Article";
 
 export default function ArticlePage() {
     const dummyArticles: Article[] = [
@@ -71,17 +71,17 @@ export default function ArticlePage() {
         }
     ];
     return (
-        <div className="grow flex max-w-screen-xl mx-auto">
-            <aside className="w-64 min-w-64 max-w-64 p-4  border-x-2 hidden lg:block">
+        <div className="mx-auto flex max-w-4xl grow">
+            {/* <aside className="w-64 min-w-64 max-w-64 p-4  border-x-2 hidden lg:block">
                 <h1 className="text-2xl font-bold mb-4">Side</h1>
-            </aside>
-            <div className="py-4 px-6 grow">
-                <h1 className="text-2xl font-bold mb-4">Articles</h1>
+            </aside> */}
+            <div className="max-w-screen-lg grow px-6 py-4">
+                <h1 className="mb-4 text-2xl font-bold">Articles</h1>
                 <ArticleListView articles={dummyArticles} />
             </div>
-            <aside className="w-64  min-w-64 max-w-64 p-4 border-x-2 hidden lg:block">
-                <h1 className="text-2xl font-bold mb-4">Side</h1>
-            </aside>
+            {/* <aside className="hidden  w-64 min-w-64 max-w-64 border-x-2 p-4 lg:block">
+                <h1 className="mb-4 text-2xl font-bold">Side</h1>
+            </aside> */}
         </div>
     )
 }
