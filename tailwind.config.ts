@@ -43,6 +43,9 @@ const config: Config = {
         }
       }
     },
+    fontFamily: {
+      monospace: ["Menlo", "Monaco", "Courier New", "Consolas", "monospace"],
+    }
   },
   plugins: [
     require("tailwindcss-radix")(),

@@ -1,11 +1,11 @@
 import { Icon } from '@phosphor-icons/react';
 import { GithubLogo, Info, User, UserCircle } from '@phosphor-icons/react/dist/ssr';
 import RixiaProfImg from "@/assets/rixia.svg";
-import { leadingDescription, profileLinks } from './consts/text';
+import { leadingJobDescription, profileLinks } from './consts/profile';
 import Image from 'next/image';
 
 
-export default async function ProfiileCard() {
+export default async function ProfileCard() {
     return (
         <div className="flex flex-col rounded-lg  border border-card_border bg-card_background p-3 dark:border-card_border-dark dark:bg-card_background-dark">
             <a href='/about' className="mb-4 flex flex-row flex-nowrap items-center border-b border-dashed border-gray-400 pb-2 align-middle dark:border-gray-500">
@@ -19,7 +19,7 @@ export default async function ProfiileCard() {
                     </div>
                 </div>
                 <p className="mb-2 text-start text-xl font-bold text-grayishblack dark:text-grayishblack-dark">rixia</p>
-                <p className="text-start text-sm text-gray-500 dark:text-gray-300">{leadingDescription}</p>
+                <p className="text-start text-sm text-gray-500 dark:text-gray-300">{leadingJobDescription}</p>
                 <div className="mt-4 flex flex-row flex-wrap ">
                     <a href='/about' className="flex flex-row flex-nowrap items-center rounded-lg border border-gray-400 p-1 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800">
                         <Info size="1.25rem" className='mr-1 text-gray-500 dark:text-gray-400' />
