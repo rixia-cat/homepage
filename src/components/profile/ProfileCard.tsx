@@ -1,7 +1,8 @@
 import { Icon } from '@phosphor-icons/react';
 import { GithubLogo, Info, User, UserCircle } from '@phosphor-icons/react/dist/ssr';
-import Image from 'next/image';
+import RixiaProfImg from "@/assets/rixia.svg";
 import { leadingDescription, profileLinks } from './consts/text';
+import Image from 'next/image';
 
 
 export default async function ProfiileCard() {
@@ -14,7 +15,7 @@ export default async function ProfiileCard() {
             <div className='mb-2 '>
                 <div className='flex flex-col items-center'>
                     <div className="flex size-36 flex-col items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800">
-                        <Image src="/images/rixia.svg" alt="rixiaのプロフィール画像" width={90} height={90} />
+                        <Image src={RixiaProfImg} alt="rixiaのプロフィール画像" width={90} height={90} />
                     </div>
                 </div>
                 <p className="mb-2 text-start text-xl font-bold text-grayishblack dark:text-grayishblack-dark">rixia</p>
