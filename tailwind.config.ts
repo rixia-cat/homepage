@@ -13,15 +13,23 @@ const config: Config = {
       colors: {
         header_background: {
           dark: "#1b1b36",
-          DEFAULT: "#dedeed",
+          DEFAULT: "#e0e0eb",
         },
         footer_background: {
-          dark: "#06060c",
-          DEFAULT: "#f8f8ff",
+          dark: "#070c0e",
+          DEFAULT: "hsl(240, 15%, 97%)",
         },
         background: {
-          dark: "#06060c",
-          DEFAULT: "#f8f8ff",
+          dark: "#070c0e",
+          DEFAULT: "hsl(240, 15%, 97%)",
+        },
+        card_background: {
+          dark: "#1c171c",
+          DEFAULT: "#ffffff",
+        },
+        card_border: {
+          dark: "#374151",
+          DEFAULT: "#d3d6de",
         },
 
         grayishblack: {
