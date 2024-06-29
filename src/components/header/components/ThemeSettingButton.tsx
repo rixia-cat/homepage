@@ -1,5 +1,5 @@
 'use client';
-import { CircleHalfTilt, CircleNotch, MoonStars, Question, Sun, CheckCircle, CircleHalf } from '@phosphor-icons/react';
+import { CircleHalfTilt, CircleNotch, MoonStars, Question, Sun, CheckCircle, CircleHalf, Icon } from '@phosphor-icons/react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { useTheme } from 'next-themes'
 import { RefObject, createRef, useEffect, useMemo, useRef, useState } from 'react';
@@ -10,12 +10,12 @@ enum ThemeMode {
     System = 'system',
 }
 type ButtonData = {
-    iconElm: JSX.Element,
+    iconElm: Icon,
     label: string
 }
 type DropdownData = {
     mode: ThemeMode,
-    iconElm: JSX.Element,
+    iconElm: Icon,
     label: string,
 }
 const dropdownItemEntries = [
@@ -41,30 +41,30 @@ export const ThemeSettingButton = () => {
     const buttonData: ButtonData = useMemo(() => {
         if (!mounted) {
             return {
-                iconElm: <CircleNotch className='animate-spin' size={ICONSIZE} />,
+                iconElm: CircleNotch,
                 label: 'Loading...',
             }
         }
         switch (theme) {
             case ThemeMode.Light:
                 return {
-                    iconElm: <Sun size={ICONSIZE} />,
+                    iconElm: Sun,
                     label: 'Light',
                 }
             case ThemeMode.Dark:
                 return {
-                    iconElm: <MoonStars size={ICONSIZE} />,
+                    iconElm: MoonStars,
                     label: 'Dark',
                 }
             case ThemeMode.System:
-                const iconElm = systemTheme === ThemeMode.Dark ? <MoonStars size={ICONSIZE} /> : <Sun size={ICONSIZE} />;
+                const iconElm = systemTheme === ThemeMode.Dark ? MoonStars : Sun;
                 return {
                     iconElm: iconElm,
                     label: 'System',
                 }
             default:
                 return {
-                    iconElm: <Question size={ICONSIZE} />,
+                    iconElm: Question,
                     label: 'Unknown',
                 }
         }
@@ -77,25 +77,25 @@ export const ThemeSettingButton = () => {
             case ThemeMode.Light:
                 return {
                     mode: ThemeMode.Light,
-                    iconElm: <Sun size={ICONSIZE} className='mr-2' />,
+                    iconElm: Sun,
                     label: 'Light',
                 }
             case ThemeMode.Dark:
                 return {
                     mode: ThemeMode.Dark,
-                    iconElm: <MoonStars size={ICONSIZE} className='mr-2' />,
+                    iconElm: MoonStars,
                     label: 'Dark',
                 }
             case ThemeMode.System:
                 return {
                     mode: ThemeMode.System,
-                    iconElm: <CircleHalf size={ICONSIZE} className='mr-2 ' />,
+                    iconElm: CircleHalf,
                     label: 'System',
                 }
             default:
                 return {
                     mode: ThemeMode.System,
-                    iconElm: <Question size={ICONSIZE} className='mr-2' />,
+                    iconElm: Question,
                     label: 'Unknown',
                 }
         }
@@ -104,18 +104,18 @@ export const ThemeSettingButton = () => {
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
-                <button className="rounded-lg  p-2 text-gray-800 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-gray-500 dark:text-gray-200 dark:outline-gray-700 dark:focus:outline-gray-300"
+                <button className="rounded-lg  border border-gray-300 p-2 text-gray-800  dark:border-gray-700 dark:text-gray-200 "
                     aria-label="画面テーマを変更">
-                    {buttonData.iconElm}
+                    {<buttonData.iconElm size={ICONSIZE} />}
                 </button>
             </DropdownMenu.Trigger>
 
             <DropdownMenu.Portal>
-                <DropdownMenu.Content className="w-40  rounded-lg bg-white shadow-lg backdrop-blur-sm dark:bg-gray-800">
+                <DropdownMenu.Content className="mx-4  w-40 rounded-lg border  border-gray-300 bg-white/75 shadow-lg backdrop-blur-md dark:border-gray-700 dark:bg-gray-800/75" sideOffset={5}>
                     <DropdownMenu.RadioGroup value={theme} onValueChange={setTheme}>
                         {dropdownData.map((data, index) => (
-                            <DropdownMenu.RadioItem value={data.mode} key={index} className="flex w-full items-center justify-start px-4 py-2 text-gray-800 hover:bg-gray-200 radix-state-checked:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 dark:radix-state-checked:bg-gray-700">
-                                {data.iconElm} {data.label}
+                            <DropdownMenu.RadioItem value={data.mode} key={data.mode} className="flex w-full items-center justify-start  px-4 py-2 text-gray-800 first:rounded-t-lg last:rounded-b-lg hover:bg-gray-200 radix-state-checked:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 dark:radix-state-checked:bg-gray-700">
+                                {<data.iconElm size={ICONSIZE} className='mr-2' />} {data.label}
 
                                 <DropdownMenu.ItemIndicator className="ml-auto">
                                     <CheckCircle />

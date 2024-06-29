@@ -1,4 +1,4 @@
-import { Article } from "../type/Article";
+import { Article } from "../../type/Article";
 import ArticleCard from "./ArticleCard";
 
 type Props = {

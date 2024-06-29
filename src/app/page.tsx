@@ -16,11 +16,6 @@ export default function Home() {
 
       <div className="flex w-full flex-col p-4">
 
-        <div className="flex justify-center space-x-4">
-          <LinkButton href="/articles" label="articles" icon={<Book />} />
-          <LinkButton href="/about" label="about me" icon={<Info />} iconPosition="left" />
-        </div>
-
         {
           dummyTexts.map((text, index) => (
             <div key={index} className="py-4" >

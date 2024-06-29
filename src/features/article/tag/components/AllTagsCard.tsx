@@ -56,7 +56,7 @@ export default async function AllTagsCard() {
 
     ];
     return (
-        <div className="flex flex-col  rounded-lg border border-gray-300 bg-white dark:border-gray-400 dark:bg-gray-800">
+        <div className="flex flex-col  rounded-lg border border-card_border bg-card_background dark:border-card_border-dark dark:bg-card_background-dark">
             <div className="flex w-full">
                 <div className="h-full grow overflow-hidden p-3">
                     <a href='/tags' className="mb-0.5 flex flex-row flex-nowrap items-center border-b border-dashed border-gray-400 pb-2 align-middle dark:border-gray-500">
@@ -68,7 +68,7 @@ export default async function AllTagsCard() {
             <div className="flex flex-wrap gap-2 px-3 pb-3">
                 {
                     dummyTags.map((tag) => (
-                        <a href={tag.url} key={tag.url} className="rounded-full border-2  border-gray-300 bg-gray-200 px-2 py-1 text-sm dark:border-gray-700 dark:bg-gray-800">
+                        <a href={tag.url} key={tag.url} className="rounded-full border  border-gray-300 bg-gray-100 px-2 py-1 text-sm dark:border-gray-700 dark:bg-gray-800">
                             {tag.label}
                             <span className="ml-2 text-xs text-gray-600 dark:text-gray-300">x{tag.count}</span>
                         </a>

@@ -16,22 +16,22 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
             </h2>
         },
         "h3": ({ children }) => {
-            return <h3 className="mb-3 mt-8 text-xl font-bold">
+            return <h3 className="mb-2 mt-8 text-xl font-bold">
                 {children}
             </h3>
         },
         "h4": ({ children }) => {
-            return <h4 className="mb-3 mt-8 text-lg font-bold">
+            return <h4 className="mb-2 mt-8 text-lg font-bold">
                 {children}
             </h4>
         },
         "h5": ({ children }) => {
-            return <h5 className="mb-3 mt-8 text-base font-bold">
+            return <h5 className="mb-2 mt-8 text-base font-bold">
                 {children}
             </h5>
         },
         "h6": ({ children }) => {
-            return <h6 className="mb-3 mt-8 text-sm font-bold">
+            return <h6 className="mb-2 mt-8 text-sm font-bold">
                 {children}
             </h6>
         },
@@ -60,23 +60,23 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
         },
 
         "p": ({ children }) => {
-            return <p className="">{children}</p>
+            return <p className="mb-4 leading-8">{children}</p>
         },
 
 
         /* List */
         "ul": ({ children }) => {
-            return <ul className="list-inside list-disc">{children}</ul>
+            return <ul className="list-inside list-disc leading-8">{children}</ul>
         },
         "ol": ({ children }) => {
-            return <ol className="list-inside list-decimal">{children}</ol>
+            return <ol className="list-inside list-decimal leading-8">{children}</ol>
         },
         "li": ({ children }) => {
-            return <li className="">{children}</li>
+            return <li className="leading-8">{children}</li>
         },
         "blockquote": ({ children }) => {
             return <blockquote className="my-3 border-l-4 border-gray-300 px-2 align-middle dark:border-gray-700">
-                <div className='p-2' >{children}</div>
+                <div className='p-2 leading-8' >{children}</div>
             </blockquote>
         }
     }
