@@ -15,7 +15,7 @@ export const calcAboutBirthUptime = (): { year: number, month: number } => {
         month: diffMonth - (diffYear * 12)
     }
 }
-// #endregions
+// #endregion
 
 export const logoAsciiArt = [
     "                               @@@                @@@            ",
