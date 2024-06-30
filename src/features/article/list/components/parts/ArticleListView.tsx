@@ -1,5 +1,5 @@
-import { Article } from "../../type/Article";
-import ArticleCard from "./ArticleCard";
+import { Article } from "@/features/article/type/Article";
+import ArticleCard from "@/features/article/list/components/parts/ArticleCard";
 
 type Props = {
     articles: Article[];

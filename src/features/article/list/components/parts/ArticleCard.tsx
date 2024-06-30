@@ -1,5 +1,5 @@
 import { CalendarDots, ClockUser } from "@phosphor-icons/react/dist/ssr";
-import { Article } from "../../type/Article";
+import { Article } from "@/features/article/type/Article";
 
 type Props = {
     article: Article;

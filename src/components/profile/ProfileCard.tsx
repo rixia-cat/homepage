@@ -23,7 +23,7 @@ export default async function ProfileCard() {
                 <div className="mt-4 flex flex-row flex-wrap ">
                     <a href='/about' className="flex flex-row flex-nowrap items-center rounded-lg border border-gray-400 p-1 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800">
                         <Info size="1.25rem" className='mr-1 text-gray-500 dark:text-gray-400' />
-                        <span className="text-sm text-gray-500 hover:underline dark:text-gray-400">もっと詳しく</span>
+                        <span className="text-sm text-gray-500 hover:underline dark:text-gray-400">See more</span>
                     </a>
                 </div>
                 <div className="mt-4 flex flex-row flex-wrap gap-2">

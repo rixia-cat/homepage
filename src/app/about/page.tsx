@@ -4,6 +4,7 @@ export default function About() {
             <main className="max-w-screen-md grow overflow-hidden p-4">
                 <div className="p-4">
                     Hello.
+                    Work in progress.
                 </div>
             </main>
         </div>

@@ -5,7 +5,7 @@ export type LeadingPageLink = {
 export const leadingPageLinks: LeadingPageLink[] = [
     {
         label: "blog",
-        url: "/articles"
+        url: "/blog"
     },
     {
         label: "about",

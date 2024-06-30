@@ -44,7 +44,7 @@ export default function NeofetchLikeProfile() {
             <div className="border-b border-b-gray-400 bg-gray-700 p-2 dark:border-b-gray-600 dark:bg-gray-700">
                 <div className="flex flex-row flex-nowrap items-center justify-between">
                     <h2 className="flex flex-row flex-nowrap">
-                        <p className="text-sm">Profile - Terminal</p>
+                        <p className="text-sm">Profile</p>
                     </h2>
                     <div className="flex flex-row flex-nowrap justify-end">
                         <div className="mr-1 size-2 rounded-full bg-green-500"></div>
