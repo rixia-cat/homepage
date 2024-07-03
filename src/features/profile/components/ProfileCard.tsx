@@ -1,4 +1,4 @@
-import { Info, UserCircle } from '@phosphor-icons/react/dist/ssr';
+import { CaretCircleDoubleRight, UserCircle } from '@phosphor-icons/react/dist/ssr';
 import RixiaProfImg from "@/assets/rixia.svg";
 import { leadingJobDescription, profileLinks } from '@/features/profile/consts/profile';
 import Image from 'next/image';
@@ -21,8 +21,8 @@ export default async function ProfileCard() {
                 <p className="text-start text-sm text-gray-500 dark:text-gray-300">{leadingJobDescription}</p>
                 <div className="mt-4 flex flex-row flex-wrap ">
                     <a href='/about' className="flex flex-row flex-nowrap items-center rounded-lg border border-gray-400 p-1 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800">
-                        <Info size="1.25rem" className='mr-1 text-gray-500 dark:text-gray-400' />
-                        <span className="text-sm text-gray-500 hover:underline dark:text-gray-400">See more</span>
+                        <CaretCircleDoubleRight size="1.25rem" className='mr-1 text-gray-500 dark:text-gray-400' />
+                        <span className="text-sm text-gray-500 hover:underline dark:text-gray-400">詳しく見る</span>
                     </a>
                 </div>
                 <div className="mt-4 flex flex-row flex-wrap gap-2">

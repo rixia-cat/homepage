@@ -14,6 +14,11 @@ export default function NeofetchLikeProfile() {
     }
     const detailDataset: ProfileDetailData[] = [
         {
+            title: "Name (ja_JP)",
+            value: "りーしゃ",
+            type: "text"
+        },
+        {
             title: "Job",
             value: "Frontend,App Engineer",
             type: "text"
@@ -87,9 +92,9 @@ export default function NeofetchLikeProfile() {
                                     <p key={index} aria-label={`「${data.title}」項目の説明`} className="flex flex-row  text-nowrap">
                                         <span className="text-cyan-300">{data.title}: </span>
                                         {
-                                            data.type === "text" ?
-                                                <span className="pl-2">{data.value}</span> :
-                                                <a href={data.value} className="pl-2 underline">{data.value}</a>
+                                            data.type === "link" ?
+                                                <a href={data.value} className="pl-2 underline">{data.value}</a> :
+                                                <span className="pl-2">{data.value}</span>
                                         }
                                     </p>
                                 )

@@ -29,7 +29,7 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Props)
                         <li className="flex flex-row items-center justify-start py-2">
                             <a href="/blog" className="hover:underline ">
                                 <span className="text-base  font-medium text-gray-500 dark:text-gray-400">
-                                    and {andmoreCount} articles more...
+                                    ... {andmoreCount} more articles.
                                 </span>
                             </a>
                         </li>
