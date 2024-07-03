@@ -1,4 +1,5 @@
-import { calcAboutBirthUptime, logoAsciiArt, name, domain } from "./consts/profile";
+import { logoAsciiArt, name, domain, calcAboutBirthUptime } from "@/features/profile/consts/profile";
+import dayjs from "dayjs";
 
 type ProfileDetailData = {
     title: string;
@@ -8,7 +9,7 @@ type ProfileDetailData = {
 
 export default function NeofetchLikeProfile() {
     const getAboutBirthUptimeStr = (): string => {
-        const uptime = calcAboutBirthUptime();
+        const uptime = calcAboutBirthUptime(dayjs());
         return `(about) ${uptime.year} years , ${uptime.month} months `;
     }
     const detailDataset: ProfileDetailData[] = [

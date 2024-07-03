@@ -1,7 +1,8 @@
-import NeofetchLikeProfile from "@/components/profile/NeofetchLikeProfile";
+import NeofetchLikeProfile from "@/features/profile/components/NeofetchLikeProfile";
 import RecentArticleSingleLineListView from "@/features/article/list/components/RecentArticleSingleLineListView";
 import { Book, CaretCircleDoubleRight } from "@phosphor-icons/react/dist/ssr";
 
+export const revalidate = 60 * 60 * 24 * 7;
 
 const leadingPrefixText = "I'm ";
 const leadingNameText = "rixia";
@@ -35,9 +36,9 @@ export default function Home() {
               <span className="text-3xl  text-grayishblack dark:text-grayishblack-dark">Blog</span>
             </div>
 
-            <a href="/blog" className="flex  rounded-lg border border-gray-600 px-2 py-1.5  text-base font-medium text-grayishblack dark:border-gray-500 dark:text-grayishblack-dark sm:px-3" >
+            <a href="/blog" className="flex  rounded-lg border border-gray-600 px-2 py-1.5  text-base font-medium text-grayishblack dark:border-gray-500 dark:text-grayishblack-dark" >
               <span className="sm:mr-3"><CaretCircleDoubleRight size="1.5rem" /></span>
-              <span className="hidden sm:flex">See more</span>
+              <span className="">See more</span>
             </a>
           </h2>
 

@@ -1,15 +1,14 @@
 import { Icon } from "@phosphor-icons/react";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 
 // #region birthday
 const birthYear = 1997;
 const birthMonth = 11;
-export const calcAboutBirthUptime = (): { year: number, month: number } => {
-    const nowDay = dayjs();
+export const calcAboutBirthUptime = (targetDate: Dayjs): { year: number, month: number } => {
     const aboutlyBirthDay = dayjs(`${birthYear}-${birthMonth}-01`);
-    const diffYear = nowDay.diff(aboutlyBirthDay, "year");
-    const diffMonth = nowDay.diff(aboutlyBirthDay, "month");
+    const diffYear = targetDate.diff(aboutlyBirthDay, "year");
+    const diffMonth = targetDate.diff(aboutlyBirthDay, "month");
     return {
         year: diffYear,
         month: diffMonth - (diffYear * 12)

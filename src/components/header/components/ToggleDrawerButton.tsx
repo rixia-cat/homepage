@@ -9,7 +9,7 @@ export default function ToggleDrawerButton() {
     return (
         <Dialog.Root>
             <Dialog.Trigger asChild>
-                <button aria-label="サイドドロワーを表示" className="mr-2 rounded-lg border border-gray-300 p-2 text-gray-800 dark:border-gray-700  dark:text-gray-200  md:hidden" >
+                <button aria-label="サイドドロワーを表示" className="mr-2 rounded-lg border border-gray-400/35 p-2 text-gray-800 dark:border-gray-700  dark:text-gray-200  md:hidden" >
                     <List size={ICONSIZE} />
                 </button>
             </Dialog.Trigger>

@@ -1,7 +1,6 @@
-import { Icon } from '@phosphor-icons/react';
-import { GithubLogo, Info, User, UserCircle } from '@phosphor-icons/react/dist/ssr';
+import { Info, UserCircle } from '@phosphor-icons/react/dist/ssr';
 import RixiaProfImg from "@/assets/rixia.svg";
-import { leadingJobDescription, profileLinks } from './consts/profile';
+import { leadingJobDescription, profileLinks } from '@/features/profile/consts/profile';
 import Image from 'next/image';
 
 

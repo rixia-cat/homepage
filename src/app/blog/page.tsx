@@ -1,4 +1,4 @@
-import ProfileCard from "@/components/profile/ProfileCard";
+import ProfileCard from "@/features/profile/components/ProfileCard";
 import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
 import ArticleListView from "@/features/article/list/components/parts/ArticleListView";
 import { dummyArticles } from "@/features/article/dummy-data/articleDummyData";

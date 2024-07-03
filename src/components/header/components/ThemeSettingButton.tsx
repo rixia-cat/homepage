@@ -104,7 +104,7 @@ export const ThemeSettingButton = () => {
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
-                <button className="rounded-lg  border border-gray-300 p-2 text-gray-800  dark:border-gray-700 dark:text-gray-200 "
+                <button className="rounded-lg  border border-gray-400/35 p-2 text-gray-800  dark:border-gray-700 dark:text-gray-200 "
                     aria-label="画面テーマを変更">
                     {<buttonData.iconElm size={ICONSIZE} />}
                 </button>
