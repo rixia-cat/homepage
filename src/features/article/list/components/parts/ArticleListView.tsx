@@ -1,11 +1,11 @@
-import { Article } from "@/features/article/type/Article";
 import ArticleCard from "@/features/article/list/components/parts/ArticleCard";
+import { ComponentProps } from "react";
 
-type Props = {
-  articles: Article[];
+type ArticleListViewProps = {
+  articles: ComponentProps<typeof ArticleCard>["article"][];
 };
 
-export default function ArticleListView(props: Props) {
+export default function ArticleListView(props: ArticleListViewProps) {
   return (
     <div className="mx-auto  w-full">
       <div className=" mx-auto">

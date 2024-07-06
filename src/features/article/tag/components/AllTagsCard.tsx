@@ -1,60 +1,27 @@
 import { Hash, Tag } from "@phosphor-icons/react/dist/ssr";
+import { contentfulClient } from "../../util/contentful";
+import { TypeBlogSkeleton } from "../../../../../@types/generated/contentful";
 
+type TagData = {
+    label: string;
+    url: string;
+    count: number;
+};
 
 export default async function AllTagsCard() {
-    const dummyTags = [
-        {
-            label: "雑記",
-            url: "/tag/tag1",
-            count: 10
-        },
-        {
-            label: "技術",
-            url: "/tag/tag2",
-            count: 20
-        },
-        {
-            label: "日記",
-            url: "/tag/tag3",
-            count: 30
-        },
-        {
-            label: "プログラミング",
-            url: "/tag/tag4",
-            count: 40
-        },
-        {
-            label: "読書",
-            url: "/tag/tag5",
-            count: 50
-        },
-        {
-            label: "映画",
-            url: "/tag/tag6",
-            count: 60
-        },
-        {
-            label: "アニメ",
-            url: "/tag/tag7",
-            count: 70
-        },
-        {
-            label: "旅行",
-            url: "/tag/tag8",
-            count: 80
-        },
-        {
-            label: "音楽",
-            url: "/tag/tag9",
-            count: 90
-        },
-        {
-            label: "お知らせ",
-            url: "/tag/tag10",
-            count: 100
-        },
-
-    ];
+    const  tagsCollection = await contentfulClient.getTags();
+    const allBlogs = await contentfulClient.getEntries<TypeBlogSkeleton>();
+    
+    const tags:TagData[] =  tagsCollection.items.map((tag) =>{
+        const matchedBlogs = allBlogs.items.filter((blog) => blog.metadata.tags.some((blogTag) => blogTag.sys.id === tag.sys.id));
+        const retData:TagData = {
+            label: tag.name,
+            url: `/tags/${tag.sys.id}`,
+            count: matchedBlogs.length,
+        }
+        return retData;
+    }).sort((a, b) => b.count - a.count);
+    
     return (
         <div className="flex flex-col  rounded-lg border border-card_border bg-card_background dark:border-card_border-dark dark:bg-card_background-dark">
             <div className="flex w-full">
@@ -67,7 +34,7 @@ export default async function AllTagsCard() {
             </div>
             <div className="flex flex-wrap gap-2 px-3 pb-3">
                 {
-                    dummyTags.map((tag) => (
+                    tags.map((tag) => (
                         <a href={tag.url} key={tag.url} className="rounded-full border  border-gray-300 bg-gray-100 px-2 py-1 text-sm dark:border-gray-700 dark:bg-gray-800">
                             {tag.label}
                             <span className="ml-2 text-xs text-gray-600 dark:text-gray-300">x{tag.count}</span>

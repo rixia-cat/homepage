@@ -62,7 +62,7 @@ export default function Home() {
             </a>
           </h2>
 
-          <div className="mt-3">
+          <div className="mt-4">
             <RecentArticleSingleLineListView />
           </div>
         </section>

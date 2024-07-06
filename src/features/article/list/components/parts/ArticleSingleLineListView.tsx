@@ -1,11 +1,23 @@
-import { Article } from "@/features/article/type/Article";
+import Image from 'next/image';
 
-type Props = {
+export type Article = {
+    leadingImageUrl: string;
+    title: string;
+    shortDescription: string;
+    url: string;
+    createdAt: string;
+    updatedAt: string;
+    tags: {
+        label: string;
+        url: string;
+    }[];
+  }
+type ArticleSingleLineListProps = {
     articles: Article[];
     andmoreCount: number;
 }
 
-export default function ArticleSingleLineList({ articles, andmoreCount }: Props) {
+export default function ArticleSingleLineList({ articles, andmoreCount }: ArticleSingleLineListProps) {
     return (
         <div className="relative  w-full rounded-lg border  border-dashed border-gray-400 dark:border-gray-700">
             <div className="overflow-y-auto p-4">
@@ -13,9 +25,7 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Props)
                     {articles.map((article) => (
                         <li key={article.url} className="flex flex-col   py-2 ">
                             <div className="flex flex-row items-center justify-start">
-                                <span className="mr-4 rounded-lg bg-gray-300 px-3 py-1 text-center text-base font-medium">
-                                    {article.leaderEmoji}
-                                </span>
+                                <Image src={article.leadingImageUrl} alt={article.title} width={40} height={40} className="rounded-lg" />
 
                                 <div className="flex w-full flex-col flex-nowrap">
                                     <a href={article.url} className="line-clamp-1 text-base font-medium text-grayishblack hover:underline dark:text-grayishblack-dark ">
@@ -25,7 +35,7 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Props)
                             </div>
                         </li>
                     ))}
-                    {andmoreCount > 0 && (
+                    {andmoreCount >= 10 && (
                         <li className="flex flex-row items-center justify-start py-2">
                             <a href="/blog" className="hover:underline ">
                                 <span className="text-base  font-medium text-gray-500 dark:text-gray-400">

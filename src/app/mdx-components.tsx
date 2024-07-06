@@ -66,7 +66,7 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
 
         /* List */
         "ul": ({ children }) => {
-            return <ul className="list-inside list-disc leading-8">{children}</ul>
+            return <ul className="mb-2 list-inside list-disc leading-8">{children}</ul>
         },
         "ol": ({ children }) => {
             return <ol className="list-inside list-decimal leading-8">{children}</ol>

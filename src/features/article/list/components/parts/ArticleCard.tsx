@@ -1,6 +1,18 @@
 import { CalendarDots, ClockUser } from "@phosphor-icons/react/dist/ssr";
-import { Article } from "@/features/article/type/Article";
+import Image from "next/image";
 
+type Article = {
+    leadingImageUrl: string;
+    title: string;
+    shortDescription: string;
+    url: string;
+    createdAt: string;
+    updatedAt: string;
+    tags: {
+        label: string;
+        url: string;
+    }[];
+  };
 type Props = {
     article: Article;
 }
@@ -10,9 +22,9 @@ export default function ArticleCard(props: Props) {
         <div className="flex flex-col  rounded-lg border border-card_border bg-card_background dark:border-card_border-dark dark:bg-card_background-dark">
             <a href={`${props.article.url}`} className="flex grow flex-col rounded-t-lg hover:bg-gray-100 focus:outline-2 focus:outline-gray-500 dark:hover:bg-gray-900 dark:focus:outline-gray-300">
                 <div className="flex w-full">
-                    {/* 見出し用絵文字 */}
+                    {/* 見出し用画像 */}
                     <div className="flex size-20 min-h-20 min-w-20 items-center justify-center rounded-tl-lg bg-gray-200 dark:bg-gray-800 ">
-                        <span className="text-3xl hover:text-4xl">{props.article.leaderEmoji}</span>
+                        <Image src={props.article.leadingImageUrl} alt="leading image" width={80} height={80} />
                     </div>
                     {/* タイトル */}
                     <div className="h-full grow overflow-hidden px-4 pt-3">
