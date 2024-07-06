@@ -44,7 +44,7 @@ export const logoAsciiArt = [
 export const name = "rixia";
 export const domain = "rixia.dev";
 
-export const leadingJobDescription = "Web・アプリ中心のエンジニア";
+export const leadingJobDescription = "フロントエンド、アプリが好き・得意なエンジニア";
 export const likesDescription = "PC,スマホ,ガジェット,車";
 
 type ProfileLink = {

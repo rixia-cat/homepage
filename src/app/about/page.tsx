@@ -25,21 +25,21 @@ export default function About() {
                     <div className="mt-4 w-full border-b border-gray-300 dark:border-gray-600"></div>
                 </div>
 
-                <section className="mt-8">
-                    <h2 className="mb-6 flex w-full flex-row flex-nowrap items-center">
+                <section className="mt-10">
+                    <h2 className="mb-6 flex w-full flex-row flex-nowrap items-start">
                         <div className="ml-1 mr-2.5 h-7 -skew-x-12 border-x-2 border-grayishblack px-[2px] dark:border-grayishblack-dark"></div>
                         <span className="text-2xl font-bold text-grayishblack dark:text-grayishblack-dark">このサイトについて</span>
                     </h2>
                     <div className="flex flex-col gap-y-2 leading-6" >
                         <p>試した技術やTipsなどプログラミング寄りのことから日常的な雑記まで、ごった煮で書いていきたいと思います。</p>
-                        <p>ポートフォリオ・砂場も兼ねており、デザインやUI/UXの改善にも挑戦していくような場にしたいです。</p>
+                        <p>ポートフォリオ・サンドボックスも兼ねており、デザインやUI/UXの改善にも挑戦していくような場にしたいです。</p>
                     </div>
                 </section>
 
-                <section className="mt-12">
-                    <h2 className="mb-2 flex w-full flex-row flex-nowrap items-center">
+                <section className="mt-14">
+                    <h2 className="mb-2 flex w-full flex-row flex-nowrap items-start">
                         <div className="ml-1 mr-2.5 h-7 -skew-x-12 border-x-2 border-grayishblack px-[2px] dark:border-grayishblack-dark"></div>
-                        <span className="text-2xl font-bold text-grayishblack dark:text-grayishblack-dark">rixia</span>
+                        <span className="text-2xl font-bold text-grayishblack dark:text-grayishblack-dark">「rixia」について</span>
                     </h2>
 
                     <div className='mb-2 flex flex-col items-center'>
@@ -51,8 +51,8 @@ export default function About() {
                     <h3 className="mb-2 text-xl font-bold text-grayishblack dark:text-grayishblack-dark">プロフィール</h3>
                     <div className=" mt-4 flex flex-col gap-y-2 leading-6" >
                         <p>rixia (りーしゃ）です。</p>
-                        <p>フロントエンドが好き・得意なエンジニアです。仕事上はTypeScript、Vue.js、PHP（Laravel)を使用した開発が多いです。</p>
-                        <p>モバイルアプリも興味・個人開発で触っており、FlutterやCompose Multiplatformなどクロスプラットフォーム系を中心としています。</p>
+                        <p>フロントエンド・モバイルアプリが好き・得意なエンジニアです。仕事上はTypeScript、Vue.js、PHP（Laravel)を使用した開発が多いです。</p>
+                        <p>アプリ系は興味・個人開発で触っており、FlutterやCompose Multiplatformなどクロスプラットフォーム系を中心としています。</p>
                     </div>
 
                     <h3 className="mb-2 mt-6 text-xl font-bold text-grayishblack dark:text-grayishblack-dark">スキル</h3>
