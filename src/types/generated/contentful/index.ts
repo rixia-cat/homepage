@@ -7,4 +7,4 @@ export type {
   TypeBlogWithAllLocalesResponse,
   TypeBlogWithoutLinkResolutionResponse,
   TypeBlogWithoutUnresolvableLinksResponse,
-} from "./TypeBlog"
+} from "./TypeBlog";

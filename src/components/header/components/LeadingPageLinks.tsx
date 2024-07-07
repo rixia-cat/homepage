@@ -1,4 +1,4 @@
-import { leadingPageLinks } from "../consts/leading-pages"
+import { leadingPageLinks } from "../consts/leading-pages";
 
 export default function LeadingPageLinks() {
   return (
@@ -15,5 +15,5 @@ export default function LeadingPageLinks() {
         </li>
       ))}
     </ul>
-  )
+  );
 }

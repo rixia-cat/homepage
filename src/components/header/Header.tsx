@@ -1,8 +1,8 @@
-"use client"
-import SiteLogoLink from "../logo/SiteLogoLink"
-import LeadingPageLinks from "./components/LeadingPageLinks"
-import { ThemeSettingButton } from "./components/ThemeSettingButton"
-import ToggleDrawerButton from "./components/ToggleDrawerButton"
+"use client";
+import SiteLogoLink from "../logo/SiteLogoLink";
+import LeadingPageLinks from "./components/LeadingPageLinks";
+import { ThemeSettingButton } from "./components/ThemeSettingButton";
+import ToggleDrawerButton from "./components/ToggleDrawerButton";
 
 export const Header = () => {
   return (
@@ -17,5 +17,5 @@ export const Header = () => {
         <ThemeSettingButton />
       </div>
     </header>
-  )
-}
+  );
+};

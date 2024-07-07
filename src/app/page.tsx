@@ -1,12 +1,12 @@
-import RecentArticleSingleLineListView from "@/features/article/list/components/RecentArticleSingleLineListView"
-import NeofetchLikeProfile from "@/features/profile/components/NeofetchLikeProfile"
-import { Book, CaretCircleDoubleRight } from "@phosphor-icons/react/dist/ssr"
+import RecentArticleSingleLineListView from "@/features/article/list/components/RecentArticleSingleLineListView";
+import NeofetchLikeProfile from "@/features/profile/components/NeofetchLikeProfile";
+import { Book, CaretCircleDoubleRight } from "@phosphor-icons/react/dist/ssr";
 
-export const revalidate = 60 * 60 * 24 * 7
+export const revalidate = 60 * 60 * 24 * 7;
 
-const leadingPrefixText = "I'm "
-const leadingNameText = "rixia"
-const leadingSuffixText = "."
+const leadingPrefixText = "I'm ";
+const leadingNameText = "rixia";
+const leadingSuffixText = ".";
 export default function Home() {
   return (
     <div className="mx-auto flex max-w-screen-lg grow justify-center">
@@ -57,5 +57,5 @@ export default function Home() {
         </section>
       </main>
     </div>
-  )
+  );
 }

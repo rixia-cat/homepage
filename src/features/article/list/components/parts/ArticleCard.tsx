@@ -1,23 +1,27 @@
-import { CalendarDots } from "@phosphor-icons/react/dist/ssr"
-import Image from "next/image"
+import dayjs from "@/util/dayjs";
+import { CalendarDots, Sparkle } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 
 type Article = {
-  leadingImageUrl: string
-  title: string
-  shortDescription: string
-  url: string
-  createdAt: string
-  updatedAt: string
+  leadingImageUrl: string;
+  title: string;
+  shortDescription: string;
+  url: string;
+  publishedAt: string;
+  updatedAt: string;
   tags: {
-    label: string
-    url: string
-  }[]
-}
+    label: string;
+    url: string;
+  }[];
+};
 type Props = {
-  article: Article
-}
+  article: Article;
+};
 
 export default function ArticleCard(props: Props) {
+  const publishedAtStr = dayjs(props.article.publishedAt).tz().format("YYYY/MM/DD (ddd) HH:mm");
+  const updatedAtStr = dayjs(props.article.updatedAt).tz().format("YYYY/MM/DD (ddd) HH:mm");
+
   return (
     <div className="flex flex-col rounded-lg border border-card_border bg-card_background dark:border-card_border-dark dark:bg-card_background-dark">
       <a
@@ -42,11 +46,20 @@ export default function ArticleCard(props: Props) {
         </div>
       </a>
 
-      {/* 更新日時 */}
+      {/* 公開日時 */}
       <div className="flex flex-wrap px-2 pt-2 pb-1">
         <p className="flex items-center rounded-full border border-gray-300 px-1.5 py-0.5 text-gray-600 text-xs dark:border-gray-700 dark:text-gray-300">
           <CalendarDots size="1rem" className="mr-1" />
-          {props.article.updatedAt}
+          <span className="mr-1">公開:</span>
+          {publishedAtStr}
+        </p>
+      </div>
+      {/* 更新日時 */}
+      <div className="flex flex-wrap px-2 pt-1 pb-1">
+        <p className="flex items-center rounded-full border border-gray-300 px-1.5 py-0.5 text-gray-600 text-xs dark:border-gray-700 dark:text-gray-300">
+          <Sparkle size="1rem" className="mr-1" />
+          <span className="mr-1">更新:</span>
+          {updatedAtStr}
         </p>
       </div>
       {/* タグ */}
@@ -62,5 +75,5 @@ export default function ArticleCard(props: Props) {
         ))}
       </div>
     </div>
-  )
+  );
 }

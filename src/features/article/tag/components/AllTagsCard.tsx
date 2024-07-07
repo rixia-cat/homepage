@@ -1,30 +1,30 @@
-import { Hash } from "@phosphor-icons/react/dist/ssr"
-import type { TypeBlogSkeleton } from "../../../../../@types/generated/contentful"
-import { contentfulClient } from "../../util/contentful"
+import { Hash } from "@phosphor-icons/react/dist/ssr";
+import type { TypeBlogSkeleton } from "../../../../../@types/generated/contentful";
+import { contentfulClient } from "../../../../util/contentful";
 
 type TagData = {
-  label: string
-  url: string
-  count: number
-}
+  label: string;
+  url: string;
+  count: number;
+};
 
 export default async function AllTagsCard() {
-  const tagsCollection = await contentfulClient.getTags()
-  const allBlogs = await contentfulClient.getEntries<TypeBlogSkeleton>()
+  const tagsCollection = await contentfulClient.getTags();
+  const allBlogs = await contentfulClient.getEntries<TypeBlogSkeleton>();
 
   const tags: TagData[] = tagsCollection.items
     .map((tag) => {
       const matchedBlogs = allBlogs.items.filter((blog) =>
         blog.metadata.tags.some((blogTag) => blogTag.sys.id === tag.sys.id)
-      )
+      );
       const retData: TagData = {
         label: tag.name,
         url: `/tags/${tag.sys.id}`,
         count: matchedBlogs.length,
-      }
-      return retData
+      };
+      return retData;
     })
-    .sort((a, b) => b.count - a.count)
+    .sort((a, b) => b.count - a.count);
 
   return (
     <div className="flex flex-col rounded-lg border border-card_border bg-card_background dark:border-card_border-dark dark:bg-card_background-dark">
@@ -52,5 +52,5 @@ export default async function AllTagsCard() {
         ))}
       </div>
     </div>
-  )
+  );
 }

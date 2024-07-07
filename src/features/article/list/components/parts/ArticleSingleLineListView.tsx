@@ -1,21 +1,21 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export type Article = {
-  leadingImageUrl: string
-  title: string
-  shortDescription: string
-  url: string
-  createdAt: string
-  updatedAt: string
+  leadingImageUrl: string;
+  title: string;
+  shortDescription: string;
+  url: string;
+  publishedAt: string;
+  updatedAt: string;
   tags: {
-    label: string
-    url: string
-  }[]
-}
+    label: string;
+    url: string;
+  }[];
+};
 type ArticleSingleLineListProps = {
-  articles: Article[]
-  andmoreCount: number
-}
+  articles: Article[];
+  andmoreCount: number;
+};
 
 export default function ArticleSingleLineList({ articles, andmoreCount }: ArticleSingleLineListProps) {
   return (
@@ -58,5 +58,5 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Articl
       <div className="absolute top-0 left-0 h-4 w-full rounded-t-lg bg-gradient-to-b from-white to-transparent dark:from-background-dark" />
       <div className="absolute bottom-0 left-0 h-4 w-full rounded-b-lg bg-gradient-to-t from-white to-transparent dark:from-background-dark" />
     </div>
-  )
+  );
 }

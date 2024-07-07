@@ -1,17 +1,17 @@
-import { domain, calcAboutBirthUptime, logoAsciiArt, name } from "@/features/profile/consts/profile"
-import dayjs from "dayjs"
+import { domain, calcAboutBirthUptime, logoAsciiArt, name } from "@/features/profile/consts/profile";
+import dayjs from "@/util/dayjs";
 
 type ProfileDetailData = {
-  title: string
-  value: string
-  type: "text" | "link"
-}
+  title: string;
+  value: string;
+  type: "text" | "link";
+};
 
 export default function NeofetchLikeProfile() {
   const getAboutBirthUptimeStr = (): string => {
-    const uptime = calcAboutBirthUptime(dayjs())
-    return `(about) ${uptime.year} years , ${uptime.month} months `
-  }
+    const uptime = calcAboutBirthUptime(dayjs());
+    return `(about) ${uptime.year} years , ${uptime.month} months `;
+  };
   const detailDataset: ProfileDetailData[] = [
     {
       title: "Name (ja_JP)",
@@ -43,7 +43,7 @@ export default function NeofetchLikeProfile() {
       value: "/about",
       type: "link",
     },
-  ]
+  ];
   return (
     <div className="flex flex-col flex-nowrap overflow-hidden rounded-lg border-2 border-gray-500 bg-gray-950 text-gray-200 dark:border-gray-800">
       {/* タイトルバー */}
@@ -82,7 +82,7 @@ export default function NeofetchLikeProfile() {
                   <span key={index} className="block whitespace-pre-wrap font-monospace">
                     {line}
                   </span>
-                )
+                );
               })}
             </p>
           </div>
@@ -104,11 +104,11 @@ export default function NeofetchLikeProfile() {
                     <span className="pl-2">{data.value}</span>
                   )}
                 </p>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import SiteLogoLink from "@/components/logo/SiteLogoLink"
-import { XCircle } from "@phosphor-icons/react/dist/ssr/XCircle"
-import * as Dialog from "@radix-ui/react-dialog"
-import { type LeadingPageLink, leadingPageLinks } from "../consts/leading-pages"
+import SiteLogoLink from "@/components/logo/SiteLogoLink";
+import { XCircle } from "@phosphor-icons/react/dist/ssr/XCircle";
+import * as Dialog from "@radix-ui/react-dialog";
+import { type LeadingPageLink, leadingPageLinks } from "../consts/leading-pages";
 
-const ICONSIZE = 24
+const ICONSIZE = 24;
 
 const pageLinks: LeadingPageLink[] = [
   {
@@ -11,7 +11,7 @@ const pageLinks: LeadingPageLink[] = [
     url: "/",
   },
   ...leadingPageLinks,
-]
+];
 
 export default function SiteDrawerContent() {
   return (
@@ -50,5 +50,5 @@ export default function SiteDrawerContent() {
         </nav>
       </Dialog.Description>
     </Dialog.Content>
-  )
+  );
 }

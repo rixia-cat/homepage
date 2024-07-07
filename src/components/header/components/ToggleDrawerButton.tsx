@@ -1,8 +1,8 @@
-import { List } from "@phosphor-icons/react/dist/ssr"
-import * as Dialog from "@radix-ui/react-dialog"
-import SiteDrawerContent from "./SiteDrawerContent"
+import { List } from "@phosphor-icons/react/dist/ssr";
+import * as Dialog from "@radix-ui/react-dialog";
+import SiteDrawerContent from "./SiteDrawerContent";
 
-const ICONSIZE = 24
+const ICONSIZE = 24;
 
 export default function ToggleDrawerButton() {
   return (
@@ -21,5 +21,5 @@ export default function ToggleDrawerButton() {
         <SiteDrawerContent />
       </Dialog.Portal>
     </Dialog.Root>
-  )
+  );
 }

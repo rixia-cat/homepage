@@ -1,18 +1,18 @@
-import { cloneElement } from "react"
+import { cloneElement } from "react";
 
 interface LinkButtonProps {
-  href: string
-  label: string
-  icon?: JSX.Element
-  iconPosition?: "left" | "right"
+  href: string;
+  label: string;
+  icon?: JSX.Element;
+  iconPosition?: "left" | "right";
 }
 
 export default function LinkButton(props: LinkButtonProps) {
-  const iconPosition = props.iconPosition ? props.iconPosition : "left"
-  const iconHorizontalMargin = iconPosition === "left" ? "mr-2" : "ml-2"
+  const iconPosition = props.iconPosition ? props.iconPosition : "left";
+  const iconHorizontalMargin = iconPosition === "left" ? "mr-2" : "ml-2";
   const clonedClassAddedIcon = props.icon
     ? cloneElement(props.icon, { size: "1.5rem", className: `  ${iconHorizontalMargin}` })
-    : null
+    : null;
   return (
     <a
       href={props.href}
@@ -22,5 +22,5 @@ export default function LinkButton(props: LinkButtonProps) {
       <span>{props.label}</span>
       {iconPosition === "right" && clonedClassAddedIcon}
     </a>
-  )
+  );
 }

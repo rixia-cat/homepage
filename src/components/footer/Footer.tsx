@@ -1,4 +1,4 @@
-import SiteLogoLink from "../logo/SiteLogoLink"
+import SiteLogoLink from "../logo/SiteLogoLink";
 
 export default function Footer() {
   return (
@@ -11,5 +11,5 @@ export default function Footer() {
         <p className="text-end text-sm ">© rixia. All Rights Reserved.</p>
       </div>
     </footer>
-  )
+  );
 }

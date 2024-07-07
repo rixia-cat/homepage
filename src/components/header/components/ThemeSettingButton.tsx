@@ -1,8 +1,8 @@
-"use client"
-import { CheckCircle, CircleHalf, CircleNotch, type Icon, MoonStars, Question, Sun } from "@phosphor-icons/react"
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
-import { useTheme } from "next-themes"
-import { useEffect, useMemo, useState } from "react"
+"use client";
+import { CheckCircle, CircleHalf, CircleNotch, type Icon, MoonStars, Question, Sun } from "@phosphor-icons/react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { useTheme } from "next-themes";
+import { useEffect, useMemo, useState } from "react";
 
 enum ThemeMode {
   Light = "light",
@@ -10,60 +10,60 @@ enum ThemeMode {
   System = "system",
 }
 type ButtonData = {
-  iconElm: Icon
-  label: string
-}
+  iconElm: Icon;
+  label: string;
+};
 type DropdownData = {
-  mode: ThemeMode
-  iconElm: Icon
-  label: string
-}
-const dropdownItemEntries = [ThemeMode.Light, ThemeMode.Dark, ThemeMode.System]
+  mode: ThemeMode;
+  iconElm: Icon;
+  label: string;
+};
+const dropdownItemEntries = [ThemeMode.Light, ThemeMode.Dark, ThemeMode.System];
 
-const ICONSIZE = 24
+const ICONSIZE = 24;
 
 export const ThemeSettingButton = () => {
-  const [mounted, setMounted] = useState(false)
-  const [systemTheme, setSystemTheme] = useState<ThemeMode>(ThemeMode.Light)
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const [systemTheme, setSystemTheme] = useState<ThemeMode>(ThemeMode.Light);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true)
-    setSystemTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? ThemeMode.Dark : ThemeMode.Light)
-  }, [])
+    setMounted(true);
+    setSystemTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? ThemeMode.Dark : ThemeMode.Light);
+  }, []);
 
   const buttonData: ButtonData = useMemo(() => {
     if (!mounted) {
       return {
         iconElm: CircleNotch,
         label: "Loading...",
-      }
+      };
     }
     switch (theme) {
       case ThemeMode.Light:
         return {
           iconElm: Sun,
           label: "Light",
-        }
+        };
       case ThemeMode.Dark:
         return {
           iconElm: MoonStars,
           label: "Dark",
-        }
+        };
       case ThemeMode.System: {
-        const iconElm = systemTheme === ThemeMode.Dark ? MoonStars : Sun
+        const iconElm = systemTheme === ThemeMode.Dark ? MoonStars : Sun;
         return {
           iconElm: iconElm,
           label: "System",
-        }
+        };
       }
       default:
         return {
           iconElm: Question,
           label: "Unknown",
-        }
+        };
     }
-  }, [theme, mounted, systemTheme])
+  }, [theme, mounted, systemTheme]);
 
   /* ドロップダウンメニュー */
   const dropdownData: DropdownData[] = dropdownItemEntries.map((item) => {
@@ -73,27 +73,27 @@ export const ThemeSettingButton = () => {
           mode: ThemeMode.Light,
           iconElm: Sun,
           label: "Light",
-        }
+        };
       case ThemeMode.Dark:
         return {
           mode: ThemeMode.Dark,
           iconElm: MoonStars,
           label: "Dark",
-        }
+        };
       case ThemeMode.System:
         return {
           mode: ThemeMode.System,
           iconElm: CircleHalf,
           label: "System",
-        }
+        };
       default:
         return {
           mode: ThemeMode.System,
           iconElm: Question,
           label: "Unknown",
-        }
+        };
     }
-  })
+  });
 
   return (
     <DropdownMenu.Root>
@@ -129,5 +129,5 @@ export const ThemeSettingButton = () => {
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
-  )
-}
+  );
+};

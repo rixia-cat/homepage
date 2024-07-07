@@ -1,9 +1,9 @@
-import ArticleCard from "@/features/article/list/components/parts/ArticleCard"
-import type { ComponentProps } from "react"
+import ArticleCard from "@/features/article/list/components/parts/ArticleCard";
+import type { ComponentProps } from "react";
 
 type ArticleListViewProps = {
-  articles: ComponentProps<typeof ArticleCard>["article"][]
-}
+  articles: ComponentProps<typeof ArticleCard>["article"][];
+};
 
 export default function ArticleListView(props: ArticleListViewProps) {
   return (
@@ -16,5 +16,5 @@ export default function ArticleListView(props: ArticleListViewProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
