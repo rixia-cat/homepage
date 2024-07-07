@@ -20,7 +20,7 @@ export default function SiteDrawerContent() {
         <Dialog.Close asChild>
           <button
             aria-label="サイドドロワーを閉じる"
-            className="mr-2 rounded-lg border border-gray-400 p-2 text-gray-800 lg:hidden dark:border-gray-700 dark:text-gray-200"
+            className="mr-2 rounded-full border border-gray-400 p-2 text-gray-800 lg:hidden dark:border-gray-700 dark:text-gray-200"
             type="button"
           >
             <XCircle size={ICONSIZE} />

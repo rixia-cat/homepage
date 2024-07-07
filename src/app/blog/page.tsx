@@ -1,4 +1,4 @@
-import ArticleListView from "@/features/article/list/components/parts/ArticleListView";
+import ArticleCardGridView from "@/features/article/list/components/parts/ArticleCardGridView";
 import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
 import ProfileCard from "@/features/profile/components/ProfileCard";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful/TypeBlog";
@@ -12,13 +12,13 @@ export default async function ArticlePage() {
   });
   const tagCollection = await contentfulClient.getTags();
 
-  type ArticleListViewProps = ComponentProps<typeof ArticleListView>;
-  const articles: ArticleListViewProps["articles"] = articleCollection.items.map((article) => {
+  type ArticleCardGridViewProps = ComponentProps<typeof ArticleCardGridView>;
+  const articles: ArticleCardGridViewProps["articles"] = articleCollection.items.map((article) => {
     const leadingImageData = article.fields.leadingImage as Asset;
     const leadingImageUrlSrc = leadingImageData.fields?.file?.url ?? "";
     const leadingImageUrl = leadingImageUrlSrc ? `https:${leadingImageUrlSrc}` : "";
 
-    const retData: ArticleListViewProps["articles"][number] = {
+    const retData: ArticleCardGridViewProps["articles"][number] = {
       leadingImageUrl: leadingImageUrl,
       title: article.fields.title,
       shortDescription: article.fields.description,
@@ -44,7 +44,7 @@ export default async function ArticlePage() {
 
       <main className="max-w-screen-md grow p-6">
         <h1 className="h-14 font-bold text-2xl">Articles</h1>
-        <ArticleListView articles={articles} />
+        <ArticleCardGridView articles={articles} />
       </main>
       <aside className="mt-14 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
         <AllTagsCard />

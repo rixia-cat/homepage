@@ -1,11 +1,11 @@
 import ArticleCard from "@/features/article/list/components/parts/ArticleCard";
 import type { ComponentProps } from "react";
 
-type ArticleListViewProps = {
+type ArticleCardGridViewProps = {
   articles: ComponentProps<typeof ArticleCard>["article"][];
 };
 
-export default function ArticleListView(props: ArticleListViewProps) {
+export default function ArticleListView(props: ArticleCardGridViewProps) {
   return (
     <div className="mx-auto w-full">
       <div className=" mx-auto">

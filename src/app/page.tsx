@@ -23,7 +23,7 @@ export default function Home() {
           <div className="mt-3 flex flex-row justify-start pr-0.5">
             <a
               href="/about"
-              className="flex rounded-lg border border-gray-600 px-3 py-1.5 font-medium text-base text-grayishblack dark:border-gray-500 dark:text-grayishblack-dark"
+              className="flex rounded-lg border border-gray-600 px-3 py-1.5 font-medium text-base text-grayishblack hover:bg-gray-200/55 hover:underline dark:border-gray-500 dark:text-grayishblack-dark dark:hover:bg-gray-800"
             >
               <span className="mr-3">
                 <CaretCircleDoubleRight size="1.5rem" />
@@ -42,7 +42,7 @@ export default function Home() {
 
             <a
               href="/blog"
-              className="flex rounded-lg border border-gray-600 px-2 py-1.5 font-medium text-base text-grayishblack dark:border-gray-500 dark:text-grayishblack-dark"
+              className="flex rounded-lg border border-gray-600 px-2 py-1.5 font-medium text-base text-grayishblack hover:bg-gray-200/55 hover:underline dark:border-gray-500 dark:text-grayishblack-dark dark:hover:bg-gray-800"
             >
               <span className="sm:mr-3">
                 <CaretCircleDoubleRight size="1.5rem" />
@@ -51,7 +51,7 @@ export default function Home() {
             </a>
           </h2>
 
-          <div className="mt-4">
+          <div className="mt-3">
             <RecentArticleSingleLineListView />
           </div>
         </section>

@@ -99,7 +99,7 @@ export const ThemeSettingButton = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button
-          className="rounded-lg border border-gray-400/35 p-2 text-gray-800 dark:border-gray-700 dark:text-gray-200 "
+          className="rounded-full border border-gray-400/45 p-2 text-gray-800 dark:border-gray-700 dark:text-gray-200 "
           aria-label="画面テーマを変更"
           type="button"
         >
@@ -109,15 +109,15 @@ export const ThemeSettingButton = () => {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className="mx-4 w-40 rounded-lg border border-gray-300 bg-white/75 shadow-lg backdrop-blur-md dark:border-gray-700 dark:bg-gray-800/75"
-          sideOffset={5}
+          className="mx-2 w-40 rounded-xl border border-gray-300 bg-white/75 shadow-lg backdrop-blur-md dark:border-gray-700 dark:bg-gray-800/75"
+          sideOffset={2}
         >
           <DropdownMenu.RadioGroup value={theme} onValueChange={setTheme}>
             {dropdownData.map((data) => (
               <DropdownMenu.RadioItem
                 value={data.mode}
                 key={data.mode}
-                className="flex w-full items-center justify-start radix-state-checked:bg-gray-200 px-4 py-2 text-gray-800 first:rounded-t-lg last:rounded-b-lg hover:bg-gray-200 dark:radix-state-checked:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-700"
+                className="flex w-full items-center justify-start radix-state-checked:bg-gray-200 px-4 py-2 text-gray-800 first:rounded-t-xl last:rounded-xl hover:bg-gray-200 dark:radix-state-checked:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-700"
               >
                 {<data.iconElm size={ICONSIZE} className="mr-2" />} {data.label}
                 <DropdownMenu.ItemIndicator className="ml-auto">

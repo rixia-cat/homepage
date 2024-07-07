@@ -13,6 +13,17 @@ const options: MDXRemoteProps["options"] = {
   },
 };
 
+export async function generateStaticParams() {
+  const blogCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
+    content_type: "blog",
+  });
+
+  return blogCollection.items.map((article) => ({
+    slug: article.fields.slug,
+  }));
+}
+export const dynamicParams = false;
+
 export default async function ArticlePage({
   params,
 }: {

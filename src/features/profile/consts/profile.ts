@@ -46,7 +46,7 @@ export const domain = "rixia.dev";
 
 export const leadingJobDescription = "フロントエンド、アプリが好き・得意なエンジニア";
 
-export const interests = ["PC", "スマホ", "ガジェット", "ゲーム", "音楽", "車"];
+export const interests = ["自作PC", "Linux", "スマホ", "ガジェット", "ゲーム", "音楽", "ねこ", "車"];
 
 export const likesArtists = [
   "分島花音",
@@ -58,11 +58,13 @@ export const likesArtists = [
 
 type ProfileLink = {
   icon: Icon;
+  title: string;
   url: string;
 };
 export const profileLinks: ProfileLink[] = [
   {
     icon: GithubLogo,
+    title: "GitHub",
     url: "https://github.com/rixia-cat",
   },
 ];

@@ -19,8 +19,8 @@ type Props = {
 };
 
 export default function ArticleCard(props: Props) {
-  const publishedAtStr = dayjs(props.article.publishedAt).tz().format("YYYY/MM/DD (ddd) HH:mm");
-  const updatedAtStr = dayjs(props.article.updatedAt).tz().format("YYYY/MM/DD (ddd) HH:mm");
+  const publishedAtStr = dayjs(props.article.publishedAt).tz().format("YYYY/MM/DD HH:mm");
+  const updatedAtStr = dayjs(props.article.updatedAt).tz().format("YYYY/MM/DD HH:mm");
 
   return (
     <div className="flex flex-col rounded-lg border border-card_border bg-card_background dark:border-card_border-dark dark:bg-card_background-dark">
@@ -30,11 +30,16 @@ export default function ArticleCard(props: Props) {
       >
         <div className="flex w-full">
           {/* 見出し用画像 */}
-          <div className="flex size-20 min-h-20 min-w-20 items-center justify-center rounded-tl-lg bg-gray-200 dark:bg-gray-800 ">
-            <Image src={props.article.leadingImageUrl} alt="leading image" width={80} height={80} />
-          </div>
+          <Image
+            src={props.article.leadingImageUrl}
+            alt={props.article.title}
+            width={96}
+            height={80}
+            quality={85}
+            className="!relative h-16 max-h-20 min-h-20 w-24 min-w-24 max-w-24 rounded-tl-lg object-cover"
+          />
           {/* タイトル */}
-          <div className="h-full grow overflow-hidden px-4 pt-3">
+          <div className="h-full grow overflow-hidden px-2 pt-3">
             <h2 className="align-top font-bold text-grayishblack text-lg dark:text-grayishblack-dark">
               <p className="line-clamp-2 no-underline hover:underline">{props.article.title}</p>
             </h2>
@@ -47,7 +52,7 @@ export default function ArticleCard(props: Props) {
       </a>
 
       {/* 公開日時 */}
-      <div className="flex flex-wrap px-2 pt-2 pb-1">
+      <div className="flex flex-wrap px-2 pt-2 pb-0.5">
         <p className="flex items-center rounded-full border border-gray-300 px-1.5 py-0.5 text-gray-600 text-xs dark:border-gray-700 dark:text-gray-300">
           <CalendarDots size="1rem" className="mr-1" />
           <span className="mr-1">公開:</span>
@@ -55,7 +60,7 @@ export default function ArticleCard(props: Props) {
         </p>
       </div>
       {/* 更新日時 */}
-      <div className="flex flex-wrap px-2 pt-1 pb-1">
+      <div className="flex flex-wrap px-2 pt-0.5 pb-1">
         <p className="flex items-center rounded-full border border-gray-300 px-1.5 py-0.5 text-gray-600 text-xs dark:border-gray-700 dark:text-gray-300">
           <Sparkle size="1rem" className="mr-1" />
           <span className="mr-1">更新:</span>
@@ -63,7 +68,7 @@ export default function ArticleCard(props: Props) {
         </p>
       </div>
       {/* タグ */}
-      <div className="flex flex-nowrap overflow-auto px-2 pt-1 pb-2">
+      <div className="flex flex-nowrap gap-1 overflow-auto px-2 pt-1 pb-2">
         {props.article.tags.map((tag) => (
           <a
             key={tag.url}
