@@ -59,7 +59,15 @@ export default async function About() {
 
           <div className="mb-2 flex flex-col items-center">
             <div className="flex size-36 flex-col items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800">
-              <Image src="/image/profile/rixia.svg" alt="プロフィール画像" width={90} height={90} className="" />
+              <Image
+                src="/image/profile/rixia.svg"
+                alt="プロフィール画像"
+                width={90}
+                height={90}
+                className=""
+                priority={true}
+                loading="eager"
+              />
             </div>
           </div>
 

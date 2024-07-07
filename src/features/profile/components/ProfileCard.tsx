@@ -15,7 +15,14 @@ export default async function ProfileCard() {
       <div className="mb-2 ">
         <div className="flex flex-col items-center">
           <div className="flex size-36 flex-col items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800">
-            <Image src="/image/profile/rixia.svg" alt="rixiaのプロフィール画像" width={90} height={90} />
+            <Image
+              src="/image/profile/rixia.svg"
+              alt="rixiaのプロフィール画像"
+              width={90}
+              height={90}
+              priority={true}
+              loading="eager"
+            />
           </div>
         </div>
         <p className="mb-2 text-start font-bold text-grayishblack text-xl dark:text-grayishblack-dark">rixia</p>
