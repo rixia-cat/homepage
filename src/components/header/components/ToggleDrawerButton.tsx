@@ -17,7 +17,7 @@ export default function ToggleDrawerButton() {
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm" />
+        <Dialog.Overlay className="fixed inset-0 z-drawer bg-black/40 backdrop-blur-sm" />
         <SiteDrawerContent />
       </Dialog.Portal>
     </Dialog.Root>

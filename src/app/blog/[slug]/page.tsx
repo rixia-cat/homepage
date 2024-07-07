@@ -3,8 +3,10 @@ import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
 import ProfileCard from "@/features/profile/components/ProfileCard";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful";
 import { contentfulClient } from "@/util/contentful";
+import type { Asset } from "contentful";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
+import Image from "next/image";
 
 const components = articleMDXComponents({});
 const options: MDXRemoteProps["options"] = {
@@ -39,6 +41,11 @@ export default async function ArticlePage({
   }
 
   const blogData = blogCollection.items[0];
+  const leadingImage = blogData.fields.leadingImage as Asset;
+  const leadingImageUrl =
+    leadingImage.fields.file?.url !== undefined
+      ? `https:${leadingImage.fields.file?.url}`
+      : "";
 
   return (
     <div className="mx-auto flex max-w-screen-lg grow justify-center">
@@ -46,18 +53,33 @@ export default async function ArticlePage({
           <h1 className="text-2xl font-bold mb-4">Side</h1>
       </aside> */}
 
-      <main className="mx-auto max-w-screen-md grow p-6 lg:mr-4">
-        <div className=" mb-8 rounded-xl border-2 border-gray-300 px-2 dark:border-gray-700">
-          <div className="mt-2 mb-6 flex justify-center">
-            <span className="text-5xl text-gray-500 dark:text-gray-400">{"📝"}</span>
+      <main className="mx-auto max-w-screen-md grow grid-cols-1 grid-rows-1 p-6 lg:mr-4">
+        <div className="relative mb-4 grid h-40 w-full rounded-xl border-2 border-gray-300 dark:border-gray-700 ">
+          <Image
+            src={leadingImageUrl}
+            layout="fill"
+            objectFit="cover"
+            className="col-start-1 row-start-1 h-full max-h-full w-full max-w-full rounded-xl"
+            alt={`${blogData.fields.title}のイメージ画像`}
+          />
+
+          <div className="col-start-1 row-start-1 h-full max-h-full min-h-full rounded-xl bg-black/45 backdrop-blur-sm" />
+
+          <div className="col-start-1 row-start-1 rounded-xl px-2 ">
+            <div className="flex h-full items-center justify-center">
+              <h1 className=" text-center font-bold text-3xl text-gray-100 mix-blend-luminosity dark:text-gray-200 ">
+                {blogData.fields.title}
+              </h1>
+            </div>
           </div>
-          <h1 className="mb-6 text-center font-bold text-3xl text-grayishblack dark:text-grayishblack-dark ">
-            {blogData.fields.title}
-          </h1>
         </div>
-        <MDXRemote source={blogData.fields.body} components={components} options={options} />
+        <MDXRemote
+          source={blogData.fields.body}
+          components={components}
+          options={options}
+        />
       </main>
-      <aside className=" mt-40 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
+      <aside className=" mt-48 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
         <AllTagsCard />
         <ProfileCard />
       </aside>

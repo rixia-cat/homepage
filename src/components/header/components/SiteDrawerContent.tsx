@@ -1,7 +1,10 @@
 import SiteLogoLink from "@/components/logo/SiteLogoLink";
 import { XCircle } from "@phosphor-icons/react/dist/ssr/XCircle";
 import * as Dialog from "@radix-ui/react-dialog";
-import { type LeadingPageLink, leadingPageLinks } from "../consts/leading-pages";
+import {
+  type LeadingPageLink,
+  leadingPageLinks,
+} from "../consts/leading-pages";
 
 const ICONSIZE = 24;
 
@@ -15,7 +18,7 @@ const pageLinks: LeadingPageLink[] = [
 
 export default function SiteDrawerContent() {
   return (
-    <Dialog.Content className="fixed z-50 h-full w-96 max-w-[75%] border-gray-300 border-r bg-header_background/70 backdrop-blur-sm dark:border-gray-800/70 dark:bg-header_background-dark/70 dark:backdrop-blur-sm">
+    <Dialog.Content className="fixed z-drawer h-full w-96 max-w-[75%] border-gray-300 border-r bg-header_background/70 backdrop-blur-sm dark:border-gray-800/70 dark:bg-header_background-dark/70 dark:backdrop-blur-sm">
       <div className="flex h-14 w-full items-center px-2 ">
         <Dialog.Close asChild>
           <button

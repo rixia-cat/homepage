@@ -21,7 +21,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" enableSystem defaultTheme="system">
           <Header />
           {/* iOSなどでbackground */}
-          <div className="flex-1 bg-background dark:bg-background-dark">{children}</div>
+          <div className="flex-1 bg-background dark:bg-background-dark">
+            {children}
+          </div>
           <Footer />
         </ThemeProvider>
       </body>

@@ -1,5 +1,13 @@
 "use client";
-import { CheckCircle, CircleHalf, CircleNotch, type Icon, MoonStars, Question, Sun } from "@phosphor-icons/react";
+import {
+  CheckCircle,
+  CircleHalf,
+  CircleNotch,
+  type Icon,
+  MoonStars,
+  Question,
+  Sun,
+} from "@phosphor-icons/react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useTheme } from "next-themes";
 import { useEffect, useMemo, useState } from "react";
@@ -12,6 +20,7 @@ enum ThemeMode {
 type ButtonData = {
   iconElm: Icon;
   label: string;
+  className?: string;
 };
 type DropdownData = {
   mode: ThemeMode;
@@ -29,7 +38,11 @@ export const ThemeSettingButton = () => {
 
   useEffect(() => {
     setMounted(true);
-    setSystemTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? ThemeMode.Dark : ThemeMode.Light);
+    setSystemTheme(
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? ThemeMode.Dark
+        : ThemeMode.Light
+    );
   }, []);
 
   const buttonData: ButtonData = useMemo(() => {
@@ -37,6 +50,7 @@ export const ThemeSettingButton = () => {
       return {
         iconElm: CircleNotch,
         label: "Loading...",
+        className: "animate-spin",
       };
     }
     switch (theme) {
@@ -103,13 +117,18 @@ export const ThemeSettingButton = () => {
           aria-label="画面テーマを変更"
           type="button"
         >
-          {<buttonData.iconElm size={ICONSIZE} />}
+          {
+            <buttonData.iconElm
+              size={ICONSIZE}
+              className={buttonData.className}
+            />
+          }
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className="mx-2 w-40 rounded-xl border border-gray-300 bg-white/75 shadow-lg backdrop-blur-md dark:border-gray-700 dark:bg-gray-800/75"
+          className="z-header_popup mx-2 w-40 rounded-xl border border-gray-300 bg-white/75 shadow-lg backdrop-blur-md dark:border-gray-700 dark:bg-gray-800/75"
           sideOffset={2}
         >
           <DropdownMenu.RadioGroup value={theme} onValueChange={setTheme}>
