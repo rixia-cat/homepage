@@ -46,8 +46,8 @@ export default async function ArticlePage({
           <h1 className="text-2xl font-bold mb-4">Side</h1>
       </aside> */}
 
-      <main className="mx-6 max-w-screen-md grow p-6">
-        <div className=" mb-8 rounded-xl border-2 border-gray-300 dark:border-gray-700">
+      <main className="mx-auto max-w-screen-md grow p-6 lg:mr-4">
+        <div className=" mb-8 rounded-xl border-2 border-gray-300 px-2 dark:border-gray-700">
           <div className="mt-2 mb-6 flex justify-center">
             <span className="text-5xl text-gray-500 dark:text-gray-400">{"📝"}</span>
           </div>
