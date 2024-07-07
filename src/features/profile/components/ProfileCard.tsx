@@ -1,4 +1,3 @@
-import RixiaProfImg from "@/assets/rixia.svg?url";
 import { interests, leadingJobDescription, profileLinks } from "@/features/profile/consts/profile";
 import { CaretCircleDoubleRight, UserCircle } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
@@ -16,7 +15,7 @@ export default async function ProfileCard() {
       <div className="mb-2 ">
         <div className="flex flex-col items-center">
           <div className="flex size-36 flex-col items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800">
-            <Image src={RixiaProfImg} alt="rixiaのプロフィール画像" width={90} height={90} />
+            <Image src="/image/profile/rixia.svg" alt="rixiaのプロフィール画像" width={90} height={90} />
           </div>
         </div>
         <p className="mb-2 text-start font-bold text-grayishblack text-xl dark:text-grayishblack-dark">rixia</p>
@@ -29,6 +28,7 @@ export default async function ProfileCard() {
                 key={link.url}
                 href={link.url}
                 target="_blank"
+                title={link.title}
                 className="flex flex-row flex-nowrap items-center rounded-full border border-gray-400 p-1.5 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
                 rel="noreferrer"
               >
