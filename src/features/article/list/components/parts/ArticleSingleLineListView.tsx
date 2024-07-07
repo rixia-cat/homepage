@@ -44,7 +44,7 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Articl
                       {/* タイトル */}
                       <a
                         href={article.url}
-                        className="mb-1 line-clamp-1 font-medium text-base text-grayishblack hover:underline dark:text-grayishblack-dark "
+                        className="mb-1 line-clamp-2 font-medium text-base text-grayishblack hover:underline dark:text-grayishblack-dark "
                       >
                         {article.title}
                       </a>

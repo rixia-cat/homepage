@@ -55,7 +55,7 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
     },
 
     p: ({ children }) => {
-      return <p className="mb-4 leading-8">{children}</p>;
+      return <p className="mb-4 leading-7">{children}</p>;
     },
 
     /* List */
