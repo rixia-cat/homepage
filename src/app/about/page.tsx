@@ -1,5 +1,6 @@
-import RixiaProfImg from "@/assets/rixia.svg"
-import LabelChip from "@/components/chip/LabelChip"
+import RixiaProfImg from "@/assets/rixia.svg?url";
+import LabelChip from "@/components/chip/LabelChip";
+import { likesArtists } from "@/features/profile/consts/profile";
 import {
   backendFrameworks,
   backendLanguages,
@@ -7,15 +8,16 @@ import {
   frontendLanguages,
   mobileFrameworks,
   mobileLanguages,
-} from "@/features/profile/consts/skills"
-import { Urbanist } from "next/font/google"
+} from "@/features/profile/consts/skills";
+import { Urbanist } from "next/font/google";
+import Image from "next/image";
 const logoFont = Urbanist({
   subsets: ["latin"],
   display: "swap",
   weight: "700",
-})
+});
 
-export default function About() {
+export default async function About() {
   return (
     <div className="mx-auto flex max-w-screen-lg grow justify-center">
       <main className="flex max-w-screen-sm grow flex-col overflow-hidden p-4">
@@ -58,7 +60,7 @@ export default function About() {
 
           <div className="mb-2 flex flex-col items-center">
             <div className="flex size-36 flex-col items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800">
-              <RixiaProfImg />
+              <Image src={RixiaProfImg} alt="プロフィール画像" width={90} height={90} className="" />
             </div>
           </div>
 
@@ -81,24 +83,35 @@ export default function About() {
           </h4>
           <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
             {[...frontendLanguages, ...frontendFrameworks].map((skill) => {
-              return <LabelChip key={skill} label={skill} />
+              return <LabelChip key={skill} label={skill} />;
             })}
           </div>
 
           <h4 className="mt-4 mb-2 font-bold text-base text-grayishblack dark:text-grayishblack-dark">バックエンド</h4>
           <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
             {[...backendLanguages, ...backendFrameworks].map((skill) => {
-              return <LabelChip key={skill} label={skill} />
+              return <LabelChip key={skill} label={skill} />;
             })}
           </div>
           <h4 className="mt-4 mb-2 font-bold text-base text-grayishblack dark:text-grayishblack-dark">モバイル</h4>
           <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
             {[...mobileLanguages, ...mobileFrameworks].map((skill) => {
-              return <LabelChip key={skill} label={skill} />
+              return <LabelChip key={skill} label={skill} />;
+            })}
+          </div>
+
+          <h3 className="mt-6 mb-2 font-bold text-grayishblack text-xl dark:text-grayishblack-dark">趣味</h3>
+
+          <h4 className="mt-4 mb-2 font-bold text-base text-grayishblack dark:text-grayishblack-dark">
+            好きな音楽アーティスト/グループ等
+          </h4>
+          <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+            {likesArtists.map((artist) => {
+              return <LabelChip key={artist} label={artist} />;
             })}
           </div>
         </section>
       </main>
     </div>
-  )
+  );
 }

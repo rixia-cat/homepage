@@ -1,35 +1,40 @@
-import ArticleListView from "@/features/article/list/components/parts/ArticleListView"
-import AllTagsCard from "@/features/article/tag/components/AllTagsCard"
-import { contentfulClient } from "@/features/article/util/contentful"
-import ProfileCard from "@/features/profile/components/ProfileCard"
-import type { TypeBlogSkeleton } from "@/types/generated/contentful/TypeBlog"
-import type { ComponentProps } from "react"
+import ArticleListView from "@/features/article/list/components/parts/ArticleListView";
+import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
+import ProfileCard from "@/features/profile/components/ProfileCard";
+import type { TypeBlogSkeleton } from "@/types/generated/contentful/TypeBlog";
+import { contentfulClient } from "@/util/contentful";
+import type { Asset } from "contentful";
+import type { ComponentProps } from "react";
 
 export default async function ArticlePage() {
   const articleCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
     order: ["-sys.createdAt"],
-  })
-  const tagCollection = await contentfulClient.getTags()
+  });
+  const tagCollection = await contentfulClient.getTags();
 
-  type ArticleListViewProps = ComponentProps<typeof ArticleListView>
+  type ArticleListViewProps = ComponentProps<typeof ArticleListView>;
   const articles: ArticleListViewProps["articles"] = articleCollection.items.map((article) => {
+    const leadingImageData = article.fields.leadingImage as Asset;
+    const leadingImageUrlSrc = leadingImageData.fields?.file?.url ?? "";
+    const leadingImageUrl = leadingImageUrlSrc ? `https:${leadingImageUrlSrc}` : "";
+
     const retData: ArticleListViewProps["articles"][number] = {
-      leadingImageUrl: `https:${article.fields.leadingImage.fields.file.url}`,
+      leadingImageUrl: leadingImageUrl,
       title: article.fields.title,
       shortDescription: article.fields.description,
       tags: article.metadata.tags.map((tag) => {
-        const matchedTag = tagCollection.items.find((tagItem) => tagItem.sys.id === tag.sys.id)
+        const matchedTag = tagCollection.items.find((tagItem) => tagItem.sys.id === tag.sys.id);
         return {
           label: matchedTag?.name ?? "",
           url: `/tags/${matchedTag?.sys.id ?? ""}`,
-        }
+        };
       }),
-      createdAt: article.sys.createdAt,
+      publishedAt: article.fields.publishedAt,
       updatedAt: article.sys.updatedAt,
       url: `/blog/${article.fields.slug}`,
-    }
-    return retData
-  })
+    };
+    return retData;
+  });
 
   return (
     <div className="mx-auto flex max-w-screen-lg grow justify-center">
@@ -46,5 +51,5 @@ export default async function ArticlePage() {
         <ProfileCard />
       </aside>
     </div>
-  )
+  );
 }
