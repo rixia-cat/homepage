@@ -1,11 +1,11 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   darkMode: "class",
   theme: {
@@ -13,42 +13,40 @@ const config: Config = {
       colors: {
         header_background: {
           dark: "#1b1b36",
-          DEFAULT: "#e0e0eb",
+          DEFAULT: "#e0e0eb"
         },
         footer_background: {
           dark: "#070c0e",
-          DEFAULT: "hsl(240, 15%, 97%)",
+          DEFAULT: "hsl(240, 15%, 97%)"
         },
         background: {
           dark: "#070c0e",
-          DEFAULT: "hsl(240, 15%, 97%)",
+          DEFAULT: "hsl(240, 15%, 97%)"
         },
         card_background: {
           dark: "#1c171c",
-          DEFAULT: "#ffffff",
+          DEFAULT: "#ffffff"
         },
         card_border: {
           dark: "#374151",
-          DEFAULT: "#d3d6de",
+          DEFAULT: "#d3d6de"
         },
 
         grayishblack: {
           dark: "#e5e7eb",
-          DEFAULT: "#333d4d",
+          DEFAULT: "#333d4d"
         },
 
         outline: {
           dark: "#1b1b36",
-          DEFAULT: "#dedeed",
+          DEFAULT: "#dedeed"
         }
       }
     },
     fontFamily: {
-      monospace: ["Menlo", "Monaco", "Courier New", "Consolas", "monospace"],
+      monospace: ["Menlo", "Monaco", "Courier New", "Consolas", "monospace"]
     }
   },
-  plugins: [
-    require("tailwindcss-radix")(),
-  ],
-};
-export default config;
+  plugins: [require("tailwindcss-radix")()]
+}
+export default config

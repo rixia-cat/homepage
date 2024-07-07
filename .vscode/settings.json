@@ -1,0 +1,7 @@
+{
+	"editor.formatOnSave": true, 
+	"[javascript][typescript][javascriptreact][typescriptreact][json][jsonc]": {
+		"editor.tabSize": 2, // biome.jsonと合わせる
+		"editor.defaultFormatter": "biomejs.biome"
+	}
+}
