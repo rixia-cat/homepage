@@ -1,0 +1,8 @@
+.articleContainer {
+  ul ul {
+    @apply ml-6;
+  }
+  ul ul ul {
+    @apply ml-12;
+  }
+}

@@ -1,6 +1,7 @@
-import type { MDXComponents } from "mdx/types";
+import type { Components } from "react-markdown";
+import CodeBlock from "./components/CodeBlock";
 
-export function articleMDXComponents(components: MDXComponents): MDXComponents {
+export function articleMarkdownComponents(components: Partial<Components>): Partial<Components> {
   return {
     ...components,
 
@@ -13,16 +14,16 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
     },
     h2: ({ children }) => {
       return (
-        <h2 className="mt-8 mb-6 border-gray-300 border-b-2 border-dashed pb-2 font-bold text-2xl first:mt-0 dark:border-gray-700">
+        <h2 className="mt-12 mb-6 border-gray-300 border-b-2 border-dashed pb-2 font-bold text-2xl first:mt-0 dark:border-gray-700">
           {children}
         </h2>
       );
     },
     h3: ({ children }) => {
-      return <h3 className="mt-8 mb-2 font-bold text-xl">{children}</h3>;
+      return <h3 className="mt-8 mb-4 font-bold text-xl">{children}</h3>;
     },
     h4: ({ children }) => {
-      return <h4 className="mt-8 mb-2 font-bold text-lg">{children}</h4>;
+      return <h4 className="mt-8 mb-4 font-bold text-lg">{children}</h4>;
     },
     h5: ({ children }) => {
       return <h5 className="mt-8 mb-2 font-bold text-base">{children}</h5>;
@@ -38,7 +39,7 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
     /* Table */
     table: ({ children }) => {
       return (
-        <div className="overflow-x-auto">
+        <div className="mb-3 overflow-x-auto">
           <table className="table-auto">{children}</table>
         </div>
       );
@@ -55,7 +56,20 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
     },
 
     p: ({ children }) => {
-      return <p className="mb-4 leading-7">{children}</p>;
+      return <p className="mb-3 text-base leading-7">{children}</p>;
+    },
+
+    a: ({ href, children }) => {
+      const isInternalLink = href ? href.startsWith("/") : false;
+      return (
+        <a
+          href={href}
+          className="text-blue-600 underline dark:text-blue-400"
+          target={isInternalLink ? "_self" : "_blank"}
+        >
+          {children}
+        </a>
+      );
     },
 
     /* List */
@@ -74,6 +88,10 @@ export function articleMDXComponents(components: MDXComponents): MDXComponents {
           <div className="p-2 leading-8">{children}</div>
         </blockquote>
       );
+    },
+
+    code: ({ children }) => {
+      return <CodeBlock>{children}</CodeBlock>;
     },
   };
 }

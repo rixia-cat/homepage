@@ -19,26 +19,16 @@ type ArticleSingleLineListProps = {
   andmoreCount: number;
 };
 
-export default function ArticleSingleLineList({
-  articles,
-  andmoreCount,
-}: ArticleSingleLineListProps) {
+export default function ArticleSingleLineList({ articles, andmoreCount }: ArticleSingleLineListProps) {
   return (
     <div className="relative w-full rounded-lg border border-gray-400 border-dashed dark:border-gray-700">
       <div className="overflow-y-auto">
         <ul className=" flex max-h-80 flex-col flex-nowrap">
           {articles.map((article) => {
-            const publishedAtStr = dayjs(article.publishedAt)
-              .tz()
-              .format("YYYY/MM/DD HH:mm");
-            const updatedAtStr = dayjs(article.updatedAt)
-              .tz()
-              .format("YYYY/MM/DD HH:mm");
+            const publishedAtStr = dayjs(article.publishedAt).tz().format("YYYY/MM/DD HH:mm");
+            const updatedAtStr = dayjs(article.updatedAt).tz().format("YYYY/MM/DD HH:mm");
             return (
-              <li
-                key={article.url}
-                className="flex flex-col p-2 hover:bg-gray-200 dark:hover:bg-gray-800"
-              >
+              <li key={article.url} className="flex flex-col p-2 hover:bg-gray-200 dark:hover:bg-gray-800">
                 <div className="flex flex-row flex-nowrap items-center justify-start">
                   <Image
                     src={article.leadingImageUrl}
