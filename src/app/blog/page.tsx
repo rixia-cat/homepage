@@ -7,41 +7,34 @@ import type { Asset } from "contentful";
 import type { ComponentProps } from "react";
 
 export default async function ArticlePage() {
-  const articleCollection = await contentfulClient.getEntries<TypeBlogSkeleton>(
-    {
-      order: ["-sys.createdAt"],
-    }
-  );
+  const articleCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
+    order: ["-sys.createdAt"],
+  });
   const tagCollection = await contentfulClient.getTags();
 
   type ArticleCardGridViewProps = ComponentProps<typeof ArticleCardGridView>;
-  const articles: ArticleCardGridViewProps["articles"] =
-    articleCollection.items.map((article) => {
-      const leadingImageData = article.fields.leadingImage as Asset;
-      const leadingImageUrlSrc = leadingImageData.fields?.file?.url ?? "";
-      const leadingImageUrl = leadingImageUrlSrc
-        ? `https:${leadingImageUrlSrc}`
-        : "";
+  const articles: ArticleCardGridViewProps["articles"] = articleCollection.items.map((article) => {
+    const leadingImageData = article.fields.leadingImage as Asset;
+    const leadingImageUrlSrc = leadingImageData.fields?.file?.url ?? "";
+    const leadingImageUrl = leadingImageUrlSrc ? `https:${leadingImageUrlSrc}` : "";
 
-      const retData: ArticleCardGridViewProps["articles"][number] = {
-        leadingImageUrl: leadingImageUrl,
-        title: article.fields.title,
-        shortDescription: article.fields.description,
-        tags: article.metadata.tags.map((tag) => {
-          const matchedTag = tagCollection.items.find(
-            (tagItem) => tagItem.sys.id === tag.sys.id
-          );
-          return {
-            label: matchedTag?.name ?? "",
-            url: `/tags/${matchedTag?.sys.id ?? ""}`,
-          };
-        }),
-        publishedAt: article.fields.publishedAt,
-        updatedAt: article.sys.updatedAt,
-        url: `/blog/${article.fields.slug}`,
-      };
-      return retData;
-    });
+    const retData: ArticleCardGridViewProps["articles"][number] = {
+      leadingImageUrl: leadingImageUrl,
+      title: article.fields.title,
+      shortDescription: article.fields.description,
+      tags: article.metadata.tags.map((tag) => {
+        const matchedTag = tagCollection.items.find((tagItem) => tagItem.sys.id === tag.sys.id);
+        return {
+          label: matchedTag?.name ?? "",
+          url: `/tags/${matchedTag?.sys.id ?? ""}`,
+        };
+      }),
+      publishedAt: article.fields.publishedAt,
+      updatedAt: article.sys.updatedAt,
+      url: `/blog/${article.fields.slug}`,
+    };
+    return retData;
+  });
 
   return (
     <div className="mx-auto flex max-w-screen-lg grow justify-center">

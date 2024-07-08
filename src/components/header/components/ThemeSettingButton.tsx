@@ -1,13 +1,5 @@
 "use client";
-import {
-  CheckCircle,
-  CircleHalf,
-  CircleNotch,
-  type Icon,
-  MoonStars,
-  Question,
-  Sun,
-} from "@phosphor-icons/react";
+import { CheckCircle, CircleHalf, CircleNotch, type Icon, MoonStars, Question, Sun } from "@phosphor-icons/react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useTheme } from "next-themes";
 import { useEffect, useMemo, useState } from "react";
@@ -38,11 +30,7 @@ export const ThemeSettingButton = () => {
 
   useEffect(() => {
     setMounted(true);
-    setSystemTheme(
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? ThemeMode.Dark
-        : ThemeMode.Light
-    );
+    setSystemTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? ThemeMode.Dark : ThemeMode.Light);
   }, []);
 
   const buttonData: ButtonData = useMemo(() => {
@@ -117,12 +105,7 @@ export const ThemeSettingButton = () => {
           aria-label="画面テーマを変更"
           type="button"
         >
-          {
-            <buttonData.iconElm
-              size={ICONSIZE}
-              className={buttonData.className}
-            />
-          }
+          {<buttonData.iconElm size={ICONSIZE} className={buttonData.className} />}
         </button>
       </DropdownMenu.Trigger>
 

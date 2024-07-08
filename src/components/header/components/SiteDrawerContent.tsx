@@ -1,10 +1,7 @@
 import SiteLogoLink from "@/components/logo/SiteLogoLink";
 import { XCircle } from "@phosphor-icons/react/dist/ssr/XCircle";
 import * as Dialog from "@radix-ui/react-dialog";
-import {
-  type LeadingPageLink,
-  leadingPageLinks,
-} from "../consts/leading-pages";
+import { type LeadingPageLink, leadingPageLinks } from "../consts/leading-pages";
 
 const ICONSIZE = 24;
 

@@ -1,5 +1,5 @@
-import { Hash } from "@phosphor-icons/react/dist/ssr";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful/TypeBlog";
+import { Hash } from "@phosphor-icons/react/dist/ssr";
 import { contentfulClient } from "../../../../util/contentful";
 
 type TagData = {

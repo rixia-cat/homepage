@@ -5,9 +5,7 @@ import dayjs, { type Dayjs } from "dayjs";
 // #region birthday
 const birthYear = 1997;
 const birthMonth = 11;
-export const calcAboutBirthUptime = (
-  targetDate: Dayjs
-): { year: number; month: number } => {
+export const calcAboutBirthUptime = (targetDate: Dayjs): { year: number; month: number } => {
   const aboutlyBirthDay = dayjs(`${birthYear}-${birthMonth}-01`);
   const diffYear = targetDate.diff(aboutlyBirthDay, "year");
   const diffMonth = targetDate.diff(aboutlyBirthDay, "month");
@@ -48,19 +46,9 @@ export const domain = "rixia.dev";
 export const githubUsername = "rixia-cat";
 export const githubLink = `https://github.com/${githubUsername}`;
 
-export const leadingJobDescription =
-  "フロントエンド、アプリが好き・得意なエンジニア";
+export const leadingJobDescription = "フロントエンド、アプリが好き・得意なエンジニア";
 
-export const interests = [
-  "自作PC",
-  "Linux",
-  "スマホ",
-  "ガジェット",
-  "ゲーム",
-  "音楽",
-  "ねこ",
-  "車",
-];
+export const interests = ["自作PC", "Linux", "スマホ", "ガジェット", "ゲーム", "音楽", "ねこ", "車"];
 
 export const likesArtists = [
   "分島花音",
