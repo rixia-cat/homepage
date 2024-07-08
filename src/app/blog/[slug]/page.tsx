@@ -33,7 +33,7 @@ export default async function ArticlePage({
 
   const blogData = blogCollection.items[0];
   const leadingImage = blogData.fields.leadingImage as Asset;
-  const leadingImageUrl = leadingImage.fields.file?.url !== undefined ? `https:${leadingImage.fields.file?.url}` : "";
+  const leadingImageUrl = leadingImage?.fields.file?.url !== undefined ? `https:${leadingImage.fields.file?.url}` : "";
 
   return (
     <div className="mx-auto flex max-w-screen-lg grow justify-center">
@@ -43,14 +43,16 @@ export default async function ArticlePage({
 
       <main className="mx-auto max-w-screen-md grow grid-cols-1 grid-rows-1 px-4 py-6 lg:mr-4">
         <div className="relative mb-10 grid h-40 w-full rounded-xl border-2 border-gray-300 dark:border-gray-700 ">
-          <Image
-            src={leadingImageUrl}
-            layout="fill"
-            className="col-start-1 row-start-1 h-full max-h-full w-full max-w-full rounded-xl object-cover"
-            alt={`${blogData.fields.title}のイメージ画像`}
-            priority={true}
-            loading="eager"
-          />
+          {leadingImageUrl ? (
+            <Image
+              src={leadingImageUrl}
+              layout="fill"
+              className="col-start-1 row-start-1 h-full max-h-full w-full max-w-full rounded-xl object-cover"
+              alt={`${blogData.fields.title}のイメージ画像`}
+              priority={true}
+              loading="eager"
+            />
+          ) : null}
 
           <div className="col-start-1 row-start-1 h-full max-h-full min-h-full rounded-xl bg-black/45 backdrop-blur-sm" />
 

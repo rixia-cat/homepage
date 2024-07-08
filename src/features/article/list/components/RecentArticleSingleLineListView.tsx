@@ -8,7 +8,7 @@ export default async function RecentArticleSingleLineListView() {
   const MAX_SHOW_COUNT = 10;
   const articleCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
     content_type: "blog",
-    order: ["-sys.createdAt"],
+    order: ["-fields.publishedAt"],
   });
   const tagCollection = await contentfulClient.getTags();
 
@@ -16,7 +16,7 @@ export default async function RecentArticleSingleLineListView() {
   const articles: ArticleListViewProps["articles"] = articleCollection.items
     .map((article) => {
       const leadingImageData = article.fields.leadingImage as Asset;
-      const leadingImageUrlSrc = leadingImageData.fields?.file?.url ?? "";
+      const leadingImageUrlSrc = leadingImageData?.fields?.file?.url ?? "";
       const leadingImageUrl = leadingImageUrlSrc ? `https:${leadingImageUrlSrc}` : "";
 
       const retData: ArticleListViewProps["articles"][number] = {

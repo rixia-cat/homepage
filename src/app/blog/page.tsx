@@ -8,14 +8,15 @@ import type { ComponentProps } from "react";
 
 export default async function ArticlePage() {
   const articleCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
-    order: ["-sys.createdAt"],
+    content_type: "blog",
+    order: ["-fields.publishedAt"],
   });
   const tagCollection = await contentfulClient.getTags();
 
   type ArticleCardGridViewProps = ComponentProps<typeof ArticleCardGridView>;
   const articles: ArticleCardGridViewProps["articles"] = articleCollection.items.map((article) => {
     const leadingImageData = article.fields.leadingImage as Asset;
-    const leadingImageUrlSrc = leadingImageData.fields?.file?.url ?? "";
+    const leadingImageUrlSrc = leadingImageData?.fields?.file?.url ?? "";
     const leadingImageUrl = leadingImageUrlSrc ? `https:${leadingImageUrlSrc}` : "";
 
     const retData: ArticleCardGridViewProps["articles"][number] = {
