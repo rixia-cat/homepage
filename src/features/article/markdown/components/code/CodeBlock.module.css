@@ -1,0 +1,7 @@
+.codeBlockContainer {
+  @apply max-w-full;
+  pre {
+    @apply text-sm mb-3 py-3 pl-3 pr-6 rounded-lg border border-gray-700 whitespace-pre overflow-x-auto;
+    box-sizing: border-box;
+  }
+}

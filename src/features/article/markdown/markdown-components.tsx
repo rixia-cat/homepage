@@ -1,7 +1,7 @@
-import type { Components } from "react-markdown";
-import CodeBlock from "./components/CodeBlock";
+import type { MDXRemoteProps } from "next-mdx-remote";
+import CodeBlock from "./components/code/CodeBlock";
 
-export function articleMarkdownComponents(components: Partial<Components>): Partial<Components> {
+export function articleMarkdownComponents(components: MDXRemoteProps["components"]): MDXRemoteProps["components"] {
   return {
     ...components,
 
@@ -74,10 +74,10 @@ export function articleMarkdownComponents(components: Partial<Components>): Part
 
     /* List */
     ul: ({ children }) => {
-      return <ul className="mb-2 list-inside list-disc leading-8">{children}</ul>;
+      return <ul className="mb-3 list-inside list-disc leading-8">{children}</ul>;
     },
     ol: ({ children }) => {
-      return <ol className="list-inside list-decimal leading-8">{children}</ol>;
+      return <ol className="mb-3 list-inside list-decimal leading-8">{children}</ol>;
     },
     li: ({ children }) => {
       return <li className="leading-8">{children}</li>;
@@ -90,8 +90,28 @@ export function articleMarkdownComponents(components: Partial<Components>): Part
       );
     },
 
-    code: ({ children }) => {
-      return <CodeBlock>{children}</CodeBlock>;
+    pre: (props) => {
+      const preNode = props.children;
+      const isChildCodeBlock = (() => {
+        if (!preNode) return false;
+        const children = Array.isArray(preNode) ? preNode : [preNode];
+        if (children.length !== 1) return false;
+        return children[0].type.name === "code";
+      })();
+
+      if (isChildCodeBlock) {
+        return <CodeBlock>{preNode}</CodeBlock>;
+      }
+
+      return <pre>{preNode}</pre>;
+    },
+
+    code: (props) => {
+      return (
+        <code className="rounded bg-gray-300/65 p-0.5 text-sm dark:bg-gray-800 dark:text-gray-300">
+          {props.children}
+        </code>
+      );
     },
   };
 }

@@ -9,8 +9,8 @@ const leadingNameText = "rixia";
 const leadingSuffixText = ".";
 export default function Home() {
   return (
-    <div className="mx-auto flex max-w-screen-lg grow justify-center">
-      <main className="max-w-screen-md grow overflow-hidden p-4">
+    <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
+      <main className="max-w-full grow overflow-hidden p-4 md:max-w-screen-md">
         <h1 className="mt-2">
           <span className="text-5xl text-gray-500 dark:text-gray-400">{leadingPrefixText}</span>
           <span className="text-5xl text-grayishblack dark:text-grayishblack-dark">{leadingNameText}</span>

@@ -1,8 +1,10 @@
 .articleContainer {
   ul ul {
-    @apply ml-6;
+    @apply ml-6 mb-0;
+    list-style-type: circle;
   }
   ul ul ul {
-    @apply ml-12;
+    @apply ml-6 mb-0;
+    list-style-type: square;
   }
 }

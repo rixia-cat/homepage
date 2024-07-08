@@ -1,16 +1,18 @@
-import Markdown from "react-markdown";
+import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import type { PluggableList } from "unified";
-// ネスト要素などに対応するため一部スタイルは別途定義
-import styles from "./ArticleMarkdown.module.css";
+import styles from "./ArticleMarkdown.module.css"; // ネスト要素などに対応するため一部スタイルは別途定義
 import { articleMarkdownComponents } from "./markdown-components";
 
-// #region react-markdown
+// #region next-mdx-remote
 const components = articleMarkdownComponents({});
-const remarkPlugins: PluggableList = [remarkGfm];
-const rehypePlugins: PluggableList = [rehypeSlug, rehypeAutolinkHeadings];
+const options: MDXRemoteProps["options"] = {
+  mdxOptions: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+  },
+};
 // #endregion
 
 type ArticleMarkdownProps = {
@@ -20,9 +22,7 @@ type ArticleMarkdownProps = {
 export default function ArticleMarkdown({ blogBodyMarkdown }: ArticleMarkdownProps) {
   return (
     <div className={styles.articleContainer}>
-      <Markdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins} components={components}>
-        {blogBodyMarkdown}
-      </Markdown>
+      <MDXRemote source={blogBodyMarkdown} components={components} options={options} />
     </div>
   );
 }

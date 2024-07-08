@@ -18,8 +18,8 @@ const logoFont = Urbanist({
 
 export default async function About() {
   return (
-    <div className="mx-auto flex max-w-screen-lg grow justify-center">
-      <main className="flex max-w-screen-sm grow flex-col overflow-hidden p-4">
+    <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
+      <main className="flex max-w-full grow flex-col overflow-hidden p-4 sm:max-w-screen-sm">
         {/* Title */}
         <div className="flex w-full flex-col flex-nowrap items-center justify-center">
           <h1 className={logoFont.className}>

@@ -38,12 +38,12 @@ export default async function ArticlePage() {
   });
 
   return (
-    <div className="mx-auto flex max-w-screen-lg grow justify-center">
+    <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
       {/* <aside className="w-64 min-w-64 max-w-64 p-4  border-x-2 hidden lg:block">
                 <h1 className="text-2xl font-bold mb-4">Side</h1>
             </aside> */}
 
-      <main className="max-w-screen-md grow p-6">
+      <main className="max-w-full grow p-6 md:max-w-screen-md">
         <h1 className="h-14 font-bold text-2xl">Articles</h1>
         <ArticleCardGridView articles={articles} />
       </main>

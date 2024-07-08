@@ -71,21 +71,22 @@ export default function NeofetchLikeProfile() {
         </div>
         <div className="flex flex-row flex-nowrap bg-gray-950 px-2 pt-2 pb-4">
           {/* ロゴセクション */}
-          <div
-            aria-label="サイトロゴのアスキーアート"
-            className="flex shrink-0 flex-col flex-nowrap items-center justify-center pr-1"
-          >
-            <p className="text-[4px] text-gray-50 sm:text-[6px]">
-              {" "}
+          <figure className="flex shrink-0 flex-col flex-nowrap items-center justify-center pr-1">
+            <pre
+              className="font-monospace text-[4px] text-gray-50 sm:text-[6px]"
+              role="img"
+              aria-label="サイトロゴのアスキーアート"
+            >
               {logoAsciiArt.map((line, index) => {
                 return (
-                  <span key={index} className="block whitespace-pre-wrap font-monospace">
+                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                  <span key={index} className="block whitespace-pre-wrap">
                     {line}
                   </span>
                 );
               })}
-            </p>
-          </div>
+            </pre>
+          </figure>
           {/* 詳細セクション */}
           <div className="flex flex-col flex-nowrap pl-2 align-top font-medium text-xs sm:text-base">
             <p>

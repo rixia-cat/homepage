@@ -36,12 +36,12 @@ export default async function ArticlePage({
   const leadingImageUrl = leadingImage?.fields.file?.url !== undefined ? `https:${leadingImage.fields.file?.url}` : "";
 
   return (
-    <div className="mx-auto flex max-w-screen-lg grow justify-center">
+    <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
       {/* <aside className="w-64 min-w-64 max-w-64 p-4  border-x-2 hidden lg:block">
           <h1 className="text-2xl font-bold mb-4">Side</h1>
       </aside> */}
 
-      <main className="mx-auto max-w-screen-md grow grid-cols-1 grid-rows-1 px-4 py-6 lg:mr-4">
+      <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-6 md:max-w-screen-md lg:mr-4">
         <div className="relative mb-10 grid h-40 w-full rounded-xl border-2 border-gray-300 dark:border-gray-700 ">
           {leadingImageUrl ? (
             <Image
