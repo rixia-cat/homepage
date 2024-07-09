@@ -1,3 +1,4 @@
+import FloatingBottomActionBar from "@/components/floating-action/FloatingBottomActionBar";
 import ArticleMarkdown from "@/features/article/markdown/ArticleMarkdown";
 import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
 import ProfileCard from "@/features/profile/components/ProfileCard";
@@ -78,7 +79,7 @@ export default async function ArticlePage(props: ArticlePageProps) {
       </aside> */}
 
       <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-6 md:max-w-screen-md lg:mr-4">
-        <div className="relative mb-10 grid h-40 w-full rounded-xl border-2 border-gray-300 dark:border-gray-700 ">
+        <div className="relative mb-10 grid h-40 w-full rounded-xl ">
           {leadingImageUrl ? (
             <Image
               src={leadingImageUrl}
@@ -90,7 +91,7 @@ export default async function ArticlePage(props: ArticlePageProps) {
             />
           ) : null}
 
-          <div className="col-start-1 row-start-1 h-full max-h-full min-h-full rounded-xl bg-black/45 backdrop-blur-sm" />
+          <div className="col-start-1 row-start-1 h-full max-h-full min-h-full rounded-xl bg-black/35 shadow-inner backdrop-blur-sm" />
 
           <div className="col-start-1 row-start-1 rounded-xl px-2 ">
             <div className="flex h-full items-center justify-center">
@@ -107,6 +108,8 @@ export default async function ArticlePage(props: ArticlePageProps) {
         <AllTagsCard />
         <ProfileCard />
       </aside>
+
+      <FloatingBottomActionBar />
     </div>
   );
 }

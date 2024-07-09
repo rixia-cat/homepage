@@ -46,10 +46,14 @@ const config: Config = {
     zIndex: {
       tooltip: "1100",
       header: "1500",
+      footer: "1500",
       header_popup: "1501",
       drawer: "2600",
-      footer: "1500",
+      floating_action: "2900",
       modal: "3000",
+    },
+    boxShadow: {
+      inner: "inset 0px 0px 12px 4px rgba(0, 0, 0, 0.55)"
     },
     fontFamily: {
       monospace: ["Menlo", "Monaco", "Courier New", "Consolas", "monospace"],

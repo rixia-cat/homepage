@@ -70,7 +70,7 @@ export default async function About() {
         </section>
 
         <section className="mt-14">
-          <h2 className="mb-2 flex w-full flex-row flex-nowrap items-start">
+          <h2 className="mb-4 flex w-full flex-row flex-nowrap items-start">
             <div className="-skew-x-12 mr-2.5 ml-1 h-7 border-grayishblack border-x-2 px-[2px] dark:border-grayishblack-dark" />
             <span className="font-bold text-2xl text-grayishblack dark:text-grayishblack-dark">「rixia」について</span>
           </h2>
