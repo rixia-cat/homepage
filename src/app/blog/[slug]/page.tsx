@@ -1,11 +1,30 @@
 import ArticleMarkdown from "@/features/article/markdown/ArticleMarkdown";
 import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
 import ProfileCard from "@/features/profile/components/ProfileCard";
+import { domain } from "@/features/profile/consts/profile";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful";
 import { contentfulClient } from "@/util/contentful";
-import type { Asset } from "contentful";
+import type { Asset, Entry } from "contentful";
+import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 
+type ArticlePageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export const dynamicParams = false;
+// 記事データ取得
+async function getArticleData(slug: string): Promise<Entry<TypeBlogSkeleton>[]> {
+  const blogCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
+    content_type: "blog",
+    "fields.slug": slug,
+  });
+
+  return blogCollection.items;
+}
+// SSG用
 export async function generateStaticParams() {
   const blogCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
     content_type: "blog",
@@ -15,23 +34,38 @@ export async function generateStaticParams() {
     slug: article.fields.slug,
   }));
 }
-export const dynamicParams = false;
+export async function generateMetadata(props: ArticlePageProps, parent: ResolvingMetadata): Promise<Metadata> {
+  const parentMetadata = await parent;
 
-export default async function ArticlePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const blogCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
-    content_type: "blog",
-    "fields.slug": params.slug,
-  });
+  const blogCollection = await getArticleData(props.params.slug);
+  if (!blogCollection.length) {
+    return {
+      title: "404 Not Found",
+      description: "404 Not Found",
+    };
+  }
+  const blogData = blogCollection[0];
+  return {
+    title: `${blogData.fields.title} - ${domain}`,
+    description: blogData.fields.description.toString(),
+    openGraph: {
+      ...parentMetadata.openGraph,
+      title: `${blogData.fields.title} - ${domain}`,
+      description: blogData.fields.description.toString(),
+      type: "article",
+      url: `https://${domain}/blog/${props.params.slug}`,
+    },
+  };
+}
 
-  if (!blogCollection.items.length) {
+export default async function ArticlePage(props: ArticlePageProps) {
+  const slug = props.params.slug;
+  const blogCollection = await getArticleData(slug);
+  if (!blogCollection.length) {
     return <div>404 Not Found</div>;
   }
 
-  const blogData = blogCollection.items[0];
+  const blogData = blogCollection[0];
   const leadingImage = blogData.fields.leadingImage as Asset;
   const leadingImageUrl = leadingImage?.fields.file?.url !== undefined ? `https:${leadingImage.fields.file?.url}` : "";
 

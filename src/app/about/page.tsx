@@ -8,13 +8,30 @@ import {
   mobileFrameworks,
   mobileLanguages,
 } from "@/features/profile/consts/skills";
+import type { Metadata, ResolvingMetadata } from "next";
 import { Urbanist } from "next/font/google";
 import Image from "next/image";
+
 const logoFont = Urbanist({
   subsets: ["latin"],
   display: "swap",
   weight: "700",
 });
+
+export async function generateMetadata(_, parent: ResolvingMetadata): Promise<Metadata> {
+  const parentMetadata = await parent;
+  return {
+    title: "about - rixia.dev",
+    description: "プロフィール・スキル・サイトについて",
+    openGraph: {
+      ...parentMetadata.openGraph,
+      title: "about - rixia.dev",
+      description: "プロフィール・スキル・サイトについて",
+      type: "website",
+      url: "https://rixia.dev/about",
+    },
+  };
+}
 
 export default async function About() {
   return (

@@ -37,7 +37,7 @@ export default function Home() {
           <h2 className="flex items-center justify-between ">
             <div className="flex flex-nowrap items-center">
               <Book size="2.75rem" className="mr-2 text-grayishblack dark:text-grayishblack-dark" />
-              <span className="text-3xl text-grayishblack dark:text-grayishblack-dark">Blog</span>
+              <span className="text-3xl text-grayishblack dark:text-grayishblack-dark">blog</span>
             </div>
 
             <a

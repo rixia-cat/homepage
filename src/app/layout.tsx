@@ -6,8 +6,16 @@ import { mainFont } from "@/util/font";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rixia.dev"),
   title: "rixia.dev",
-  description: "rixia's site.",
+  description: "rixiaの個人サイト・ブログ。技術系の記事や日常のことを書いています。",
+  openGraph: {
+    title: "rixia.dev",
+    description: "rixiaの個人サイト・ブログ。技術系の記事や日常のことを書いています。",
+    type: "website",
+    url: "https://rixia.dev",
+    locale: "ja_JP",
+  },
 };
 
 export default function RootLayout({

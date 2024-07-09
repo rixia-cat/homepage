@@ -3,8 +3,25 @@ import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
 import ProfileCard from "@/features/profile/components/ProfileCard";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful/TypeBlog";
 import { contentfulClient } from "@/util/contentful";
+import { Book } from "@phosphor-icons/react/dist/ssr";
 import type { Asset } from "contentful";
+import type { Metadata, ResolvingMetadata } from "next";
 import type { ComponentProps } from "react";
+
+export async function generateMetadata(_, parent: ResolvingMetadata): Promise<Metadata> {
+  const parentMetadata = await parent;
+  return {
+    title: "blog - rixia.dev",
+    description: "ブログ記事一覧",
+    openGraph: {
+      ...parentMetadata.openGraph,
+      title: "blog - rixia.dev",
+      description: "ブログ記事一覧",
+      type: "website",
+      url: "https://rixia.dev/blog",
+    },
+  };
+}
 
 export default async function ArticlePage() {
   const articleCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({
@@ -43,8 +60,11 @@ export default async function ArticlePage() {
                 <h1 className="text-2xl font-bold mb-4">Side</h1>
             </aside> */}
 
-      <main className="max-w-full grow p-6 md:max-w-screen-md">
-        <h1 className="h-14 font-bold text-2xl">Articles</h1>
+      <main className="max-w-full grow px-4 py-6 md:max-w-screen-md">
+        <h1 className="flex h-14 flex-row flex-nowrap items-start align-middle font-bold text-2xl ">
+          <Book className="mr-1.5" size="2rem" />
+          記事一覧
+        </h1>
         <ArticleCardGridView articles={articles} />
       </main>
       <aside className="mt-14 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
