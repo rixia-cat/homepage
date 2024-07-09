@@ -18,7 +18,8 @@ const logoFont = Urbanist({
   weight: "700",
 });
 
-export async function generateMetadata(_, parent: ResolvingMetadata): Promise<Metadata> {
+// biome-ignore lint/correctness/noEmptyPattern: <explanation>
+export async function generateMetadata({}, parent: ResolvingMetadata): Promise<Metadata> {
   const parentMetadata = await parent;
   return {
     title: "about - rixia.dev",

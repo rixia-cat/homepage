@@ -68,6 +68,8 @@ export default async function ArticlePage(props: ArticlePageProps) {
   const blogData = blogCollection[0];
   const leadingImage = blogData.fields.leadingImage as Asset;
   const leadingImageUrl = leadingImage?.fields.file?.url !== undefined ? `https:${leadingImage.fields.file?.url}` : "";
+  const title: string = blogData.fields.title.toString();
+  const body: string = blogData.fields.body.toString();
 
   return (
     <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
@@ -93,13 +95,13 @@ export default async function ArticlePage(props: ArticlePageProps) {
           <div className="col-start-1 row-start-1 rounded-xl px-2 ">
             <div className="flex h-full items-center justify-center">
               <h1 className=" text-center font-bold text-3xl text-gray-100 mix-blend-luminosity dark:text-gray-200 ">
-                {blogData.fields.title}
+                {title}
               </h1>
             </div>
           </div>
         </div>
 
-        <ArticleMarkdown blogBodyMarkdown={blogData.fields.body} />
+        <ArticleMarkdown blogBodyMarkdown={body} />
       </main>
       <aside className=" mt-48 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
         <AllTagsCard />

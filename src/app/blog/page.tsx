@@ -8,7 +8,8 @@ import type { Asset } from "contentful";
 import type { Metadata, ResolvingMetadata } from "next";
 import type { ComponentProps } from "react";
 
-export async function generateMetadata(_, parent: ResolvingMetadata): Promise<Metadata> {
+// biome-ignore lint/correctness/noEmptyPattern: <explanation>
+export async function generateMetadata({}, parent: ResolvingMetadata): Promise<Metadata> {
   const parentMetadata = await parent;
   return {
     title: "blog - rixia.dev",
