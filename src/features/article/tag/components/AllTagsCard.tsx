@@ -28,12 +28,9 @@ export default async function AllTagsCard() {
 
   return (
     <div className="flex flex-col rounded-lg border border-card_border bg-card_background dark:border-card_border-dark dark:bg-card_background-dark">
-      <div className="flex w-full">
-        <div className="h-full grow overflow-hidden p-3">
-          <a
-            href="/tags"
-            className="mb-0.5 flex flex-row flex-nowrap items-center border-gray-400 border-b border-dashed pb-2 align-middle dark:border-gray-500"
-          >
+      <div className="w-full overflow-hidden p-3">
+        <div className="flex w-full flex-row flex-nowrap items-center border-gray-400 border-b border-dashed pb-2 align-middle dark:border-gray-500">
+          <a href="/tags" className="mb-0.5 flex flex-row flex-nowrap items-center align-middle ">
             <Hash className="mr-1.5 text-2xl" />
             <p className="line-clamp-2 font-bold text-lg no-underline hover:underline">Tags</p>
           </a>

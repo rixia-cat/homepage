@@ -1,4 +1,5 @@
 import FloatingBottomActionBar from "@/components/floating-action/FloatingBottomActionBar";
+import LeadingSection from "@/features/article/leading/LeadingSection";
 import ArticleMarkdown from "@/features/article/markdown/ArticleMarkdown";
 import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
 import ProfileCard from "@/features/profile/components/ProfileCard";
@@ -7,7 +8,6 @@ import type { TypeBlogSkeleton } from "@/types/generated/contentful";
 import { contentfulClient } from "@/util/contentful";
 import type { Asset, Entry } from "contentful";
 import type { Metadata, ResolvingMetadata } from "next";
-import Image from "next/image";
 
 type ArticlePageProps = {
   params: {
@@ -70,6 +70,7 @@ export default async function ArticlePage(props: ArticlePageProps) {
   const leadingImage = blogData.fields.leadingImage as Asset;
   const leadingImageUrl = leadingImage?.fields.file?.url !== undefined ? `https:${leadingImage.fields.file?.url}` : "";
   const title: string = blogData.fields.title.toString();
+  const description: string = blogData.fields.description.toString();
   const body: string = blogData.fields.body.toString();
 
   return (
@@ -79,28 +80,7 @@ export default async function ArticlePage(props: ArticlePageProps) {
       </aside> */}
 
       <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-6 md:max-w-screen-md lg:mr-4">
-        <div className="relative mb-10 grid h-40 w-full rounded-xl ">
-          {leadingImageUrl ? (
-            <Image
-              src={leadingImageUrl}
-              layout="fill"
-              className="col-start-1 row-start-1 h-full max-h-full w-full max-w-full rounded-xl object-cover"
-              alt={`${blogData.fields.title}のイメージ画像`}
-              priority={true}
-              loading="eager"
-            />
-          ) : null}
-
-          <div className="col-start-1 row-start-1 h-full max-h-full min-h-full rounded-xl bg-black/35 shadow-inner backdrop-blur-sm" />
-
-          <div className="col-start-1 row-start-1 rounded-xl px-2 ">
-            <div className="flex h-full items-center justify-center">
-              <h1 className=" text-center font-bold text-3xl text-gray-100 mix-blend-luminosity dark:text-gray-200 ">
-                {title}
-              </h1>
-            </div>
-          </div>
-        </div>
+        <LeadingSection leadingImageUrl={leadingImageUrl} title={title} description={description} />
 
         <ArticleMarkdown blogBodyMarkdown={body} />
       </main>

@@ -5,13 +5,12 @@ import Image from "next/image";
 export default async function ProfileCard() {
   return (
     <div className="flex flex-col rounded-lg border border-card_border bg-card_background p-3 dark:border-card_border-dark dark:bg-card_background-dark">
-      <a
-        href="/about"
-        className="mb-4 flex flex-row flex-nowrap items-center border-gray-400 border-b border-dashed pb-2 align-middle dark:border-gray-500"
-      >
-        <UserCircle className="mr-1.5" size="2rem" />
-        <p className="font-bold text-lg no-underline hover:underline">Profile</p>
-      </a>
+      <div className="mb-3 flex w-full flex-row flex-nowrap items-center border-gray-400 border-b border-dashed pb-2 align-middle dark:border-gray-500">
+        <a href="/about" className="mb-0.5 flex flex-row flex-nowrap items-center align-middle ">
+          <UserCircle className="mr-1.5 text-2xl" />
+          <p className="line-clamp-2 font-bold text-lg no-underline hover:underline">Profile</p>
+        </a>
+      </div>
       <div className="mb-2 ">
         <div className="flex flex-col items-center">
           <div className="flex size-36 flex-col items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800">
