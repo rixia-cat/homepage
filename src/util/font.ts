@@ -1,9 +1,16 @@
-import { M_PLUS_Rounded_1c } from "next/font/google";
+import { M_PLUS_2, Nunito, Urbanist } from "next/font/google";
 
-const mplusRound1c = M_PLUS_Rounded_1c({
-  weight: ["100", "300", "400", "500", "700", "800", "900"],
+export const mainFont = M_PLUS_2({
   subsets: ["latin"],
   display: "swap",
 });
 
-export const mainFont = mplusRound1c;
+export const urbanist = Urbanist({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const nunito = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+});

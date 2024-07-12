@@ -74,21 +74,22 @@ export default async function ArticlePage(props: ArticlePageProps) {
   const body: string = blogData.fields.body.toString();
 
   return (
-    <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
-      {/* <aside className="w-64 min-w-64 max-w-64 p-4  border-x-2 hidden lg:block">
+    <div className="">
+      <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
+        {/* <aside className="w-64 min-w-64 max-w-64 p-4  border-x-2 hidden lg:block">
           <h1 className="text-2xl font-bold mb-4">Side</h1>
       </aside> */}
 
-      <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-6 md:max-w-screen-md lg:mr-4">
-        <LeadingSection leadingImageUrl={leadingImageUrl} title={title} description={description} />
+        <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-6 sm:max-w-screen-sm lg:mr-4">
+          <LeadingSection leadingImageUrl={leadingImageUrl} title={title} description={description} />
 
-        <ArticleMarkdown blogBodyMarkdown={body} />
-      </main>
-      <aside className=" mt-48 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
-        <AllTagsCard />
-        <ProfileCard />
-      </aside>
-
+          <ArticleMarkdown blogBodyMarkdown={body} />
+        </main>
+        <aside className=" mt-48 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
+          <AllTagsCard />
+          <ProfileCard />
+        </aside>
+      </div>
       <FloatingBottomActionBar />
     </div>
   );

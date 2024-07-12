@@ -25,8 +25,8 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Articl
       <div className="overflow-y-auto">
         <ul className=" flex max-h-80 flex-col flex-nowrap">
           {articles.map((article) => {
-            const publishedAtStr = dayjs(article.publishedAt).tz().format("YYYY/MM/DD HH:mm");
-            const updatedAtStr = dayjs(article.updatedAt).tz().format("YYYY/MM/DD HH:mm");
+            const publishedAtStr = dayjs(article.publishedAt).tz().format("YYYY/MM/DD");
+            const updatedAtStr = dayjs(article.updatedAt).tz().format("YYYY/MM/DD");
             return (
               <li key={article.url} className="flex flex-col p-2 hover:bg-gray-200 dark:hover:bg-gray-800">
                 <div className="flex flex-row flex-nowrap items-center justify-start">
@@ -50,7 +50,7 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Articl
                       </a>
 
                       {/* タグ */}
-                      <div className="mt-1 flex flex-nowrap gap-1 overflow-auto pb-1">
+                      <div className="my-1 flex flex-nowrap gap-1 overflow-auto">
                         {article.tags.map((tag) => (
                           <a
                             key={tag.url}
@@ -65,16 +65,14 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Articl
 
                     <div className="flex flex-col flex-nowrap justify-center gap-1">
                       {/* 公開日時 */}
-                      <p className="flex items-center rounded-full border border-gray-300 px-1.5 py-0.5 text-gray-600 text-xs dark:border-gray-700 dark:text-gray-300">
-                        <CalendarDots size="1rem" className="mr-1" />
-                        <span className="mr-1">公開:</span>
-                        {publishedAtStr}
+                      <p className="flex h-6 items-center rounded-full border border-gray-300 px-1.5 text-gray-600 text-xs dark:border-gray-700 dark:text-gray-300">
+                        <CalendarDots size="1.2rem" className="mr-1" />
+                        <span className="align-middle">公開: {publishedAtStr}</span>
                       </p>
                       {/* 更新日時 */}
-                      <p className="flex items-center rounded-full border border-gray-300 px-1.5 py-0.5 text-gray-600 text-xs dark:border-gray-700 dark:text-gray-300">
-                        <Sparkle size="1rem" className="mr-1" />
-                        <span className="mr-1">更新:</span>
-                        {updatedAtStr}
+                      <p className="flex h-6 items-center rounded-full border border-gray-300 px-1.5 text-gray-600 text-xs dark:border-gray-700 dark:text-gray-300">
+                        <Sparkle size="1.2rem" className="mr-1" />
+                        <span className="align-middle">更新: {updatedAtStr}</span>
                       </p>
                     </div>
                   </div>

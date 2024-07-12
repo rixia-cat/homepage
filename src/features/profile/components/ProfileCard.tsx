@@ -6,8 +6,8 @@ export default async function ProfileCard() {
   return (
     <div className="flex flex-col rounded-lg border border-card_border bg-card_background p-3 dark:border-card_border-dark dark:bg-card_background-dark">
       <div className="mb-3 flex w-full flex-row flex-nowrap items-center border-gray-400 border-b border-dashed pb-2 align-middle dark:border-gray-500">
-        <a href="/about" className="mb-0.5 flex flex-row flex-nowrap items-center align-middle ">
-          <UserCircle className="mr-1.5 text-2xl" />
+        <a href="/about" className=" flex flex-row flex-nowrap items-center ">
+          <UserCircle className="mr-1.5" size="1.75rem" />
           <p className="line-clamp-2 font-bold text-lg no-underline hover:underline">Profile</p>
         </a>
       </div>
@@ -53,7 +53,7 @@ export default async function ProfileCard() {
               return (
                 <span
                   key={interestItem}
-                  className="rounded-full border border-gray-400 px-1.5 py-0.5 text-grayishblack text-xs dark:border-gray-600 dark:text-grayishblack-dark"
+                  className="rounded-full border border-gray-400 px-1.5 py-0.5 align-top text-grayishblack text-xs dark:border-gray-600 dark:text-grayishblack-dark"
                 >
                   {interestItem}
                 </span>
@@ -67,7 +67,7 @@ export default async function ProfileCard() {
         <div className="mt-4 flex flex-row flex-wrap ">
           <a
             href="/about"
-            className="flex flex-row flex-nowrap items-center rounded-lg border border-gray-400 p-1 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
+            className="flex flex-row flex-nowrap items-center rounded-lg border border-gray-400 px-2 py-1 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
           >
             <CaretCircleDoubleRight size="1.25rem" className="mr-1 text-gray-500 dark:text-gray-400" />
             <span className="text-gray-500 text-sm hover:underline dark:text-gray-400">詳しく見る</span>

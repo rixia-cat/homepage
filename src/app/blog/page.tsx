@@ -62,10 +62,12 @@ export default async function ArticlePage() {
             </aside> */}
 
       <main className="max-w-full grow px-4 py-6 md:max-w-screen-md">
-        <h1 className="flex h-14 flex-row flex-nowrap items-start align-middle font-bold text-2xl ">
-          <Book className="mr-1.5" size="2rem" />
-          記事一覧
-        </h1>
+        <div className="h-14">
+          <h1 className="items-top flex flex-row flex-nowrap ">
+            <Book className="mr-2" size="2.3rem" />
+            <span className="font-bold text-2xl "> 記事一覧</span>
+          </h1>
+        </div>
         <ArticleCardGridView articles={articles} />
       </main>
       <aside className="mt-14 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">

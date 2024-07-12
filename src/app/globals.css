@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  --leading-trim: calc((1em - 1lh) / 2);
+}
