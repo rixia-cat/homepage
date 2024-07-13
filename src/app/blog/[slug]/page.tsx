@@ -7,9 +7,10 @@ import { domain } from "@/features/profile/consts/profile";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful";
 import { contentfulClient } from "@/util/contentful";
 import dayjs from "@/util/dayjs";
-import { CalendarDots, Sparkle } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUUpLeft, CalendarDots, Sparkle } from "@phosphor-icons/react/dist/ssr";
 import type { Asset, Entry } from "contentful";
 import type { Metadata, ResolvingMetadata } from "next";
+import Link from "next/link";
 
 type ArticlePageProps = {
   params: {
@@ -95,7 +96,16 @@ export default async function ArticlePage(props: ArticlePageProps) {
           <h1 className="text-2xl font-bold mb-4">Side</h1>
       </aside> */}
 
-        <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-6 md:max-w-screen-md lg:mr-4">
+        <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-4 md:max-w-screen-md lg:mr-4">
+          <div className="mb-4 inline-flex cursor-pointer rounded-2xl px-1 hover:bg-gray-200 hover:underline dark:hover:bg-gray-700">
+            <Link href="/blog">
+              <div className="flex flex-row items-center gap-2">
+                <ArrowUUpLeft size="1.4rem" className="text-gray-500 dark:text-gray-300" />
+                <span className="text-gray-500 text-sm dark:text-gray-300">記事一覧へ</span>
+              </div>
+            </Link>
+          </div>
+
           <LeadingSection leadingImageUrl={leadingImageUrl} title={title} description={description} />
 
           <div className="my-4 flex flex-row flex-wrap justify-start gap-2">
@@ -128,7 +138,7 @@ export default async function ArticlePage(props: ArticlePageProps) {
 
           <ArticleMarkdown blogBodyMarkdown={body} />
         </main>
-        <aside className="mt-44 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
+        <aside className="mt-52 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
           <AllTagsCard />
           <ProfileCard />
         </aside>

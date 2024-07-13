@@ -21,7 +21,7 @@ type ArticleSingleLineListProps = {
 
 export default function ArticleSingleLineList({ articles, andmoreCount }: ArticleSingleLineListProps) {
   return (
-    <div className="max-h-full w-full overflow-y-auto rounded-2xl border border-gray-400 border-dashed dark:border-gray-700">
+    <div className="max-h-full w-full overflow-y-auto ">
       <ul className="flex flex-col flex-nowrap">
         {articles.map((article) => {
           const publishedAtStr = dayjs(article.publishedAt).tz().format("YYYY/MM/DD");

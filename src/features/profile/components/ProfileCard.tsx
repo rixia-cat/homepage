@@ -15,7 +15,7 @@ export default async function ProfileCard() {
       </div>
       <div className="">
         <div className="flex flex-col items-center">
-          <div className="flex size-36 flex-col items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800">
+          <div className="flex h-24 flex-col items-center justify-center rounded-full bg-gray-200 p-4 dark:bg-gray-800">
             <Image
               src="/image/profile/rixia.svg"
               alt="rixiaのプロフィール画像"
@@ -23,6 +23,7 @@ export default async function ProfileCard() {
               height={90}
               priority={true}
               loading="eager"
+              className="h-full w-auto "
             />
           </div>
         </div>

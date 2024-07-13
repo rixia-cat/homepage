@@ -54,7 +54,7 @@ export default function Home() {
             </a>
           </h2>
 
-          <div className="mt-3 flex max-h-96">
+          <div className="mt-3 flex max-h-96 overflow-hidden rounded-2xl border border-gray-400 border-dashed dark:border-gray-700">
             <RecentArticleSingleLineListView />
           </div>
         </section>

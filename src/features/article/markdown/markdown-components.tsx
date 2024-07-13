@@ -1,4 +1,6 @@
+import { judgeAndExtractImgNode } from "@/features/article/markdown/utils/parseReactNode";
 import type { MDXRemoteProps } from "next-mdx-remote";
+import Image from "next/image";
 import CodeBlock from "./components/code/CodeBlock";
 
 export function articleMarkdownComponents(components: MDXRemoteProps["components"]): MDXRemoteProps["components"] {
@@ -55,8 +57,23 @@ export function articleMarkdownComponents(components: MDXRemoteProps["components
       return <td className="border border-gray-300 p-2 dark:border-gray-700 ">{children}</td>;
     },
 
-    p: ({ children }) => {
-      return <p className="mb-3 text-wrap break-words text-base leading-7">{children}</p>;
+    p: (props) => {
+      const imgNodeResult = judgeAndExtractImgNode(props.children);
+      if (imgNodeResult.isImage) {
+        return (
+          <div className="relative mb-3 flex h-96 max-h-96 w-fit">
+            <Image
+              src={imgNodeResult.imgNodeData?.src ?? ""}
+              alt={imgNodeResult.imgNodeData?.alt ?? ""}
+              fill
+              quality={75}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className=" !relative h-full w-auto rounded-sm object-scale-down object-left"
+            />
+          </div>
+        );
+      }
+      return <p className="mb-3 text-wrap break-words text-base leading-7">{props.children}</p>;
     },
 
     a: ({ href, children }) => {

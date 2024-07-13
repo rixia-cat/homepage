@@ -6,10 +6,11 @@ export default function SiteLogoLink() {
         <Image
           src="/image/logo/prof-cat.svg"
           alt="サイトアイコン画像"
-          width={40}
-          height={40}
+          width={123.62683}
+          height={80.06085}
           priority={true}
           loading="eager"
+          className="h-8 w-auto"
         />
       </div>
       <p className=" text-2xl text-grayishblack dark:text-grayishblack-dark">rixia.dev</p>
