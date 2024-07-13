@@ -56,7 +56,7 @@ export function articleMarkdownComponents(components: MDXRemoteProps["components
     },
 
     p: ({ children }) => {
-      return <p className="mb-3 text-base leading-7">{children}</p>;
+      return <p className="mb-3 text-wrap break-words text-base leading-7">{children}</p>;
     },
 
     a: ({ href, children }) => {

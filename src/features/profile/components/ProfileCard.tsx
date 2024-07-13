@@ -4,14 +4,16 @@ import Image from "next/image";
 
 export default async function ProfileCard() {
   return (
-    <div className="flex flex-col rounded-lg border border-card_border bg-card_background p-3 dark:border-card_border-dark dark:bg-card_background-dark">
+    <div className="flex flex-col rounded-2xl border border-card_border bg-card_background p-3 dark:border-card_border-dark dark:bg-card_background-dark">
       <div className="mb-3 flex w-full flex-row flex-nowrap items-center border-gray-400 border-b border-dashed pb-2 align-middle dark:border-gray-500">
         <a href="/about" className=" flex flex-row flex-nowrap items-center ">
           <UserCircle className="mr-1.5" size="1.75rem" />
-          <p className="line-clamp-2 font-bold text-lg no-underline hover:underline">Profile</p>
+          <p className="line-clamp-2 font-bold text-grayishblack text-lg no-underline hover:underline dark:text-grayishblack-dark">
+            Profile
+          </p>
         </a>
       </div>
-      <div className="mb-2 ">
+      <div className="">
         <div className="flex flex-col items-center">
           <div className="flex size-36 flex-col items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800">
             <Image
@@ -48,15 +50,15 @@ export default async function ProfileCard() {
 
         <div className="flex flex-col">
           <p className="mb-2 font-bold text-gray-500 text-sm dark:text-gray-400">好き・興味のある分野</p>
-          <div className=" flex flex-row flex-wrap gap-1">
+          <div className=" flex flex-row flex-wrap items-center gap-1">
             {interests.map((interestItem) => {
               return (
-                <span
-                  key={interestItem}
-                  className="rounded-full border border-gray-400 px-1.5 py-0.5 align-top text-grayishblack text-xs dark:border-gray-600 dark:text-grayishblack-dark"
-                >
-                  {interestItem}
-                </span>
+                <div key={interestItem} className="flex h-6 items-center rounded-full border border-gray-400 px-1.5 ">
+                  <span className="text-grayishblack text-xs dark:border-gray-600 dark:text-grayishblack-dark">
+                    {" "}
+                    {interestItem}
+                  </span>
+                </div>
               );
             })}
           </div>
@@ -64,12 +66,12 @@ export default async function ProfileCard() {
 
         <div className="my-4 h-[1px] w-full bg-gray-300 dark:bg-gray-600" />
 
-        <div className="mt-4 flex flex-row flex-wrap ">
+        <div className="mt-2 flex flex-row flex-wrap ">
           <a
             href="/about"
-            className="flex flex-row flex-nowrap items-center rounded-lg border border-gray-400 px-2 py-1 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
+            className="flex flex-row flex-nowrap items-start rounded-md border border-gray-400 px-2 py-1 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
           >
-            <CaretCircleDoubleRight size="1.25rem" className="mr-1 text-gray-500 dark:text-gray-400" />
+            <CaretCircleDoubleRight size="1.4rem" className="mr-1 text-gray-500 dark:text-gray-400" />
             <span className="text-gray-500 text-sm hover:underline dark:text-gray-400">詳しく見る</span>
           </a>
         </div>

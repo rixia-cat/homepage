@@ -28,7 +28,7 @@ const config: Config = {
           DEFAULT: "#ffffff",
         },
         card_border: {
-          dark: "#374151",
+          dark: "#212B3A",
           DEFAULT: "#d3d6de",
         },
 
@@ -53,7 +53,7 @@ const config: Config = {
       modal: "3000",
     },
     boxShadow: {
-      inner: "inset 0px 0px 12px 4px rgba(0, 0, 0, 0.55)"
+      inner: "inset 0px 0px 10px 2px rgba(0, 0, 0, 0.70)"
     },
     fontFamily: {
       monospace: ["Menlo", "Monaco", "Courier New", "Consolas", "monospace"],

@@ -1,4 +1,4 @@
-import ArticleCardGridView from "@/features/article/list/components/parts/ArticleCardGridView";
+import ArticleCardGridView from "@/features/article/grid-view/ArticleCardGridView";
 import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
 import ProfileCard from "@/features/profile/components/ProfileCard";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful/TypeBlog";
@@ -65,7 +65,7 @@ export default async function ArticlePage() {
         <div className="h-14">
           <h1 className="items-top flex flex-row flex-nowrap ">
             <Book className="mr-2" size="2.3rem" />
-            <span className="font-bold text-2xl "> 記事一覧</span>
+            <span className="font-bold text-2xl text-grayishblack dark:text-grayishblack-dark "> 記事一覧</span>
           </h1>
         </div>
         <ArticleCardGridView articles={articles} />

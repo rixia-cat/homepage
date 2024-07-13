@@ -1,7 +1,7 @@
 import { githubLink } from "@/features/profile/consts/profile";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 
-const ICONSIZE = 24;
+const ICONSIZE = "24px";
 
 export default function GitHubLinkButton() {
   return (

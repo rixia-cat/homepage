@@ -1,3 +1,4 @@
+import { zeroWidthSpace } from "@/consts/texts";
 import { domain, calcAboutBirthUptime, logoAsciiArt, name } from "@/features/profile/consts/profile";
 import dayjs from "@/util/dayjs";
 
@@ -30,7 +31,7 @@ export default function NeofetchLikeProfile() {
     },
     {
       title: "Main Languages",
-      value: "TypeScript,PHP etc.",
+      value: "TypeScript/JavaScript,PHP",
       type: "text",
     },
     {
@@ -45,9 +46,9 @@ export default function NeofetchLikeProfile() {
     },
   ];
   return (
-    <div className="flex flex-col flex-nowrap overflow-hidden rounded-lg border-2 border-gray-500 bg-gray-950 text-gray-200 shadow-sm dark:border-gray-800">
+    <div className="flex flex-col flex-nowrap overflow-hidden rounded-2xl border-2 border-gray-500 bg-gray-950 text-gray-200 shadow-sm dark:border-gray-800">
       {/* タイトルバー */}
-      <div className="border-b border-b-gray-400 bg-gray-700 p-2 dark:border-b-gray-600 dark:bg-gray-700">
+      <div className="border-b border-b-gray-600 bg-gray-700 p-2 dark:border-b-gray-600 dark:bg-gray-700">
         <div className="flex flex-row flex-nowrap items-center justify-between">
           <h2 className="flex flex-row flex-nowrap">
             <p className="text-sm">Profile</p>
@@ -64,7 +65,9 @@ export default function NeofetchLikeProfile() {
         <div className="flex flex-row flex-nowrap p-2">
           <p className="text-xs sm:text-base">
             <span className="text-cyan-300">
-              {name}@{domain}: ${" "}
+              {name}
+              {zeroWidthSpace}@{zeroWidthSpace}
+              {domain}: ${" "}
             </span>
             fastfetch
           </p>
@@ -90,12 +93,18 @@ export default function NeofetchLikeProfile() {
           {/* 詳細セクション */}
           <div className="flex flex-col flex-nowrap pl-2 align-top font-medium text-xs sm:text-base">
             <p>
-              <span className="text-cyan-300">{name}</span>@<span className="text-cyan-300">{domain}</span>
+              <span className="text-cyan-300">{name}</span>
+              {zeroWidthSpace}@{zeroWidthSpace}
+              <span className="text-cyan-300">{domain}</span>
             </p>
             <p>-------------------</p>
             {detailDataset.map((data) => {
               return (
-                <p key={data.title} aria-label={`「${data.title}」項目の説明`} className="flex flex-row text-nowrap">
+                <p
+                  key={data.title}
+                  aria-label={`「${data.title}」項目の説明`}
+                  className="flex flex-row text-nowrap leading-6"
+                >
                   <span className="text-cyan-300">{data.title}: </span>
                   {data.type === "link" ? (
                     <a href={data.value} className="pl-2 underline">

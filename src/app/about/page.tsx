@@ -1,5 +1,5 @@
 import LabelChip from "@/components/chip/LabelChip";
-import { likesArtists } from "@/features/profile/consts/profile";
+import { interests, likeGames, likesArtists } from "@/features/profile/consts/profile";
 import {
   backendFrameworks,
   backendLanguages,
@@ -7,6 +7,7 @@ import {
   frontendLanguages,
   mobileFrameworks,
   mobileLanguages,
+  otherSkils,
 } from "@/features/profile/consts/skills";
 import { urbanist } from "@/util/font";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -53,7 +54,7 @@ export default async function About() {
             <div className="-skew-x-12 mr-2.5 ml-1 h-7 border-grayishblack border-x-2 px-[2px] dark:border-grayishblack-dark" />
             <span className="font-bold text-2xl text-grayishblack dark:text-grayishblack-dark">このサイトについて</span>
           </h2>
-          <div className="flex flex-col gap-y-2 leading-6">
+          <div className="flex flex-col gap-y-2 leading-7">
             <p>
               試した技術やTipsなどプログラミング寄りのことから日常的な雑記まで、ごった煮で書いていきたいと思います。
             </p>
@@ -84,7 +85,7 @@ export default async function About() {
           </div>
 
           <h3 className="mb-2 font-bold text-grayishblack text-xl dark:text-grayishblack-dark">プロフィール</h3>
-          <div className=" mt-4 flex flex-col gap-y-2 leading-6">
+          <div className=" mt-4 flex flex-col gap-y-2 leading-7">
             <p>rixia (りーしゃ）です。</p>
             <p>
               フロントエンド・モバイルアプリが好き・得意なエンジニアです。仕事上はTypeScript、Vue.js、PHP（Laravel)を使用した開発が多いです。
@@ -95,7 +96,7 @@ export default async function About() {
             </p>
           </div>
 
-          <h3 className="mt-6 mb-2 font-bold text-grayishblack text-xl dark:text-grayishblack-dark">スキル</h3>
+          <h3 className="mt-8 mb-2 font-bold text-grayishblack text-xl dark:text-grayishblack-dark">スキル</h3>
 
           <h4 className="mt-4 mb-2 font-bold text-base text-grayishblack dark:text-grayishblack-dark">
             フロントエンド
@@ -118,11 +119,32 @@ export default async function About() {
               return <LabelChip key={skill} label={skill} />;
             })}
           </div>
+          <h4 className="mt-4 mb-2 font-bold text-base text-grayishblack dark:text-grayishblack-dark">その他</h4>
+          <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+            {otherSkils.map((skill) => {
+              return <LabelChip key={skill} label={skill} />;
+            })}
+          </div>
 
-          <h3 className="mt-6 mb-2 font-bold text-grayishblack text-xl dark:text-grayishblack-dark">趣味</h3>
+          <h3 className="mt-8 mb-3 font-bold text-grayishblack text-xl dark:text-grayishblack-dark">
+            好き・興味のある分野
+          </h3>
+
+          <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+            {interests.map((title) => {
+              return <LabelChip key={title} label={title} />;
+            })}
+          </div>
+
+          <h4 className="mt-4 mb-2 font-bold text-base text-grayishblack dark:text-grayishblack-dark">ゲーム</h4>
+          <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+            {likeGames.map((title) => {
+              return <LabelChip key={title} label={title} />;
+            })}
+          </div>
 
           <h4 className="mt-4 mb-2 font-bold text-base text-grayishblack dark:text-grayishblack-dark">
-            好きな音楽アーティスト/グループ等
+            音楽アーティスト/グループ等
           </h4>
           <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
             {likesArtists.map((artist) => {

@@ -1,4 +1,4 @@
-import ArticleSingleLineListView from "@/features/article/list/components/parts/ArticleSingleLineListView";
+import ArticleSingleLineListView from "@/features/article/recent-list/components/ArticleSingleLineListView";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful";
 import { contentfulClient } from "@/util/contentful";
 import type { Asset } from "contentful";

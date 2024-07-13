@@ -6,6 +6,8 @@ import ProfileCard from "@/features/profile/components/ProfileCard";
 import { domain } from "@/features/profile/consts/profile";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful";
 import { contentfulClient } from "@/util/contentful";
+import dayjs from "@/util/dayjs";
+import { CalendarDots, Sparkle } from "@phosphor-icons/react/dist/ssr";
 import type { Asset, Entry } from "contentful";
 import type { Metadata, ResolvingMetadata } from "next";
 
@@ -24,6 +26,11 @@ async function getArticleData(slug: string): Promise<Entry<TypeBlogSkeleton>[]> 
   });
 
   return blogCollection.items;
+}
+// 全タグデータ取得
+async function getTagsData() {
+  const tagsCollection = await contentfulClient.getTags();
+  return tagsCollection;
 }
 // SSG用
 export async function generateStaticParams() {
@@ -62,6 +69,7 @@ export async function generateMetadata(props: ArticlePageProps, parent: Resolvin
 export default async function ArticlePage(props: ArticlePageProps) {
   const slug = props.params.slug;
   const blogCollection = await getArticleData(slug);
+  const tagsCollection = await getTagsData();
   if (!blogCollection.length) {
     return <div>404 Not Found</div>;
   }
@@ -72,6 +80,13 @@ export default async function ArticlePage(props: ArticlePageProps) {
   const title: string = blogData.fields.title.toString();
   const description: string = blogData.fields.description.toString();
   const body: string = blogData.fields.body.toString();
+  const publishedAtStr: string = dayjs(blogData.fields.publishedAt.toString()).tz().format("YYYY/MM/DD");
+  const updatedAt: string = dayjs(blogData.sys.updatedAt).tz().format("YYYY/MM/DD");
+  const tagsSrc = blogData.metadata.tags;
+  const tags = tagsSrc.map((tag) => ({
+    label: tagsCollection.items.find((t) => t.sys.id === tag.sys.id)?.name ?? "",
+    url: `/tags/${tag.sys.id}`,
+  }));
 
   return (
     <div className="">
@@ -80,12 +95,40 @@ export default async function ArticlePage(props: ArticlePageProps) {
           <h1 className="text-2xl font-bold mb-4">Side</h1>
       </aside> */}
 
-        <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-6 sm:max-w-screen-sm lg:mr-4">
+        <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-6 md:max-w-screen-md lg:mr-4">
           <LeadingSection leadingImageUrl={leadingImageUrl} title={title} description={description} />
+
+          <div className="my-4 flex flex-row flex-wrap justify-start gap-2">
+            {/* 更新日時 */}
+            <p className="flex items-center rounded-2xl border border-gray-300 px-1.5 py-0.5 text-gray-600 text-sm dark:border-gray-700 dark:text-gray-300">
+              <CalendarDots size="1.5rem" className="mr-1" />
+              <span className="mr-1">公開:</span>
+              {publishedAtStr}
+            </p>
+
+            {/* 更新日時 */}
+            <p className="flex items-center rounded-2xl border border-gray-300 px-1.5 py-0.5 text-gray-600 text-sm dark:border-gray-700 dark:text-gray-300">
+              <Sparkle size="1.5rem" className="mr-1" />
+              <span className="mr-1">更新:</span>
+              {updatedAt}
+            </p>
+          </div>
+
+          <div className="mt-4 mb-6 flex flex-row flex-wrap justify-start gap-2">
+            {tags.map((tag) => (
+              <a
+                href={tag.url}
+                key={tag.url}
+                className="rounded-2xl border border-gray-300 bg-gray-100 px-2 py-1 text-sm dark:border-gray-700 dark:bg-gray-800"
+              >
+                {tag.label}
+              </a>
+            ))}
+          </div>
 
           <ArticleMarkdown blogBodyMarkdown={body} />
         </main>
-        <aside className=" mt-48 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
+        <aside className="mt-44 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
           <AllTagsCard />
           <ProfileCard />
         </aside>
