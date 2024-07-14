@@ -91,10 +91,18 @@ export function articleMarkdownComponents(components: MDXRemoteProps["components
 
     /* List */
     ul: ({ children }) => {
-      return <ul className="mb-3 list-inside list-disc leading-8">{children}</ul>;
+      return (
+        <ul className="mb-3 list-inside list-disc leading-8 [&_ul]:mb-0 [&_ul]:ml-6 [&_ul]:list-circle [&_ul_ul]:list-square [&_ul_ul_ul]:list-disc">
+          {children}
+        </ul>
+      );
     },
     ol: ({ children }) => {
-      return <ol className="mb-3 list-inside list-decimal leading-8">{children}</ol>;
+      return (
+        <ol className="mb-3 list-inside list-decimal leading-8 [&_ol]:mb-0 [&_ol]:ml-6 [&_ol]:list-lower_alpha [&_ol_ol]:list-lower_roman">
+          {children}
+        </ol>
+      );
     },
     li: ({ children }) => {
       return <li className="leading-8">{children}</li>;

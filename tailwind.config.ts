@@ -58,6 +58,16 @@ const config: Config = {
     fontFamily: {
       monospace: ["Menlo", "Monaco", "Courier New", "Consolas", "monospace"],
     },
+    listStyleType: {
+      square: "square",
+      circle: "circle",
+      disc: "disc",
+      roman: "upper-roman",
+      decimal: "decimal",
+      lower_roman: "lower-roman",
+      lower_alpha: "lower-alpha",
+      lower_greek: "lower-greek",
+    },
   },
   plugins: [require("tailwindcss-radix")()],
 };
