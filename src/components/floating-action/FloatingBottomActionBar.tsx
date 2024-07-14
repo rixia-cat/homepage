@@ -4,9 +4,9 @@ import PageUpDownButtons from "@/components/floating-action/PageUpDownButtons";
 import { useEffect, useState } from "react";
 
 export default function FloatingBottomActionBar() {
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
-  const [scrollHeight, setScrollHeight] = useState(document.body.scrollHeight);
-  const [scrollY, setScrollY] = useState(window.scrollY);
+  const [viewportHeight, setViewportHeight] = useState(0);
+  const [scrollHeight, setScrollHeight] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const updateScrollPositions = () => {
