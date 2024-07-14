@@ -19,7 +19,7 @@ export default function PageUpDownButtons({ scrollPercentage }: PageUpDownButton
   return (
     <div className="flex flex-col">
       <span className="pb-[2px] text-center text-[8px] text-gray-600 dark:text-gray-400/55">
-        スクロール:<span className="inline-flex w-4">{percentageStr}</span>
+        <span className="inline-flex w-4">{percentageStr}</span>
       </span>
 
       <div className="flex flex-row items-center gap-x-2 ">

@@ -3,30 +3,29 @@
 import PageUpDownButtons from "@/components/floating-action/PageUpDownButtons";
 import { useEffect, useState } from "react";
 
-const footerHeight = 80;
-
 export default function FloatingBottomActionBar() {
-  const [isNearBottom, setIsNearBottom] = useState(false);
-  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const [scrollHeight, setScrollHeight] = useState(document.body.scrollHeight);
+  const [scrollY, setScrollY] = useState(window.scrollY);
 
-  // スクロールイベントの監視
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const scrollHeight = document.body.scrollHeight;
-      const clientHeight = document.documentElement.clientHeight;
-      const tempRemainBottom = scrollHeight - scrollY - clientHeight;
-      const nearBottom = tempRemainBottom < footerHeight;
-      if (nearBottom !== isNearBottom) {
-        setIsNearBottom(nearBottom);
-      }
-      setScrollPercentage((scrollY / (scrollHeight - clientHeight)) * 100);
+    const updateScrollPositions = () => {
+      setViewportHeight(window.innerHeight);
+      setScrollHeight(document.body.scrollHeight);
+      setScrollY(window.scrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("resize", updateScrollPositions);
+    window.addEventListener("scroll", updateScrollPositions);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateScrollPositions);
+      window.removeEventListener("scroll", updateScrollPositions);
     };
-  }, [isNearBottom]);
+  }, []);
+
+  const scrollPercentage = Math.round((scrollY / (scrollHeight - viewportHeight)) * 100);
+  const cappedScrollPercentage = Math.max(0, Math.min(100, scrollPercentage));
 
   return (
     <div className="sticky inset-x-0 right-0 bottom-0 z-floating_action flex justify-end pr-2 pb-2">
@@ -37,7 +36,7 @@ export default function FloatingBottomActionBar() {
 
         <div className="h-full w-px bg-gray-600/75"></div> */}
 
-        <PageUpDownButtons scrollPercentage={scrollPercentage} />
+        <PageUpDownButtons scrollPercentage={cappedScrollPercentage} />
       </div>
     </div>
   );
