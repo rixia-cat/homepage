@@ -57,7 +57,9 @@ export function articleMarkdownComponents(components: MDXRemoteProps["components
     },
 
     hr: () => {
-      return <hr className="my-9 border-gray-300 border-t-2 border-dashed dark:border-gray-700" />;
+      return (
+        <hr className="mt-9 mb-8 aspect-[102/8] h-full w-full border-none bg-[length:100%] bg-[url('/image/hr/hr-kota-sp.svg')] bg-no-repeat md:aspect-[149/8] md:bg-[url('/image/hr/hr-kota.svg')] dark:bg-[url('/image/hr/hr-kota-sp-dark.svg')] dark:md:bg-[url('/image/hr/hr-kota-dark.svg')]" />
+      );
     },
 
     /* Table */

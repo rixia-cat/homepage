@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Vectornator (http://vectornator.io/) -->
+
+<svg
+   stroke-miterlimit="10"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:round"
+   version="1.1"
+   viewBox="0 0 149.74283 7.5645939"
+   xml:space="preserve"
+   id="svg11"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+<defs
+   id="defs1" />
+<clipPath
+   id="ArtboardFrame">
+<rect
+   height="25"
+   width="250"
+   x="0"
+   y="0"
+   id="rect1" />
+</clipPath>
+
+
+
+<g
+   opacity="1"
+   id="g3"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+   transform="translate(-0.8410163,-8.0959452)">
+
+<path
+   d="m 1.0603749,12.369493 c -0.012752,-0.181578 0.062298,-0.29237 0.093378,-0.473075 0.1887462,-1.097398 -0.09432,-2.9985616 0.3646282,-3.5381565 0.2573362,-0.3025512 0.6514682,0.080382 0.8571191,0.3065412 0.2127585,0.2339689 0.3878343,0.5869289 0.6742182,1.0163354 0.4745561,0.7115679 0.965944,1.7517079 1.3440665,1.5155869 0.4467352,-0.278948 1.781308,-0.136675 1.9980402,0.01217 0.4052489,0.278368 0.8925939,-0.861219 1.4738834,-1.6846119 0.3810447,-0.5398045 1.1094088,-1.298875 1.4946684,-1.2778255 0.5435911,0.0297 0.066354,2.7254654 0.3137221,3.9169034 0.018407,0.08866 0.021061,0.128786 0.036183,0.200305"
+   fill="none"
+   opacity="1"
+   stroke="#4d4d54"
+   stroke-linecap="butt"
+   stroke-linejoin="round"
+   stroke-width="0.975711"
+   id="cat-half-face"
+   style="stroke:#737394;stroke-width:0.300001;stroke-dasharray:none;stroke-opacity:0.558352" /><path
+   d="m 0.9410163,12.283132 h 21.7882407 7.376605 120.265678"
+   fill="none"
+   opacity="1"
+   stroke="#adadaf"
+   stroke-linecap="square"
+   stroke-linejoin="round"
+   stroke-width="0.487858"
+   id="hr"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke:#565660;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"><title
+     id="title11">hr</title></path><path
+   d="m 146.39139,13.583034 c 0,0 -0.17139,-0.416912 -0.68695,-0.234053 -0.58782,0.287239 -0.77922,1.071362 0.0294,1.758252 0.36947,0.208217 0.82038,0.454753 2.03337,0.39453 1.08366,-0.04644 1.76545,-0.407984 2.22163,-0.884718 0.4881,-0.52266 0.5144,-1.483335 0.35272,-2.277193"
+   fill="none"
+   opacity="1"
+   stroke="#4d4d54"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-width="0.975719"
+   id="cat-tail"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke:#737394;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.556863"><title
+     id="title12">cat-tail</title></path>
+</g>
+</svg>
