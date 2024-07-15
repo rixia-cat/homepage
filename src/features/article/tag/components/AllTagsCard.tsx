@@ -33,7 +33,7 @@ export default async function AllTagsCard() {
           <a href="/tags" className=" flex flex-row flex-nowrap items-center ">
             <Hash className="mr-1.5" size="1.75rem" />
             <p className="line-clamp-2 font-bold text-grayishblack text-lg no-underline hover:underline dark:text-grayishblack-dark">
-              All Tags
+              タグ一覧
             </p>
           </a>
         </div>

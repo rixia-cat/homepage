@@ -2,7 +2,7 @@ import FloatingBottomActionBar from "@/components/floating-action/FloatingBottom
 import LeadingSection from "@/features/article/leading/LeadingSection";
 import ArticleMarkdown from "@/features/article/markdown/ArticleMarkdown";
 import AllTagsCard from "@/features/article/tag/components/AllTagsCard";
-import ProfileCard from "@/features/profile/components/ProfileCard";
+import TocCard from "@/features/article/toc/TocCard";
 import { domain } from "@/features/profile/consts/profile";
 import type { TypeBlogSkeleton } from "@/types/generated/contentful";
 import { contentfulClient } from "@/util/contentful";
@@ -140,7 +140,10 @@ export default async function ArticlePage(props: ArticlePageProps) {
         </main>
         <aside className="mt-52 hidden w-64 min-w-64 max-w-64 flex-col gap-y-4 px-2 py-6 lg:flex">
           <AllTagsCard />
-          <ProfileCard />
+          {/* <ProfileCard isCompact /> */}
+          <div className="sticky top-16">
+            <TocCard />
+          </div>
         </aside>
       </div>
       <FloatingBottomActionBar />

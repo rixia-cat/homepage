@@ -19,5 +19,9 @@ type ArticleMarkdownProps = {
 };
 
 export default function ArticleMarkdown({ blogBodyMarkdown }: ArticleMarkdownProps) {
-  return <MDXRemote source={blogBodyMarkdown} components={components} options={options} />;
+  return (
+    <div className="article-body">
+      <MDXRemote source={blogBodyMarkdown} components={components} options={options} />
+    </div>
+  );
 }

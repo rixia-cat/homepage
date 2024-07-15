@@ -7,31 +7,53 @@ export function articleMarkdownComponents(components: MDXRemoteProps["components
   return {
     ...components,
 
-    h1: ({ children }) => {
+    h1: ({ children, id }) => {
       return (
-        <h1 className="mt-6 mb-4 border-gray-300 border-b-2 border-dashed pb-2 font-bold text-3xl first:mt-0 dark:border-gray-700">
+        <h1
+          className="mt-6 mb-4 border-gray-300 border-b-2 border-dashed pb-2 font-bold text-3xl first:mt-0 dark:border-gray-700"
+          id={id}
+        >
           {children}
         </h1>
       );
     },
-    h2: ({ children }) => {
+    h2: ({ children, id }) => {
       return (
-        <h2 className="mt-12 mb-6 border-gray-300 border-b-2 border-dashed pb-2 font-bold text-2xl first:mt-0 dark:border-gray-700">
+        <h2
+          className="mt-12 mb-6 border-gray-300 border-b-2 border-dashed pb-2 font-bold text-2xl first:mt-0 dark:border-gray-700"
+          id={id}
+        >
           {children}
         </h2>
       );
     },
-    h3: ({ children }) => {
-      return <h3 className="mt-8 mb-4 font-bold text-xl">{children}</h3>;
+    h3: ({ children, id }) => {
+      return (
+        <h3 className="mt-8 mb-4 font-bold text-xl" id={id}>
+          {children}
+        </h3>
+      );
     },
-    h4: ({ children }) => {
-      return <h4 className="mt-8 mb-4 font-bold text-lg">{children}</h4>;
+    h4: ({ children, id }) => {
+      return (
+        <h4 className="mt-8 mb-4 font-bold text-lg" id={id}>
+          {children}
+        </h4>
+      );
     },
-    h5: ({ children }) => {
-      return <h5 className="mt-8 mb-2 font-bold text-base">{children}</h5>;
+    h5: ({ children, id }) => {
+      return (
+        <h5 className="mt-8 mb-2 font-bold text-base" id={id}>
+          {children}
+        </h5>
+      );
     },
-    h6: ({ children }) => {
-      return <h6 className="mt-8 mb-2 font-bold text-sm">{children}</h6>;
+    h6: ({ children, id }) => {
+      return (
+        <h6 className="mt-8 mb-2 font-bold text-sm" id={id}>
+          {children}
+        </h6>
+      );
     },
 
     hr: () => {
@@ -92,14 +114,14 @@ export function articleMarkdownComponents(components: MDXRemoteProps["components
     /* List */
     ul: ({ children }) => {
       return (
-        <ul className="mb-3 list-inside list-disc leading-8 [&_ul]:mb-0 [&_ul]:ml-6 [&_ul]:list-circle [&_ul_ul]:list-square [&_ul_ul_ul]:list-disc">
+        <ul className="mb-3 ml-2 list-inside list-disc leading-8 [&_ul]:mb-0 [&_ul]:ml-6 [&_ul]:list-circle [&_ul_ul]:list-square [&_ul_ul_ul]:list-disc">
           {children}
         </ul>
       );
     },
     ol: ({ children }) => {
       return (
-        <ol className="mb-3 list-inside list-decimal leading-8 [&_ol]:mb-0 [&_ol]:ml-6 [&_ol]:list-lower_alpha [&_ol_ol]:list-lower_roman">
+        <ol className="mb-3 ml-2 list-inside list-decimal leading-8 [&_ol]:mb-0 [&_ol]:ml-6 [&_ol]:list-lower_alpha [&_ol_ol]:list-lower_roman">
           {children}
         </ol>
       );
