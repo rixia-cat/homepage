@@ -38,7 +38,7 @@ export const ThemeSettingButton = () => {
       return {
         iconElm: CircleNotch,
         label: "Loading...",
-        className: "animate-spin",
+        className: "animate-spin opacity-20",
       };
     }
     switch (theme) {
