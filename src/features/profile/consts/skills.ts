@@ -18,3 +18,5 @@ export const otherSkils = [
   "VBA",
   "Excel帳票",
 ];
+
+export const certifications = ["応用情報技術者", "基本情報技術者"];

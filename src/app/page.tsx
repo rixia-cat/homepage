@@ -26,7 +26,7 @@ export default function Home() {
           <div className="mt-3 flex flex-row justify-start pr-0.5">
             <a
               href="/about"
-              className="flex flex-row items-start rounded-xl border border-gray-600 px-3 py-1.5 font-medium text-base text-grayishblack hover:bg-gray-200/55 hover:underline dark:border-gray-500 dark:text-grayishblack-dark dark:hover:bg-gray-800"
+              className="flex flex-row items-start rounded-xl border border-gray-600 px-3 py-1.5 font-medium text-base text-grayishblack5 transition-all duration-500 hover:bg-gray-300/70 hover:underline dark:border-gray-500 dark:text-grayishblack-dark dark:hover:bg-gray-700/75"
             >
               <span className="mr-3">
                 <CaretCircleDoubleRight size="1.7rem" />
@@ -45,7 +45,7 @@ export default function Home() {
 
             <a
               href="/blog"
-              className="flex flex-row items-start rounded-xl border border-gray-600 px-2 py-1.5 font-medium text-base text-grayishblack hover:bg-gray-200/55 hover:underline dark:border-gray-500 dark:text-grayishblack-dark dark:hover:bg-gray-800"
+              className="flex flex-row items-start rounded-xl border border-gray-600 px-2 py-1.5 font-medium text-base text-grayishblack transition-all duration-500 hover:bg-gray-300/70 hover:underline dark:border-gray-500 dark:text-grayishblack-dark dark:hover:bg-gray-700/75"
             >
               <span className="mr-3">
                 <CaretCircleDoubleRight size="1.7rem" />

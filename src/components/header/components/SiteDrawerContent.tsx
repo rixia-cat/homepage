@@ -9,6 +9,7 @@ const pageLinks: LeadingPageLink[] = [
   {
     label: "home",
     url: "/",
+    description: "ホーム",
   },
   ...leadingPageLinks,
 ];
@@ -20,7 +21,7 @@ export default function SiteDrawerContent() {
         <Dialog.Close asChild>
           <button
             aria-label="サイドドロワーを閉じる"
-            className="mr-2 rounded-full border border-gray-400 p-2 text-gray-800 lg:hidden dark:border-gray-700 dark:text-gray-200"
+            className="ransition-all mr-2 rounded-full border border-gray-400 p-2 text-gray-800 hover:bg-gray-300/80 lg:hidden dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700/75"
             type="button"
           >
             <XCircle size={ICONSIZE} />
@@ -37,7 +38,7 @@ export default function SiteDrawerContent() {
               <li key={pageLink.url}>
                 <a
                   href={pageLink.url}
-                  className="group flex items-center rounded-lg p-2 decoration-black hover:bg-gray-300/65 hover:underline dark:decoration-gray-100 dark:hover:bg-gray-700/65"
+                  className="group flex items-center rounded-lg p-2 decoration-black hover:bg-gray-300/80 hover:underline dark:decoration-gray-100 dark:hover:bg-gray-700/75"
                 >
                   <div className="flex h-5 items-center border-gray-400 border-l-2 pr-2 dark:border-gray-600 dark:group-hover:border-gray-400" />
                   <span className="font-semibold text-grayishblack tracking-widest dark:text-grayishblack-dark">

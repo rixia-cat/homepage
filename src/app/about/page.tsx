@@ -4,6 +4,7 @@ import {
   backendDatabases,
   backendFrameworks,
   backendLanguages,
+  certifications,
   frontendFrameworks,
   frontendLanguages,
   mobileFrameworks,
@@ -12,6 +13,7 @@ import {
 } from "@/features/profile/consts/skills";
 import { urbanist } from "@/util/font";
 import {
+  Certificate,
   Code,
   Desktop,
   DeviceMobileSpeaker,
@@ -98,10 +100,10 @@ export default async function About() {
           </div>
 
           <h3 className="mb-3 flex flex-row flex-nowrap items-center text-grayishblack dark:text-grayishblack-dark">
-            <UserCircle size="2.75rem" className="mr-4" />
+            <UserCircle size="2.75rem" className="mr-2.5" />
             <span className="font-bold text-xl">プロフィール</span>
           </h3>
-          <div className="mt-4 flex flex-col gap-y-2 rounded-xl border border-gray-300 p-4 text-base leading-7 dark:border-gray-600">
+          <div className="mt-4 flex flex-col gap-y-2 rounded-xl border border-gray-300 px-4 py-6 text-base leading-7 dark:border-gray-600">
             <p>rixia (りーしゃ）です。</p>
             <p>
               フロントエンド・モバイルアプリが好き・得意なエンジニアです。仕事上はTypeScript、Vue.js、PHP（Laravel)を使用した開発が多いです。
@@ -114,7 +116,7 @@ export default async function About() {
           </div>
 
           <h3 className="mt-8 mb-3 flex flex-row flex-nowrap items-center text-grayishblack dark:text-grayishblack-dark">
-            <Code size="2.75rem" className="mr-4" />
+            <Code size="2.75rem" className="mr-2.5" />
             <span className="font-bold text-xl">スキル</span>
           </h3>
 
@@ -125,7 +127,7 @@ export default async function About() {
             </h4>
             <div className="px-1">
               <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">言語</h5>
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {frontendLanguages.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -133,7 +135,7 @@ export default async function About() {
               <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">
                 フレームワーク
               </h5>
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {frontendFrameworks.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -141,14 +143,14 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-2 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <HardDrives size="2rem" className="mr-2" />
               <span className="font-bold text-base">バックエンド</span>
             </h4>
             <div className="px-1">
               <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">言語</h5>
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {backendLanguages.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -156,13 +158,13 @@ export default async function About() {
               <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">
                 フレームワーク
               </h5>
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {backendFrameworks.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
               </div>
               <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">DB</h5>
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {backendDatabases.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -170,14 +172,14 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-2 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <DeviceMobileSpeaker size="2rem" className="mr-2" />
               <span className="font-bold text-base">モバイル</span>
             </h4>
             <div className="px-1">
               <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">言語</h5>
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {mobileLanguages.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -185,7 +187,7 @@ export default async function About() {
               <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">
                 フレームワーク
               </h5>
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {mobileFrameworks.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -193,13 +195,27 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-2 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+              <Certificate size="2rem" className="mr-2" />
+              <span className="font-bold text-base">資格</span>
+            </h4>
+            <div className="mt-2 px-1">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
+                {certifications.map((item) => {
+                  return <LabelChip key={item} label={item} />;
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <Toolbox size="2rem" className="mr-2" />
               <span className="font-bold text-base">その他</span>
             </h4>
             <div className="mt-2 px-1">
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {otherSkils.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -217,7 +233,7 @@ export default async function About() {
               <span className="font-bold text-lg">一覧</span>
             </h4>
             <div className="mt-2 px-1">
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {interests.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -231,7 +247,7 @@ export default async function About() {
               <span className="font-bold text-base">ゲーム</span>
             </h4>
             <div className="mt-2 px-1">
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {likeGames.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
@@ -239,13 +255,13 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-2 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <MusicNote size="2rem" className="mr-2" />
               <span className="font-bold text-base">音楽アーティスト/グループ等</span>
             </h4>
             <div className="mt-2 px-1">
-              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2">
+              <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {likesArtists.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
