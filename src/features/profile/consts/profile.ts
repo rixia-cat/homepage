@@ -67,6 +67,7 @@ export const likeGames = ["崩壊:スターレイル", "崩壊3rd", "原神", "�
 
 export const likesArtists = [
   "分島花音",
+  "田所あずさ",
   "School Food Punishment",
   "la la larks",
   "ELECTROCUTICA",

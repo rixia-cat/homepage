@@ -16,16 +16,16 @@ const config: Config = {
           DEFAULT: "#e0e0eb",
         },
         footer_background: {
-          dark: "#070c0e",
-          DEFAULT: "hsl(240, 15%, 97%)",
+          dark: "#021115",
+          DEFAULT: "#ededf6",
         },
         background: {
-          dark: "#070c0e",
-          DEFAULT: "hsl(240, 15%, 97%)",
+          dark: "#021115",
+          DEFAULT: "#ededf6",
         },
         card_background: {
           dark: "#1c171c",
-          DEFAULT: "#ffffff",
+          DEFAULT: "#f0f4f6",
         },
         card_border: {
           dark: "#212B3A",

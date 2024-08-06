@@ -86,7 +86,7 @@ export default async function About() {
           </h2>
 
           <div className="mb-2 flex flex-col items-center">
-            <div className="flex h-36 flex-col items-center justify-center rounded-full bg-gray-200 p-6 dark:bg-gray-800">
+            <div className="flex h-36 flex-col items-center justify-center rounded-full bg-gray-300/55 p-6 dark:bg-gray-800">
               <Image
                 src="/image/profile/rixia.svg"
                 alt="プロフィール画像"
@@ -258,7 +258,7 @@ export default async function About() {
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <MusicNote size="2rem" className="mr-2" />
-              <span className="font-bold text-base">音楽アーティスト/グループ等</span>
+              <span className="font-bold text-base">音楽アーティスト/グループ等 (敬称略)</span>
             </h4>
             <div className="mt-2 px-1">
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
