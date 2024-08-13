@@ -52,7 +52,7 @@ export default async function About() {
         <div className="flex w-full flex-col flex-nowrap items-center justify-center">
           <h1 className={urbanist.className}>
             <div className="flex w-full flex-row justify-center gap-x-1 p-2 text-center font-semibold text-4xl tracking-widest">
-              <span className="rounded-md border border-gray-800 bg-gray-600 px-4 py-2 text-white dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300">
+              <span className="rounded-md border border-gray-800 bg-gray-600 px-4 py-2 text-white dark:border-card_border-dark dark:bg-card_background-dark dark:bg-gray-700 dark:text-gray-300">
                 ABOUT
               </span>
               <span className="rounded-md border border-gray-400 bg-white px-4 py-2 text-gray-600 dark:border-gray-400 dark:bg-gray-400 dark:text-gray-800">
@@ -61,7 +61,7 @@ export default async function About() {
             </div>
           </h1>
 
-          <div className="mt-4 w-full border-gray-300 border-b dark:border-gray-600" />
+          <div className="mt-4 w-full border-card_border bg-card_background border-b dark:border-card_border-dark dark:bg-card_background-dark" />
         </div>
 
         <section className="mt-10">
@@ -103,7 +103,7 @@ export default async function About() {
             <UserCircle size="2.75rem" className="mr-2.5" />
             <span className="font-bold text-xl">プロフィール</span>
           </h3>
-          <div className="mt-4 flex flex-col gap-y-2 rounded-xl border border-gray-300 px-4 py-6 text-base leading-7 dark:border-gray-600">
+          <div className="mt-4 flex flex-col gap-y-2 rounded-xl border border-card_border bg-card_background px-4 py-6 text-base leading-7 dark:border-card_border-dark dark:bg-card_background-dark dark:bg-card_background-dark">
             <p>rixia (りーしゃ）です。</p>
             <p>
               フロントエンド・モバイルアプリが好き・得意なエンジニアです。仕事上はTypeScript、Vue.js、PHP（Laravel)を使用した開発が多いです。
@@ -120,7 +120,7 @@ export default async function About() {
             <span className="font-bold text-xl">スキル</span>
           </h3>
 
-          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <Desktop size="2rem" className="mr-2" />
               <span className="font-bold text-base">フロントエンド</span>
@@ -143,7 +143,7 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <HardDrives size="2rem" className="mr-2" />
               <span className="font-bold text-base">バックエンド</span>
@@ -172,7 +172,7 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <DeviceMobileSpeaker size="2rem" className="mr-2" />
               <span className="font-bold text-base">モバイル</span>
@@ -195,7 +195,7 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <Certificate size="2rem" className="mr-2" />
               <span className="font-bold text-base">資格</span>
@@ -209,7 +209,7 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <Toolbox size="2rem" className="mr-2" />
               <span className="font-bold text-base">その他</span>
@@ -227,7 +227,7 @@ export default async function About() {
             <ShootingStar size="2.75rem" className="mr-4" />
             <span className="font-bold text-xl">好き・興味のある分野</span>
           </h3>
-          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <ListStar size="2.25rem" className="mr-2" />
               <span className="font-bold text-lg">一覧</span>
@@ -241,7 +241,7 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-6 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-6 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <GameController size="2rem" className="mr-2" />
               <span className="font-bold text-base">ゲーム</span>
@@ -255,7 +255,7 @@ export default async function About() {
             </div>
           </div>
 
-          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-gray-300 p-2 dark:border-gray-600">
+          <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
               <MusicNote size="2rem" className="mr-2" />
               <span className="font-bold text-base">音楽アーティスト/グループ等 (敬称略)</span>

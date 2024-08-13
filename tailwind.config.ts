@@ -13,22 +13,22 @@ const config: Config = {
       colors: {
         header_background: {
           dark: "#1b1b36",
-          DEFAULT: "#e0e0eb",
+          DEFAULT: "#E0E0F0",
         },
         footer_background: {
           dark: "#021115",
-          DEFAULT: "#ededf6",
+          DEFAULT: "#f6fafe",
         },
         background: {
           dark: "#021115",
-          DEFAULT: "#ededf6",
+          DEFAULT: "#f6fafe",
         },
         card_background: {
-          dark: "#1c171c",
-          DEFAULT: "#f0f4f6",
+          dark: "#0c111a",
+          DEFAULT: "#f1f9fd",
         },
         card_border: {
-          dark: "#212B3A",
+          dark: "#18202e",
           DEFAULT: "#d3d6de",
         },
 
@@ -53,7 +53,7 @@ const config: Config = {
       modal: "3000",
     },
     boxShadow: {
-      inner: "inset 0px 0px 10px 2px rgba(0, 0, 0, 0.70)"
+      inner: "inset 0px 0px 10px 2px rgba(0, 0, 0, 0.70)",
     },
     fontFamily: {
       monospace: ["Menlo", "Monaco", "Courier New", "Consolas", "monospace"],
