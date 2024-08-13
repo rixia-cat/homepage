@@ -52,16 +52,16 @@ export default async function About() {
         <div className="flex w-full flex-col flex-nowrap items-center justify-center">
           <h1 className={urbanist.className}>
             <div className="flex w-full flex-row justify-center gap-x-1 p-2 text-center font-semibold text-4xl tracking-widest">
-              <span className="rounded-md border border-gray-800 bg-gray-600 px-4 py-2 text-white dark:border-card_border-dark dark:bg-card_background-dark dark:bg-gray-700 dark:text-gray-300">
+              <span className="rounded-md border border-gray-800 bg-primary px-4 py-2 text-white dark:border-card_border-dark dark:bg-primary-dark/30 dark:text-gray-300">
                 ABOUT
               </span>
-              <span className="rounded-md border border-gray-400 bg-white px-4 py-2 text-gray-600 dark:border-gray-400 dark:bg-gray-400 dark:text-gray-800">
+              <span className="rounded-md border border-gray-400 bg-white px-4 py-2 text-gray-600 dark:border-gray-700 dark:bg-gray-800/75 dark:text-gray-300/80">
                 ME
               </span>
             </div>
           </h1>
 
-          <div className="mt-4 w-full border-card_border bg-card_background border-b dark:border-card_border-dark dark:bg-card_background-dark" />
+          <div className="mt-4 w-full border-card_border border-b bg-card_background dark:border-card_border-dark dark:bg-card_background-dark" />
         </div>
 
         <section className="mt-10">
@@ -103,7 +103,7 @@ export default async function About() {
             <UserCircle size="2.75rem" className="mr-2.5" />
             <span className="font-bold text-xl">プロフィール</span>
           </h3>
-          <div className="mt-4 flex flex-col gap-y-2 rounded-xl border border-card_border bg-card_background px-4 py-6 text-base leading-7 dark:border-card_border-dark dark:bg-card_background-dark dark:bg-card_background-dark">
+          <div className="mt-4 flex flex-col gap-y-2 rounded-xl border border-card_border bg-card_background px-4 py-6 text-base leading-7 dark:border-card_border-dark dark:bg-card_background-dark">
             <p>rixia (りーしゃ）です。</p>
             <p>
               フロントエンド・モバイルアプリが好き・得意なエンジニアです。仕事上はTypeScript、Vue.js、PHP（Laravel)を使用した開発が多いです。

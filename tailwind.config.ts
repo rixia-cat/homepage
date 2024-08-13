@@ -11,6 +11,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          dark: "#9393f7",
+          DEFAULT: "#0b4d90",
+        },
         header_background: {
           dark: "#1b1b36",
           DEFAULT: "#E0E0F0",
@@ -34,7 +38,7 @@ const config: Config = {
 
         grayishblack: {
           dark: "#e5e7eb",
-          DEFAULT: "#333d4d",
+          DEFAULT: "#0d1631",
         },
 
         outline: {
@@ -48,8 +52,8 @@ const config: Config = {
       header: "1500",
       footer: "1500",
       header_popup: "1501",
-      drawer: "2600",
-      floating_action: "2900",
+      floating_action: "2800",
+      drawer: "2900",
       modal: "3000",
     },
     boxShadow: {

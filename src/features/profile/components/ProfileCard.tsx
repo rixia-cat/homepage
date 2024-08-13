@@ -1,4 +1,4 @@
-import { interests, leadingJobDescription, profileLinks } from "@/features/profile/consts/profile";
+import { interests, leadingJobDescription, name, profileLinks } from "@/features/profile/consts/profile";
 import { CaretCircleDoubleRight, UserCircle } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ type ProfileCardProps = {
 export default async function ProfileCard({ isCompact = false }: ProfileCardProps) {
   return (
     <div className="flex flex-col rounded-2xl border border-card_border bg-card_background p-3 dark:border-card_border-dark dark:bg-card_background-dark">
-      <div className="mb-3 flex w-full flex-row flex-nowrap items-center border-gray-400 border-b border-dashed pb-2 align-middle dark:border-gray-500">
+      <div className="mb-3 flex w-full flex-row flex-nowrap items-center border-primary/35 border-b border-dashed pb-2 align-middle dark:border-primary-dark/35">
         <a href="/about" className=" flex flex-row flex-nowrap items-center ">
           <UserCircle className="mr-1.5" size="1.75rem" />
           <p className="line-clamp-2 font-bold text-grayishblack text-lg no-underline hover:underline dark:text-grayishblack-dark">
@@ -31,7 +31,7 @@ export default async function ProfileCard({ isCompact = false }: ProfileCardProp
             />
           </div>
         </div>
-        <p className="mb-2 text-start font-bold text-grayishblack text-xl dark:text-grayishblack-dark">rixia</p>
+        <p className="mb-2 text-start font-bold text-grayishblack text-xl dark:text-grayishblack-dark">{name}</p>
         <p className="text-start text-gray-500 text-sm dark:text-gray-300">{leadingJobDescription}</p>
 
         {isCompact === false && (
@@ -47,12 +47,12 @@ export default async function ProfileCard({ isCompact = false }: ProfileCardProp
                     className="flex flex-row flex-nowrap items-center rounded-full border border-gray-400 p-1.5 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
                     rel="noreferrer"
                   >
-                    <link.icon size="1.75rem" className="text-gray-500 dark:text-gray-400" />
+                    <link.icon size="1.75rem" className="text-gray-500 " />
                   </a>
                 );
               })}
             </div>
-            <div className="my-3 h-[1px] w-full bg-gray-300 dark:bg-gray-600" />
+            <div className="my-3 h-[1px] w-full bg-primary/15 dark:bg-primary-dark/25" />
 
             <div className="flex flex-col">
               <p className="mb-2 font-bold text-gray-500 text-sm dark:text-gray-400">好き・興味のある分野</p>
@@ -75,7 +75,7 @@ export default async function ProfileCard({ isCompact = false }: ProfileCardProp
           </>
         )}
 
-        <div className="my-3 h-[1px] w-full bg-gray-300 dark:bg-gray-600" />
+        <div className="my-3 h-[1px] w-full bg-primary/15 dark:bg-primary-dark/25" />
 
         <div className="flex flex-row flex-wrap ">
           <a

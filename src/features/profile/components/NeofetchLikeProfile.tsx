@@ -48,7 +48,7 @@ export default function NeofetchLikeProfile() {
   return (
     <div className="flex flex-col flex-nowrap overflow-hidden rounded-2xl border border-gray-500 bg-gray-950 text-gray-200 shadow-sm dark:border-gray-800">
       {/* タイトルバー */}
-      <div className="border-b border-b-gray-600 bg-gray-700 p-2 dark:border-b-gray-600 dark:bg-gray-700">
+      <div className="border-b border-b-gray-600 bg-primary/45 p-2 dark:border-b-gray-600 dark:bg-primary-dark/25">
         <div className="flex flex-row flex-nowrap items-center justify-between">
           <h2 className="flex flex-row flex-nowrap">
             <p className="text-sm">Profile</p>

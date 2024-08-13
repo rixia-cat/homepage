@@ -101,7 +101,7 @@ export const ThemeSettingButton = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button
-          className="ransition-all rounded-full border border-gray-400/45 p-2 text-gray-800 duration-300 hover:bg-gray-300/80 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700/75"
+          className="ransition-all rounded-full border border-gray-500/25 p-2 text-gray-600 duration-300 hover:bg-gray-300/80 dark:border-gray-700/85 dark:text-gray-300/85 dark:hover:bg-gray-700/75"
           aria-label="画面テーマを変更"
           type="button"
         >

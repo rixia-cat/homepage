@@ -13,11 +13,11 @@ export default function Home() {
     <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
       <main className="max-w-full grow overflow-hidden p-4 md:max-w-screen-md">
         <h1 className={`mt-2 tracking-widest ${nunito.className}`}>
-          <span className="text-5xl text-gray-500/85 dark:text-gray-400/90">{leadingPrefixText}</span>
-          <span className="font-semibold text-5xl text-grayishblack tracking-wider dark:text-grayishblack-dark">
+          <span className="text-5xl text-gray-500/75 dark:text-gray-400/75">{leadingPrefixText}</span>
+          <span className="font-semibold text-5xl text-primary tracking-wider dark:text-primary-dark">
             {leadingNameText}
           </span>
-          <span className="text-5xl text-gray-500/85 dark:text-gray-400/90">{leadingSuffixText}</span>
+          <span className="text-5xl text-gray-500/75 dark:text-gray-400/75">{leadingSuffixText}</span>
         </h1>
 
         <section className="mt-6">
@@ -26,12 +26,12 @@ export default function Home() {
           <div className="mt-3 flex flex-row justify-start pr-0.5">
             <a
               href="/about"
-              className="flex flex-row items-start rounded-xl border border-gray-600 px-3 py-1.5 font-medium text-base text-grayishblack5 transition-all duration-500 hover:bg-gray-300/70 hover:underline dark:border-gray-500 dark:text-grayishblack-dark dark:hover:bg-gray-700/75"
+              className="flex flex-row items-start rounded-xl border border-primary px-3 py-1.5 font-medium text-base text-primary transition-all duration-500 hover:bg-gray-300/70 hover:underline dark:border-primary-dark dark:text-primary-dark dark:hover:bg-gray-700/75"
             >
               <span className="mr-3">
                 <CaretCircleDoubleRight size="1.7rem" />
               </span>
-              <span>もっと詳しく見る</span>
+              <span>詳しいプロフィールへ</span>
             </a>
           </div>
         </section>
@@ -45,7 +45,7 @@ export default function Home() {
 
             <a
               href="/blog"
-              className="flex flex-row items-start rounded-xl border border-gray-600 px-2 py-1.5 font-medium text-base text-grayishblack transition-all duration-500 hover:bg-gray-300/70 hover:underline dark:border-gray-500 dark:text-grayishblack-dark dark:hover:bg-gray-700/75"
+              className="flex flex-row items-start rounded-xl border border-primary px-2 py-1.5 font-medium text-base text-primary transition-all duration-500 hover:bg-gray-300/70 hover:underline dark:border-primary-dark dark:text-primary-dark dark:hover:bg-gray-700/75"
             >
               <span className="mr-3">
                 <CaretCircleDoubleRight size="1.7rem" />

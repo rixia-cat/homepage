@@ -97,11 +97,13 @@ export default function ScribbleCard(props: ScribbleCardProps) {
   const randomPaperColorPair = paperColorClassPairs[randomPaperColorIdx];
   const randomPaperColorClass = ` ${randomPaperColorPair.default} ${randomPaperColorPair.dark}`;
 
+  const scribbleColorClasses = `${randomTapeColorClass} ${randomPaperColorClass}`;
+
   return (
     <a
       // href={props.scribble.url}
       href="/scribble"
-      className={`before:-top-4 relative mt-4 h-50 w-full rounded-md border-gray-500/15 border-r border-b p-4 shadow-lg transition before:absolute before:left-1/3 before:h-8 before:w-[25%] before:max-w-36 before:rotate-3 before:border-transparent before:border-x-4 before:border-dashed before:backdrop-blur-[1px] hover:scale-110 ${randomTapeColorClass} ${randomPaperColorClass}`}
+      className={`before:-top-4 relative mt-4 h-50 w-full rounded-md border-gray-500/15 border-r border-b p-4 shadow-lg transition before:absolute before:left-1/3 before:h-8 before:w-[25%] before:max-w-36 before:rotate-3 before:border-transparent before:border-x-4 before:border-dashed before:backdrop-blur-[1px] hover:scale-110 ${scribbleColorClasses}`}
     >
       <div className="flex h-full flex-col overflow-y-hidden " style={handwriteLike.style}>
         <h2 className="mb-2 line-clamp-2 border-gray-800/15 border-b-2 pb-2 font-bold text-gray-800/85 text-sm dark:border-gray-300/15 dark:text-gray-300/90">
