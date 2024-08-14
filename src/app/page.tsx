@@ -26,7 +26,7 @@ export default function Home() {
           <div className="mt-3 flex flex-row justify-start pr-0.5">
             <a
               href="/about"
-              className="flex flex-row items-start rounded-xl border border-primary px-3 py-1.5 font-medium text-base text-primary transition-all duration-500 hover:bg-gray-300/70 hover:underline dark:border-primary-dark dark:text-primary-dark dark:hover:bg-gray-700/75"
+              className="flex flex-row items-start rounded-xl border border-primary px-3 py-1.5 font-medium text-base text-primary transition-all duration-500 hover:bg-primary/10 hover:underline dark:border-primary-dark dark:text-primary-dark dark:hover:bg-primary-dark/15"
             >
               <span className="mr-3">
                 <CaretCircleDoubleRight size="1.7rem" />
@@ -39,13 +39,13 @@ export default function Home() {
         <section className="mt-10">
           <h2 className="flex items-center justify-between ">
             <div className="flex flex-nowrap items-center">
-              <Book size="2.75rem" className="mr-2 text-grayishblack dark:text-grayishblack-dark" />
-              <span className="text-3xl text-grayishblack dark:text-grayishblack-dark">blog</span>
+              <Book size="2.75rem" className="mr-2 text-blueblack dark:text-blueblack-dark" />
+              <span className="text-3xl text-blueblack dark:text-blueblack-dark">blog</span>
             </div>
 
             <a
               href="/blog"
-              className="flex flex-row items-start rounded-xl border border-primary px-2 py-1.5 font-medium text-base text-primary transition-all duration-500 hover:bg-gray-300/70 hover:underline dark:border-primary-dark dark:text-primary-dark dark:hover:bg-gray-700/75"
+              className="flex flex-row items-start rounded-xl border border-primary px-2 py-1.5 font-medium text-base text-primary transition-all duration-500 hover:bg-primary/10 hover:underline dark:border-primary-dark dark:text-primary-dark dark:hover:bg-primary-dark/15"
             >
               <span className="mr-3">
                 <CaretCircleDoubleRight size="1.7rem" />

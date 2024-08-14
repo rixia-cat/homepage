@@ -10,7 +10,7 @@ export default function ToggleDrawerButton() {
       <Dialog.Trigger asChild>
         <button
           aria-label="サイドドロワーを表示"
-          className="ransition-all mr-2 rounded-full border border-gray-500/25 p-2 text-gray-600 hover:bg-gray-300/80 md:hidden dark:border-gray-700/85 dark:text-gray-300/85 dark:hover:bg-gray-700/75"
+          className="ransition-all mr-2 rounded-full border border-gray-500/25 p-2 text-gray-600 hover:bg-primary/10 md:hidden dark:border-gray-700/85 dark:text-gray-300/85 dark:hover:bg-primary-dark/15"
           type="button"
         >
           <List size={ICONSIZE} />

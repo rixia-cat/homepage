@@ -101,7 +101,7 @@ export const ThemeSettingButton = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button
-          className="ransition-all rounded-full border border-gray-500/25 p-2 text-gray-600 duration-300 hover:bg-gray-300/80 dark:border-gray-700/85 dark:text-gray-300/85 dark:hover:bg-gray-700/75"
+          className="ransition-all rounded-full border border-gray-500/25 p-2 text-gray-600 duration-300 hover:bg-primary/10 dark:border-gray-700/85 dark:text-gray-300/85 dark:hover:bg-primary-dark/15"
           aria-label="画面テーマを変更"
           type="button"
         >
@@ -119,7 +119,7 @@ export const ThemeSettingButton = () => {
               <DropdownMenu.RadioItem
                 value={data.mode}
                 key={data.mode}
-                className="flex w-full items-center justify-start radix-state-checked:bg-gray-200 px-4 py-2 text-gray-800 first:rounded-t-xl last:rounded-xl hover:bg-gray-200 dark:radix-state-checked:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-700"
+                className="flex w-full items-center justify-start radix-state-checked:bg-gray-200 px-4 py-2 text-gray-800 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-200 dark:radix-state-checked:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-700"
               >
                 {<data.iconElm size={ICONSIZE} className="mr-2" />} {data.label}
                 <DropdownMenu.ItemIndicator className="ml-auto">

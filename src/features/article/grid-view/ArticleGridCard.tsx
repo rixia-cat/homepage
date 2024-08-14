@@ -26,7 +26,7 @@ export default function ArticleGridCard(props: Props) {
     <div className="flex flex-col rounded-2xl border border-card_border bg-card_background dark:border-card_border-dark dark:bg-card_background-dark">
       <a
         href={`${props.article.url}`}
-        className="flex grow flex-col rounded-t-2xl hover:bg-gray-100 focus:outline-2 focus:outline-gray-500 dark:focus:outline-gray-300 dark:hover:bg-gray-900"
+        className="flex grow flex-col rounded-t-2xl hover:bg-primary/5 focus:outline-2 focus:outline-gray-500 dark:focus:outline-gray-300 dark:hover:bg-primary-dark/5"
       >
         <div className="flex w-full">
           {/* 見出し用画像 */}
@@ -36,7 +36,7 @@ export default function ArticleGridCard(props: Props) {
 
           {/* タイトル */}
           <div className="h-full grow overflow-hidden px-3 pt-3">
-            <h2 className="align-top font-bold text-base text-grayishblack dark:text-grayishblack-dark">
+            <h2 className="align-top font-bold text-base text-blueblack dark:text-blueblack-dark">
               <p className="line-clamp-2 no-underline hover:underline">{props.article.title}</p>
             </h2>
           </div>
@@ -69,7 +69,7 @@ export default function ArticleGridCard(props: Props) {
           <a
             key={tag.url}
             href={tag.url}
-            className="rounded-full border border-gray-300 bg-gray-100 px-2 py-1 text-xs dark:border-gray-700 dark:bg-gray-800"
+            className="rounded-full border border-chip_border bg-chip_background px-2 py-1 text-xs dark:border-chip_border-dark dark:bg-chip_background-dark"
           >
             {tag.label}
           </a>

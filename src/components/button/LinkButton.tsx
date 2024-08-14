@@ -16,7 +16,7 @@ export default function LinkButton(props: LinkButtonProps) {
   return (
     <a
       href={props.href}
-      className="flex items-center justify-center rounded-lg border border-gray-600 px-4 py-2 font-medium text-base text-grayishblack dark:border-gray-500 dark:text-grayishblack-dark"
+      className="flex items-center justify-center rounded-lg border border-gray-600 px-4 py-2 font-medium text-base text-blueblack dark:border-gray-500 dark:text-blueblack-dark"
     >
       {iconPosition === "left" && clonedClassAddedIcon}
       <span>{props.label}</span>

@@ -46,7 +46,7 @@ export default async function ScribblePage() {
         <div className="h-14">
           <h1 className="flex flex-row items-center ">
             <Note className="mr-2" size="2.3rem" />
-            <span className="mr-4 font-bold text-2xl text-grayishblack dark:text-grayishblack-dark ">Scribbles</span>
+            <span className="mr-4 font-bold text-2xl text-blueblack dark:text-blueblack-dark ">Scribbles</span>
             <span className="text-gray-500 text-xs sm:text-sm dark:text-gray-400"> // とりとめのないメモ・雑記</span>
           </h1>
         </div>

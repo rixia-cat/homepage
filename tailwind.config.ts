@@ -11,34 +11,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        /* Hue:205 */
         primary: {
-          dark: "#9393f7",
+          dark: "#41a2e5",
           DEFAULT: "#0b4d90",
         },
+        background: {
+          dark: "#020d15",
+          DEFAULT: "#f2f9fe",
+        },
+        blueblack: {
+          dark: "#c6e6fc",
+          DEFAULT: "#081d2c",
+        },
+
         header_background: {
           dark: "#1b1b36",
           DEFAULT: "#E0E0F0",
         },
         footer_background: {
-          dark: "#021115",
-          DEFAULT: "#f6fafe",
-        },
-        background: {
-          dark: "#021115",
-          DEFAULT: "#f6fafe",
-        },
-        card_background: {
-          dark: "#0c111a",
-          DEFAULT: "#f1f9fd",
-        },
-        card_border: {
-          dark: "#18202e",
-          DEFAULT: "#d3d6de",
+          dark: "#020d15",
+          DEFAULT: "#f2f9fe",
         },
 
-        grayishblack: {
-          dark: "#e5e7eb",
-          DEFAULT: "#0d1631",
+        card_background: {
+          dark: "#061119",
+          DEFAULT: "#eff7fd",
+        },
+        card_border: {
+          dark: "#18252e",
+          DEFAULT: "#d3dfe8",
+        },
+
+        chip_background: {
+          dark: "#0a1c29",
+          DEFAULT: "#e9f3fa",
+        },
+        chip_border: {
+          dark: "#1d5074",
+          DEFAULT: "#aed3ef",
         },
 
         outline: {

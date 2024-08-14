@@ -32,7 +32,7 @@ export default async function AllTagsCard() {
         <div className="flex w-full flex-row flex-nowrap items-center border-gray-400 border-b border-dashed pb-2 align-middle dark:border-primary-dark/35">
           <a href="/tags" className=" flex flex-row flex-nowrap items-center ">
             <Hash className="mr-1.5" size="1.75rem" />
-            <p className="line-clamp-2 font-bold text-grayishblack text-lg no-underline hover:underline dark:text-grayishblack-dark">
+            <p className="line-clamp-2 font-bold text-blueblack text-lg no-underline hover:underline dark:text-blueblack-dark">
               タグ一覧
             </p>
           </a>
@@ -43,7 +43,7 @@ export default async function AllTagsCard() {
           <a
             href={tag.url}
             key={tag.url}
-            className="rounded-full border border-gray-300 bg-gray-100 px-2 py-1 text-sm dark:border-gray-700 dark:bg-gray-800"
+            className="rounded-full border border-chip_border bg-chip_background px-2 py-1 text-sm dark:border-chip_border-dark dark:bg-chip_background-dark"
           >
             {tag.label}
             <span className="ml-2 text-gray-600 text-xs dark:text-gray-300">x{tag.count}</span>

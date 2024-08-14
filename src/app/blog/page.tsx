@@ -65,7 +65,7 @@ export default async function ArticlePage() {
         <div className="h-14">
           <h1 className="items-top flex flex-row flex-nowrap ">
             <Book className="mr-2" size="2.3rem" />
-            <span className="font-bold text-2xl text-grayishblack dark:text-grayishblack-dark "> 記事一覧</span>
+            <span className="font-bold text-2xl text-blueblack dark:text-blueblack-dark "> 記事一覧</span>
           </h1>
         </div>
         <ArticleCardGridView articles={articles} />

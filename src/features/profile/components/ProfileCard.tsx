@@ -12,7 +12,7 @@ export default async function ProfileCard({ isCompact = false }: ProfileCardProp
       <div className="mb-3 flex w-full flex-row flex-nowrap items-center border-primary/35 border-b border-dashed pb-2 align-middle dark:border-primary-dark/35">
         <a href="/about" className=" flex flex-row flex-nowrap items-center ">
           <UserCircle className="mr-1.5" size="1.75rem" />
-          <p className="line-clamp-2 font-bold text-grayishblack text-lg no-underline hover:underline dark:text-grayishblack-dark">
+          <p className="line-clamp-2 font-bold text-blueblack text-lg no-underline hover:underline dark:text-blueblack-dark">
             プロフィール
           </p>
         </a>
@@ -31,7 +31,7 @@ export default async function ProfileCard({ isCompact = false }: ProfileCardProp
             />
           </div>
         </div>
-        <p className="mb-2 text-start font-bold text-grayishblack text-xl dark:text-grayishblack-dark">{name}</p>
+        <p className="mb-2 text-start font-bold text-blueblack text-xl dark:text-blueblack-dark">{name}</p>
         <p className="text-start text-gray-500 text-sm dark:text-gray-300">{leadingJobDescription}</p>
 
         {isCompact === false && (
@@ -44,7 +44,7 @@ export default async function ProfileCard({ isCompact = false }: ProfileCardProp
                     href={link.url}
                     target="_blank"
                     title={link.title}
-                    className="flex flex-row flex-nowrap items-center rounded-full border border-gray-400 p-1.5 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
+                    className="flex flex-row flex-nowrap items-center rounded-full border border-gray-400 p-1.5 hover:bg-primary/5 dark:border-gray-600 dark:hover:bg-primary-dark/15"
                     rel="noreferrer"
                   >
                     <link.icon size="1.75rem" className="text-gray-500 " />
@@ -61,12 +61,9 @@ export default async function ProfileCard({ isCompact = false }: ProfileCardProp
                   return (
                     <div
                       key={interestItem}
-                      className="flex h-6 items-center rounded-full border border-gray-400 px-1.5 "
+                      className="flex h-6 items-center rounded-full border border-chip_border bg-chip_background px-1.5 dark:border-chip_border-dark dark:bg-card_background-dark"
                     >
-                      <span className="text-grayishblack text-xs dark:border-gray-600 dark:text-grayishblack-dark">
-                        {" "}
-                        {interestItem}
-                      </span>
+                      <span className=" text-blueblack text-xs dark:text-blueblack-dark"> {interestItem}</span>
                     </div>
                   );
                 })}
@@ -80,7 +77,7 @@ export default async function ProfileCard({ isCompact = false }: ProfileCardProp
         <div className="flex flex-row flex-wrap ">
           <a
             href="/about"
-            className="flex flex-row flex-nowrap items-start rounded-md border border-gray-400 px-2 py-1 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-800"
+            className="flex flex-row flex-nowrap items-start rounded-md border border-gray-400 px-2 py-1 hover:bg-primary/5 dark:border-gray-600 dark:hover:bg-primary-dark/15"
           >
             <CaretCircleDoubleRight size="1.4rem" className="mr-1 text-gray-500 dark:text-gray-400" />
             <span className="text-gray-500 text-sm hover:underline dark:text-gray-400">詳しく見る</span>

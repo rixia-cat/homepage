@@ -27,7 +27,7 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Articl
           const publishedAtStr = dayjs(article.publishedAt).tz().format("YYYY/MM/DD");
           const updatedAtStr = dayjs(article.updatedAt).tz().format("YYYY/MM/DD");
           return (
-            <li key={article.url} className="flex flex-col p-2 hover:bg-gray-200 dark:hover:bg-gray-800">
+            <li key={article.url} className="flex flex-col p-2 hover:bg-primary/10 dark:hover:bg-primary-dark/15">
               <div className="flex flex-row flex-nowrap items-center justify-start">
                 <div className="h-16 max-h-16 min-h-16 w-24 min-w-24 max-w-24">
                   <ArticleImageThumbnail title={article.title} leadingImageUrl={article.leadingImageUrl} />
@@ -38,7 +38,7 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Articl
                     {/* タイトル */}
                     <a
                       href={article.url}
-                      className="mb-1 line-clamp-2 font-medium text-base text-grayishblack hover:underline dark:text-grayishblack-dark "
+                      className="mb-1 line-clamp-2 font-medium text-base text-blueblack hover:underline dark:text-blueblack-dark "
                     >
                       {article.title}
                     </a>
@@ -49,7 +49,7 @@ export default function ArticleSingleLineList({ articles, andmoreCount }: Articl
                         <a
                           key={tag.url}
                           href={tag.url}
-                          className="rounded-full border border-gray-300 bg-gray-100 px-2 py-1 text-xs dark:border-gray-700 dark:bg-gray-800"
+                          className="rounded-full border border-chip_border bg-chip_background px-2 py-1 text-xs dark:border-chip_border-dark dark:bg-chip_background-dark"
                         >
                           {tag.label}
                         </a>

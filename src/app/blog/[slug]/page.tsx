@@ -97,7 +97,7 @@ export default async function ArticlePage(props: ArticlePageProps) {
       </aside> */}
 
         <main className="mx-auto max-w-full grow grid-cols-1 grid-rows-1 px-4 py-4 md:max-w-screen-md lg:mr-4">
-          <div className="mb-4 inline-flex cursor-pointer rounded-2xl px-1 hover:bg-gray-200 hover:underline dark:hover:bg-gray-700">
+          <div className="mb-4 inline-flex cursor-pointer rounded-2xl px-1 hover:bg-primary/10 hover:underline dark:hover:bg-primary-dark/15">
             <Link href="/blog">
               <div className="flex flex-row items-center gap-2">
                 <ArrowUUpLeft size="1.4rem" className="text-gray-500 dark:text-gray-300" />

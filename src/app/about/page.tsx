@@ -66,8 +66,8 @@ export default async function About() {
 
         <section className="mt-10">
           <h2 className="mb-6 flex w-full flex-row flex-nowrap items-center">
-            <div className="-skew-x-12 mr-4 ml-1 h-10 border-grayishblack border-x-2 px-[2px] dark:border-grayishblack-dark" />
-            <span className="font-bold text-2xl text-grayishblack dark:text-grayishblack-dark">このサイトについて</span>
+            <div className="-skew-x-12 mr-4 ml-1 h-10 border-blueblack border-x-2 px-[2px] dark:border-blueblack-dark" />
+            <span className="font-bold text-2xl text-blueblack dark:text-blueblack-dark">このサイトについて</span>
           </h2>
           <div className="flex flex-col gap-y-2 leading-7">
             <p>
@@ -81,8 +81,8 @@ export default async function About() {
 
         <section className="mt-16">
           <h2 className="mb-4 flex w-full flex-row flex-nowrap items-center">
-            <div className="-skew-x-12 mr-4 ml-1 h-10 border-grayishblack border-x-2 px-[2px] dark:border-grayishblack-dark" />
-            <span className="font-bold text-2xl text-grayishblack dark:text-grayishblack-dark">rixia について</span>
+            <div className="-skew-x-12 mr-4 ml-1 h-10 border-blueblack border-x-2 px-[2px] dark:border-blueblack-dark" />
+            <span className="font-bold text-2xl text-blueblack dark:text-blueblack-dark">rixia について</span>
           </h2>
 
           <div className="mb-2 flex flex-col items-center">
@@ -99,7 +99,7 @@ export default async function About() {
             </div>
           </div>
 
-          <h3 className="mb-3 flex flex-row flex-nowrap items-center text-grayishblack dark:text-grayishblack-dark">
+          <h3 className="mb-3 flex flex-row flex-nowrap items-center text-blueblack dark:text-blueblack-dark">
             <UserCircle size="2.75rem" className="mr-2.5" />
             <span className="font-bold text-xl">プロフィール</span>
           </h3>
@@ -115,24 +115,24 @@ export default async function About() {
             </p>
           </div>
 
-          <h3 className="mt-8 mb-3 flex flex-row flex-nowrap items-center text-grayishblack dark:text-grayishblack-dark">
+          <h3 className="mt-8 mb-3 flex flex-row flex-nowrap items-center text-blueblack dark:text-blueblack-dark">
             <Code size="2.75rem" className="mr-2.5" />
             <span className="font-bold text-xl">スキル</span>
           </h3>
 
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
-            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+            <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <Desktop size="2rem" className="mr-2" />
               <span className="font-bold text-base">フロントエンド</span>
             </h4>
             <div className="px-1">
-              <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">言語</h5>
+              <h5 className="mt-2 mb-1 font-semibold text-blueblack text-sm dark:text-blueblack-dark">言語</h5>
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {frontendLanguages.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
               </div>
-              <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">
+              <h5 className="mt-2 mb-1 font-semibold text-blueblack text-sm dark:text-blueblack-dark">
                 フレームワーク
               </h5>
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
@@ -144,18 +144,18 @@ export default async function About() {
           </div>
 
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
-            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+            <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <HardDrives size="2rem" className="mr-2" />
               <span className="font-bold text-base">バックエンド</span>
             </h4>
             <div className="px-1">
-              <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">言語</h5>
+              <h5 className="mt-2 mb-1 font-semibold text-blueblack text-sm dark:text-blueblack-dark">言語</h5>
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {backendLanguages.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
               </div>
-              <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">
+              <h5 className="mt-2 mb-1 font-semibold text-blueblack text-sm dark:text-blueblack-dark">
                 フレームワーク
               </h5>
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
@@ -163,7 +163,7 @@ export default async function About() {
                   return <LabelChip key={item} label={item} />;
                 })}
               </div>
-              <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">DB</h5>
+              <h5 className="mt-2 mb-1 font-semibold text-blueblack text-sm dark:text-blueblack-dark">DB</h5>
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {backendDatabases.map((item) => {
                   return <LabelChip key={item} label={item} />;
@@ -173,18 +173,18 @@ export default async function About() {
           </div>
 
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
-            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+            <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <DeviceMobileSpeaker size="2rem" className="mr-2" />
               <span className="font-bold text-base">モバイル</span>
             </h4>
             <div className="px-1">
-              <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">言語</h5>
+              <h5 className="mt-2 mb-1 font-semibold text-blueblack text-sm dark:text-blueblack-dark">言語</h5>
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
                 {mobileLanguages.map((item) => {
                   return <LabelChip key={item} label={item} />;
                 })}
               </div>
-              <h5 className="mt-2 mb-1 font-semibold text-grayishblack text-sm dark:text-grayishblack-dark">
+              <h5 className="mt-2 mb-1 font-semibold text-blueblack text-sm dark:text-blueblack-dark">
                 フレームワーク
               </h5>
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
@@ -196,7 +196,7 @@ export default async function About() {
           </div>
 
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
-            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+            <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <Certificate size="2rem" className="mr-2" />
               <span className="font-bold text-base">資格</span>
             </h4>
@@ -210,7 +210,7 @@ export default async function About() {
           </div>
 
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
-            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+            <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <Toolbox size="2rem" className="mr-2" />
               <span className="font-bold text-base">その他</span>
             </h4>
@@ -223,12 +223,12 @@ export default async function About() {
             </div>
           </div>
 
-          <h3 className="mt-8 mb-3 flex flex-row flex-nowrap items-center text-grayishblack dark:text-grayishblack-dark">
+          <h3 className="mt-8 mb-3 flex flex-row flex-nowrap items-center text-blueblack dark:text-blueblack-dark">
             <ShootingStar size="2.75rem" className="mr-4" />
             <span className="font-bold text-xl">好き・興味のある分野</span>
           </h3>
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
-            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+            <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <ListStar size="2.25rem" className="mr-2" />
               <span className="font-bold text-lg">一覧</span>
             </h4>
@@ -242,7 +242,7 @@ export default async function About() {
           </div>
 
           <div className="mt-6 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
-            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+            <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <GameController size="2rem" className="mr-2" />
               <span className="font-bold text-base">ゲーム</span>
             </h4>
@@ -256,7 +256,7 @@ export default async function About() {
           </div>
 
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
-            <h4 className="mb-1 flex flex-row items-center text-grayishblack dark:text-grayishblack-dark">
+            <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <MusicNote size="2rem" className="mr-2" />
               <span className="font-bold text-base">音楽アーティスト/グループ等 (敬称略)</span>
             </h4>
