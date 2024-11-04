@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, ReactElement } from "react";
 import { codeToHtml } from "shiki";
 import styles from "./CodeBlock.module.css";
 
@@ -6,15 +6,22 @@ type ExtractedReactNodeData = {
   text: string;
   className: string;
 };
+
+type ReactElementWithProps = ReactElement & {
+  props: {
+    className: string;
+    children: ReactNode;
+  };
+};
+
 function extractReactNode(node: ReactNode): ExtractedReactNodeData {
-  if (typeof node === "object" && node !== null) {
-    if ("props" in node && "children" in node.props) {
-      if (typeof node.props.children === "string" || typeof node.props.children === "number") {
-        return {
-          text: String(node.props.children),
-          className: node.props.className,
-        };
-      }
+  if (typeof node === "object" && node !== null && "props" in node) {
+    const element = node as ReactElementWithProps;
+    if (typeof element.props.children === "string" || typeof element.props.children === "number") {
+      return {
+        text: String(element.props.children),
+        className: element.props.className,
+      };
     }
   }
   return {

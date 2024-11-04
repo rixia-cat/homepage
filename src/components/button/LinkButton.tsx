@@ -1,4 +1,4 @@
-import { cloneElement } from "react";
+import { type JSX, cloneElement } from "react";
 
 interface LinkButtonProps {
   href: string;

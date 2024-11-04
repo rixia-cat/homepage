@@ -13,9 +13,9 @@ import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 
 type ArticlePageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export const dynamicParams = false;
@@ -45,8 +45,9 @@ export async function generateStaticParams() {
 }
 export async function generateMetadata(props: ArticlePageProps, parent: ResolvingMetadata): Promise<Metadata> {
   const parentMetadata = await parent;
+  const params = await props.params;
 
-  const blogCollection = await getArticleData(props.params.slug);
+  const blogCollection = await getArticleData(params.slug);
   if (!blogCollection.length) {
     return {
       title: "404 Not Found",
@@ -62,13 +63,15 @@ export async function generateMetadata(props: ArticlePageProps, parent: Resolvin
       title: `${blogData.fields.title} - ${domain}`,
       description: blogData.fields.description.toString(),
       type: "article",
-      url: `https://${domain}/blog/${props.params.slug}`,
+      url: `https://${domain}/blog/${params.slug}`,
     },
   };
 }
 
 export default async function ArticlePage(props: ArticlePageProps) {
-  const slug = props.params.slug;
+  const params = await props.params;
+
+  const slug = params.slug;
   const blogCollection = await getArticleData(slug);
   const tagsCollection = await getTagsData();
   if (!blogCollection.length) {
