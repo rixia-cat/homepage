@@ -22,11 +22,17 @@ export async function generateMetadata({}, parent: ResolvingMetadata): Promise<M
   };
 }
 
-export default async function ScribblePage() {
+async function getScribbleData() {
   const scribbleCollection = await contentfulClient.getEntries<TypeScribbleSkeleton>({
     content_type: "scribble",
     order: ["-sys.updatedAt"],
   });
+
+  return scribbleCollection;
+}
+
+export default async function ScribblePage() {
+  const scribbleCollection = await getScribbleData();
 
   type ScribbleListViewProps = ComponentProps<typeof ScribbleListView>;
   const scribbles: ScribbleListViewProps["scribbles"] = scribbleCollection.items.map((article) => {
@@ -47,6 +53,7 @@ export default async function ScribblePage() {
           <h1 className="flex flex-row items-center ">
             <Note className="mr-2" size="2.3rem" />
             <span className="mr-4 font-bold text-2xl text-blueblack dark:text-blueblack-dark ">Scribbles</span>
+            {/* biome-ignore lint/suspicious/noCommentText: <explanation> */}
             <span className="text-gray-500 text-xs sm:text-sm dark:text-gray-400"> // とりとめのないメモ・雑記</span>
           </h1>
         </div>

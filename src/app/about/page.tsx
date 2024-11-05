@@ -44,7 +44,7 @@ export async function generateMetadata({}, parent: ResolvingMetadata): Promise<M
   };
 }
 
-export default async function About() {
+export default function About() {
   return (
     <div className="mx-auto flex max-w-full grow justify-center lg:max-w-screen-lg">
       <main className="flex max-w-full grow flex-col overflow-hidden p-4 sm:max-w-screen-sm">

@@ -1,4 +1,4 @@
-import type { ReactNode, ReactElement } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { codeToHtml } from "shiki";
 import styles from "./CodeBlock.module.css";
 

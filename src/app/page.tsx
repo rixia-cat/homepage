@@ -3,8 +3,6 @@ import NeofetchLikeProfile from "@/features/profile/components/NeofetchLikeProfi
 import { nunito } from "@/util/font";
 import { Book, CaretCircleDoubleRight } from "@phosphor-icons/react/dist/ssr";
 
-export const revalidate = 60 * 60 * 24 * 7;
-
 const leadingPrefixText = "I'm ";
 const leadingNameText = "rixia";
 const leadingSuffixText = ".";

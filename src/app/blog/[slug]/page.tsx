@@ -18,7 +18,6 @@ type ArticlePageProps = {
   }>;
 };
 
-export const dynamicParams = false;
 // 記事データ取得
 async function getArticleData(slug: string): Promise<Entry<TypeBlogSkeleton>[]> {
   const blogCollection = await contentfulClient.getEntries<TypeBlogSkeleton>({

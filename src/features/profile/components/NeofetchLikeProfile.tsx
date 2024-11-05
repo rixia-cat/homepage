@@ -1,3 +1,4 @@
+"use client";
 import { zeroWidthSpace } from "@/consts/texts";
 import { domain, calcAboutBirthUptime, logoAsciiArt, name } from "@/features/profile/consts/profile";
 import dayjs from "@/util/dayjs";
