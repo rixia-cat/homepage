@@ -40,6 +40,15 @@ const nextConfig = {
 
     return config;
   },
+  // Turbopack configuration for SVG handling
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
   // turbopack使用時のworkaround (https://github.com/vercel/next.js/issues/64525)
   transpilePackages: ['next-mdx-remote'],
 }
