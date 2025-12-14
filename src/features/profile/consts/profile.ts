@@ -63,7 +63,7 @@ export const interests = [
   "車",
 ];
 
-export const likeGames = ["崩壊:スターレイル", "崩壊3rd", "原神", "軌跡シリーズ"];
+export const likeGames = ["崩壊:スターレイル", "崩壊3rd", "ゼンレスゾーンゼロ", "原神", "軌跡シリーズ"];
 
 export const likesArtists = [
   "分島花音",

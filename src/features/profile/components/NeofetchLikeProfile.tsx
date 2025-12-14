@@ -70,7 +70,7 @@ export default function NeofetchLikeProfile() {
               {zeroWidthSpace}@{zeroWidthSpace}
               {domain}: ${" "}
             </span>
-            rixia --output-profile
+            rixia-fetch --all
           </p>
         </div>
         <div className="flex flex-row flex-nowrap bg-gray-950 px-2 pt-2 pb-4">

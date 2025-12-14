@@ -106,12 +106,7 @@ export default function About() {
           <div className="mt-4 flex flex-col gap-y-2 rounded-xl border border-card_border bg-card_background px-4 py-6 text-base leading-7 dark:border-card_border-dark dark:bg-card_background-dark">
             <p>rixia (りーしゃ）です。</p>
             <p>
-              フロントエンド・モバイルアプリが好き・得意なエンジニアです。仕事上はTypeScript、Vue.js、PHP（Laravel)を使用した開発が多いです。
-            </p>
-            <p>興味関心はフロント寄りですが、フルスタック的に開発を担っています。</p>
-            <p>
-              アプリ系は興味・個人開発で触っており、FlutterやCompose
-              Multiplatformなどクロスプラットフォーム系を中心に、身内向けのアプリや自分用のツール系アプリなどを作成しています。
+              フロントエンド・モバイルアプリが好き・得意なエンジニアです。
             </p>
           </div>
 
@@ -230,7 +225,7 @@ export default function About() {
           <div className="mt-4 mb-2 flex flex-col rounded-xl border border-card_border bg-card_background p-2 dark:border-card_border-dark dark:bg-card_background-dark">
             <h4 className="mb-1 flex flex-row items-center text-blueblack dark:text-blueblack-dark">
               <ListStar size="2.25rem" className="mr-2" />
-              <span className="font-bold text-lg">一覧</span>
+              <span className="font-bold text-lg">ざっくり一覧</span>
             </h4>
             <div className="mt-2 px-1">
               <div className="flex flex-row flex-wrap gap-x-1 gap-y-2 px-1 py-2">
